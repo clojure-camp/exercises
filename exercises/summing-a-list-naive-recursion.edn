@@ -1,0 +1,11 @@
+{:title "summing a list (naive recursion)"
+ :instructions ["Write a function to sum a list of numbers, using recursion"]
+ :related #{"summing-a-list-reduce"
+            "summing-a-list-apply"
+            "summing-a-list-atom"
+            "summing-a-list-safe-recursion"}
+ :solution '(defn sum [values]
+              (if (empty? values)
+                0
+                (+ (first values) (sum (rest values)))))
+ :uses #{:recursion 'first 'rest 'empty? :math-operations 'if '+}}

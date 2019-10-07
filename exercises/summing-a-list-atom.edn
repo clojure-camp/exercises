@@ -1,0 +1,12 @@
+{:title "summing a list (atom)"
+ :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`"]
+ :related #{"summing-a-list-reduce"
+            "summing-a-list-apply"
+            "summing-a-list-naive-recursion"
+            "summing-a-list-safe-recursion"}
+ :solution '(defn sum [values]
+              (let [total (atom 0)]
+                (doseq [v values]
+                  (swap! total + v))
+                @total))
+ :uses #{'let 'atom '@ 'swap! :working-with-atoms :math-operations '+}}

@@ -1,0 +1,9 @@
+{:title "linear interpolation (higher-order-function)"
+ :instructions "" ; TODO
+ :related #{"linear-interpolation"}
+ :solution '(defn make-interpolator [[x0 x1] [y0 y1]]
+              (let [m (/ (- y1 y0) (- x0 x1))
+                    b (- y0 (* m x0))]
+                (fn [x]
+                  (+ (* m x) b))))
+ :uses #{'let :destructuring :math-operations :closure :higher-order-functions '+ '* '- '/}}

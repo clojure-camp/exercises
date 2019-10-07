@@ -1,0 +1,7 @@
+{:title "triangle?"
+ :instructions ["Write a function to determine if some 3 side lengths are sufficient to make a triangle."]
+ :solution '(defn triangle? [a b c]
+              (and (> a (+ b c))
+                (> b (+ a c))
+                (> c (+ a b))))
+ :uses #{'and :math-operations :math-comparisons '+ '>}}

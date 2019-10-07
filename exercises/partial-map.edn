@@ -1,0 +1,9 @@
+{:title "partial-map"
+ :instructions ["Write a function that takes two functions and a list, then transforms the list by applying fn-a to values in the list that pass fn-b."]
+ :solution '(defn partial-map [f pred? values]
+              (map (fn [x]
+                     (if (pred? x)
+                       (f x)
+                       x))
+                   values))
+ :uses #{'map 'if 'fn :higher-order-functions}}
