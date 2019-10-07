@@ -12,7 +12,7 @@
                  (<= min x max) x
                  (< x min) min
                  :else max))
-  :uses #{'defn 'cond :math-comparisons}}
+  :uses #{'defn 'cond :math-comparisons '<= '<=}}
 
 
  {:id "triangle?"
@@ -21,7 +21,7 @@
                (and (> a (+ b c))
                     (> b (+ a c))
                     (> c (+ a b))))
-  :uses #{'and :math-operations :math-comparisons}}
+  :uses #{'and :math-operations :math-comparisons '+ '>}}
 
  {:id "linear-interpolation"
   :instructions ["" ; TODO
@@ -30,7 +30,7 @@
                (let [m (/ (- y1 y0) (- x0 x1))
                      b (- y0 (* m x0))]
                  (+ (* m x) b)))
-  :uses #{'let :destructuring :math-operations}}
+  :uses #{'let :destructuring :math-operations '+ '* '/ '-}}
 
  {:id "make-linear-interpolator"
   :instructions "" ; TODO
@@ -40,7 +40,7 @@
                      b (- y0 (* m x0))]
                  (fn [x]
                    (+ (* m x) b))))
-  :uses #{'let :destructuring :math-operations :closure}}
+  :uses #{'let :destructuring :math-operations :closure :higher-order-functions '+ '* '- '/}}
 
  {:id "summing a list (apply)"
   :instructions ["Write a function to sum a list of numbers, using `apply`"]
@@ -50,7 +50,7 @@
              "summing a list (safe recursion)"}
   :solution '(defn sum [values]
                (apply + values))
-  :uses #{'apply :math-operations}}
+  :uses #{'apply :math-operations '+}}
 
  {:id "summing a list (reduce)"
   :instructions ["Write a function to sum a list of numbers, using `reduce`"]
@@ -60,7 +60,7 @@
              "summing a list (safe recursion)"}
   :solution '(defn sum [values]
                (reduce + values))
-  :uses #{'reduce :math-operations}}
+  :uses #{'reduce :math-operations '+}}
 
  {:id "summing a list (atom)"
   :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`"]
@@ -73,7 +73,7 @@
                  (doseq [v values]
                    (swap! total + v))
                  @total))
-  :uses #{'let 'atom '@ 'swap! :working-with-atoms}}
+  :uses #{'let 'atom '@ 'swap! :working-with-atoms :math-operations '+}}
 
  {:id "summing a list (naive recursion)"
   :instructions ["Write a function to sum a list of numbers, using recursion"]
@@ -85,7 +85,7 @@
                (if (empty? values)
                  0
                  (+ (first values) (sum (rest values)))))
-  :uses #{:recursion 'first 'rest 'empty? :math-operations 'if}}
+  :uses #{:recursion 'first 'rest 'empty? :math-operations 'if '+}}
 
  {:id "summing a list (safe recursion)"
   :instructions ["Write a function to sum a list of numbers, using recursion, but in a way that doesn't blow the stack."]
@@ -100,7 +100,7 @@
 
              '(defn sum [values]
                 (sum* values 0))]
-  :uses #{:recursion 'first 'rest 'recur 'empty? :math-operations 'if}}
+  :uses #{:recursion 'first 'rest 'recur 'empty? :math-operations 'if '+}}
 
  {:id "partial-map"
   :instructions ["Write a function that takes two functions and a list, then transforms the list by applying fn-a to values in the list that pass fn-b."]
