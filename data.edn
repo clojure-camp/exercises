@@ -1,0 +1,105 @@
+[{:id "clamp"
+  :instructions ["Write a function `clamp` to restrict a value to a given range:"
+
+                 '(defn clamp [x min max]
+                    )
+
+                '(is (= 2 (clamp 2 1 4)))
+                '(is (= 1 (clamp 0 1 4)))
+                '(is (= 4 (clamp 5 1 4)))]
+  :solution '(defn clamp [x min max]
+               (cond
+                 (<= min x max) x
+                 (< x min) min
+                 :else max))
+  :uses #{'defn 'cond :math-comparisons}}
+
+
+ {:id "triangle?"
+  :instructions ["Write a function to determine if some 3 side lengths are sufficient to make a triangle."]
+  :solution '(defn triangle? [a b c]
+               (and (> a (+ b c))
+                    (> b (+ a c))
+                    (> c (+ a b))))
+  :uses #{'and :math-operations :math-comparisons}}
+
+ {:id "linear-interpolation"
+  :instructions ["" ; TODO
+                 "y = mx + b"]
+  :solution '(defn interpolate [x [x0 x1] [y0 y1]]
+               (let [m (/ (- y1 y0) (- x0 x1))
+                     b (- y0 (* m x0))]
+                 (+ (* m x) b)))
+  :uses #{'let :destructuring :math-operations}}
+
+ {:id "make-linear-interpolator"
+  :instructions "" ; TODO
+  :related #{"linear-interpolation"}
+  :solution '(defn make-interpolator [[x0 x1] [y0 y1]]
+               (let [m (/ (- y1 y0) (- x0 x1))
+                     b (- y0 (* m x0))]
+                 (fn [x]
+                   (+ (* m x) b))))
+  :uses #{'let :destructuring :math-operations :closure}}
+
+ {:id "summing a list (apply)"
+  :instructions ["Write a function to sum a list of numbers, using `apply`"]
+  :related #{"summing a list (reduce)"
+             "summing a list (atom)"
+             "summing a list (naive recursion)"
+             "summing a list (safe recursion)"}
+  :solution '(defn sum [values]
+               (apply + values))
+  :uses #{'apply :math-operations}}
+
+ {:id "summing a list (reduce)"
+  :instructions ["Write a function to sum a list of numbers, using `reduce`"]
+  :related #{"summing a list (apply)"
+             "summing a list (atom)"
+             "summing a list (naive recursion)"
+             "summing a list (safe recursion)"}
+  :solution '(defn sum [values]
+               (reduce + values))
+  :uses #{'reduce :math-operations}}
+
+ {:id "summing a list (atom)"
+  :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`"]
+  :related #{"summing a list (reduce)"
+             "summing a list (apply)"
+             "summing a list (naive recursion)"
+             "summing a list (safe recursion)"}
+  :solution '(defn sum [values]
+               (let [total (atom 0)]
+                 (doseq [v values]
+                   (swap! total + v))
+                 @total))
+  :uses #{'let 'atom '@ 'swap! :working-with-atoms}}
+
+ {:id "summing a list (naive recursion)"
+  :instructions ["Write a function to sum a list of numbers, using recursion"]
+  :related #{"summing a list (reduce)"
+             "summing a list (apply)"
+             "summing a list (atom)"
+             "summing a list (safe recursion)"}
+  :solution '(defn sum [values]
+               (if (empty? values)
+                 0
+                 (+ (first values) (sum (rest values)))))
+  :uses #{:recursion 'first 'rest 'empty? :math-operations 'if}}
+
+ {:id "summing a list (safe recursion)"
+  :instructions ["Write a function to sum a list of numbers, using recursion, but in a way that doesn't blow the stack."]
+  :related #{"summing a list (reduce)"
+             "summing a list (apply)"
+             "summing a list (atom)"
+             "summing a list (naive recursion)"}
+  :solution ['(defn sum* [values accumulator]
+                (if (empty? values)
+                  accumulator
+                  (recur (rest values) (+ (first values) accumulator))))
+
+             '(defn sum [values]
+                (sum* values 0))]
+  :uses #{:recursion 'first 'rest 'recur 'empty? :math-operations 'if}}
+
+ ]
