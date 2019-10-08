@@ -1,0 +1,14 @@
+{:title "phone number sanitization"
+ :instructions ["Implement a function to clean-up phone numbers so that they can be stored in a standardized way."
+                "Make use of `clojure.string/replace`"]
+ :related #{"phone-number-sanitization-filter"}
+ :tests ['(is (= "6139950253" (sanitize "+1 (613)-995-0253")))
+         '(is (= "6139950253" (sanitize "613-995-0253")))
+         '(is (= "6139950253" (sanitize "1 613 995 0253")))
+         '(is (= "6139950253" (sanitize "613.995.0253")))]
+ :solution '(defn sanitize [phonenumber]
+              (->> (string/replace #"[^0-9]" "" phonenumber)
+                   (take-last 10)
+                   (apply str)))
+ :uses #{'clojure.string/replace 'take-last}
+ :source "https://exercism.io/tracks/clojure/exercises/phone-number"}
