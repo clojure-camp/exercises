@@ -1,0 +1,68 @@
+{:title "morse"
+ :type #{:word-problem}
+ :instructions ["Write a function to convert to & from morse code"
+                '(defn morse->english [morse]
+                   )
+                '(defn english->morse [morse]
+                   )
+
+                '(is (= "SOS" (morse->english "... --- ...")))
+                '(is (= "... --- ..." (english->morse "SOS")))
+                ]
+
+ :solution ['(def alphabet->morse
+               {"A" ".-"
+                "B" "-..."
+                "C" "-.-."
+                "D" "-.."
+                "E" "."
+                "F" "..-."
+                "G" "--."
+                "H" "...."
+                "I" ".."
+                "J" ".---"
+                "K" "-.-"
+                "L" ".-.."
+                "M" "--"
+                "N" "-."
+                "O" "---"
+                "P" ".--."
+                "Q" "--.-"
+                "R" ".-."
+                "S" "..."
+                "T" "-"
+                "U" "..-"
+                "V" "...-"
+                "W" ".--"
+                "X" "-..-"
+                "Y" "-.--"
+                "Z" "--.."
+                "1" ".----"
+                "2" "..---"
+                "3" "...--"
+                "4" "....-"
+                "5" "....."
+                "6" "-...."
+                "7" "--..."
+                "8" "---.."
+                "9" "----."
+                "0" "-----"})
+
+            '(require '[clojure.set :refer [map-invert]])
+            '(def morse->alphabet (map-invert alphabet->morse))
+
+            '(require '[clojure.string :as string])
+
+            '(defn morse->english
+               [morse]
+               (->> (string/split morse #"\s+")
+                   (map morse->alphabet)
+                   (string/join "")))
+
+            '(defn english->morse
+               [english]
+               (->> (string/split english #"")
+                   (map alphabet->morse)
+                   (string/join " ")))]
+ :uses #{'defn 'def :maps 'map-invert 'clojure.string/split 'clojure.string/join
+        '->> 'map}}
