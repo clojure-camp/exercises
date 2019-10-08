@@ -1,0 +1,34 @@
+{:title "lazy debugging"
+ :instructions ["Debug the following code:"
+                '(defn process
+                   "For a given list, return the sum of all the
+                   numbers as well as all the values as strings."
+                   [things]
+                   (let [sum (atom 0)
+                         str-things (for [thing things]
+                                      (do (when (number? thing)
+                                            (swap! sum + thing))
+                                          (str thing)))]
+                     {:str-things str-things
+                      :sum @sum}))
+
+                '(is (= {:str-things ["hello" "2" ":world" "1"]
+                         :sum 3}
+                        (process ["hello" 2 :world 1])))
+                '(is (= 3
+                        (:sum (process ["hello" 2 :world 1]))))]
+
+ :solution '(defn process
+              "For a given list, return the sum of all the
+               numbers as well as all the values as strings."
+              [things]
+              (let [sum (atom 0)
+                    str-things (doall
+                                 (for [thing things]
+                                   (do (when (number? thing)
+                                         (swap! sum + thing))
+                                       (str thing))))]
+                {:str-things str-things
+                 :sum @sum}))
+ :type #{:debugging}
+ :uses #{'defn 'when 'atom 'for 'do 'doall :lazy-evaluation}}
