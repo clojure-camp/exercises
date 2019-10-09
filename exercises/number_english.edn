@@ -49,10 +49,10 @@
                                  " "
                                  (number->english (rem n 10)))
                  :else
-                 (let [pow-ten (-> n Math/log10 Math/floor Math/toIntExact)
+                 (let [pow-ten (-> n Math/log10 Math/floor int)
                        exp (Math/pow 10 pow-ten)
-                       most-sig (Math/toIntExact (quot n exp))
-                       rest (Math/toIntExact (rem n exp))]
+                       most-sig (int (quot n exp))
+                       rest (int (rem n exp))]
                    (str (number->english most-sig)
                         " "
                         (powers-of-ten pow-ten)
