@@ -1,8 +1,8 @@
 {:title "find largest"
- :instructions ["Find the largest number in a list"
+ :instructions ["Find the largest number in a list."
                 (defn largest [nums])
-                (is (= 3 (largest [1 2 -1 3 3 2 1 0])))
-                "Try to implement the function again using `reduce`"]
+                "Try to implement the function again using `reduce`."]
+ :tests [(is (= 3 (largest [1 2 -1 3 3 2 1 0])))]
  :solution [(defn largest
                [nums]
                (apply max nums))

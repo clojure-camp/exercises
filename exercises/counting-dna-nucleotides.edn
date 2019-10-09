@@ -1,10 +1,10 @@
 {:title "counting DNA nucleotides"
- :instructions ["Given a string that represents a section of DNA, ex. \"ATAGCAGGTA\", return a count of each nucleotide"
-                (is (= {"A" 20
-                         "C" 12
-                         "G" 17
-                         "T" 21}
-                        (count-nucleotides "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")))]
+ :instructions ["Given a string that represents a section of DNA, ex. \"ATAGCAGGTA\", return a count of each nucleotide."]
+ :tests [(is (= {"A" 20
+                 "C" 12
+                 "G" 17
+                 "T" 21}
+                (count-nucleotides "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")))]
  :solution (defn count-nucleotides [s]
               (-> s
                   (string/split #"")

@@ -1,13 +1,12 @@
 {:title "Unit converter"
  :type #{:word-problem}
  :instructions ["Write a function that can convert between many different types of units"
-                (defn convert [num unit])
-                (is (= [100 :kg] (convert 220 :lb)))
-                (is (= [45 :lb] (convert 20.45 :kg)))
-                (is (= [-18 :celsius] (convert 0 :fahrenheit)))
-                (is (= [-40 :fahrenheit] (convert -40 :celsius)))
-                (is (= [49 :feet] (convert 15 :meters)))
-                ]
+                (defn convert [num unit])]
+ :tests [(is (= [100 :kg] (convert 220 :lb)))
+         (is (= [45 :lb] (convert 20.45 :kg)))
+         (is (= [-18 :celsius] (convert 0 :fahrenheit)))
+         (is (= [-40 :fahrenheit] (convert -40 :celsius)))
+         (is (= [49 :feet] (convert 15 :meters)))]
  :solution [(def conv-fn
                {:kg (fn [k] [(* k 2.2) :lb])
                 :lb (fn [l] [(/ l 2.2) :kg])

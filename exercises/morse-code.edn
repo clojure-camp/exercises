@@ -1,15 +1,10 @@
 {:title "morse"
  :type #{:word-problem}
  :instructions ["Write a function to convert to & from morse code"
-                (defn morse->english [morse]
-                   )
-                (defn english->morse [morse]
-                   )
-
-                (is (= "SOS" (morse->english "... --- ...")))
-                (is (= "... --- ..." (english->morse "SOS")))
-                ]
-
+                (defn morse->english [morse])
+                (defn english->morse [morse])]
+ :tests [(is (= "SOS" (morse->english "... --- ...")))
+         (is (= "... --- ..." (english->morse "SOS")))]
  :solution [(require '[clojure.set :refer [map-invert]])
             (require '[clojure.string :as string])
 
