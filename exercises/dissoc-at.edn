@@ -1,0 +1,11 @@
+{:title "remove from vector"
+ :type #{:word-problem}
+ :instructions ["Write a function that removes a value at the given index in a vector, moving everything else down"
+                '(defn dissoc-at [v idx])
+                '(is (= [1 3 4] (insert-at [1 2 3 4] 1)))]
+ :solution '(defn dissoc-at
+              [v idx]
+              (into
+                (subvec v 0 idx)
+                (subvec v (inc idx))))
+ :uses #{'defn 'into 'subvec}}
