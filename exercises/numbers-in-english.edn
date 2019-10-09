@@ -1,12 +1,12 @@
 {:title "numbers to english"
  :type #{:word-problem}
  :instructions ["Write a function to convert a number into the equivalent English string."
-                "To simplify things, you can assume a limited domain (e.g. under 10,000)"
-                '(defn number->english [n])
-                '(is (= "one hundred and twenty"
-                        (number->english 120)))
-                '(is (= "four thousand three hundred and twenty one"
-                        (number->english 4321)))]
+                "To simplify things, you can assume a limited domain (e.g. under 10,000)."
+                '(defn number->english [n])]
+ :tests ['(is (= "one hundred and twenty"
+                  (number->english 120)))
+         '(is (= "four thousand three hundred and twenty one"
+                 (number->english 4321)))]
  :solution '[(def number->name
                {1 "one"
                 2 "two"
@@ -60,4 +60,5 @@
                         (when (< rest 100)
                           "and ")
                         (number->english rest)))))]
- :uses #{'defn 'cond ':math-operations :java-interop :maps :recursion}}
+ :uses #{'defn 'cond ':math-operations :java-interop :maps :recursion}
+ :source "https://exercism.io/tracks/clojure/exercises/say"}
