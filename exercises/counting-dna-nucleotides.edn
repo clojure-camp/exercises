@@ -1,13 +1,13 @@
 {:title "counting DNA nucleotides"
  :instructions ["Given a string that represents a section of DNA, ex. \"ATAGCAGGTA\", return a count of each nucleotide"
-                '(is (= {"A" 20
+                (is (= {"A" 20
                          "C" 12
                          "G" 17
                          "T" 21}
                         (count-nucleotides "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")))]
- :solution '(defn count-nucleotides [s]
+ :solution (defn count-nucleotides [s]
               (-> s
                   (string/split #"")
                   frequencies))
- :uses #{'clojure.string/split 'frequencies}
+ :uses #{clojure.string/split frequencies}
  :source "https://exercism.io/tracks/clojure/exercises/nucleotide-count"}

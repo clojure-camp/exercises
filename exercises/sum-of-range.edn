@@ -1,9 +1,9 @@
 {:title "sum of range"
  :type #{:word-problem}
  :instructions ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive"
-                '(defn sum-to [n])
-                '(is (= 15 (sum-to 5)))
+                (defn sum-to [n])
+                (is (= 15 (sum-to 5)))
                 ]
- :solution '(defn sum-to [n]
+ :solution (defn sum-to [n]
               (apply + (range (inc n))))
- :uses #{'defn 'range '+ 'apply 'reduce 'inc}}
+ :uses #{defn range + apply reduce inc}}

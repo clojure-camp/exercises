@@ -2,15 +2,15 @@
  :type #{:word-problem}
  :instructions ["Write a function that takes a string and a \"secret key\" which is a number that indicates how many characters to rotate the letters by."
                 "You can assume that only upper-case letters will be used, leave spaces unchanged"
-                '(defn caeser-cipher [key message])
-                '(is (= "KHOOR ZRUOG"
+                (defn caeser-cipher [key message])
+                (is (= "KHOOR ZRUOG"
                         (caeser-cipher 3 "HELLO WORLD")))
-                '(is (= "HELLO WORLD"
+                (is (= "HELLO WORLD"
                         (caeser-cipher -3 "KHOOR ZRUOG")))
-                '(is (= "HELLO WORLD"
+                (is (= "HELLO WORLD"
                         (caeser-cipher 13 (caeser-cipher 13 "HELLO WORLD"))))]
 
- :solution '[(def char-base (int \A))
+ :solution [(def char-base (int \A))
              (defn caeser-cipher
                [key message]
                (->> (seq message)
@@ -25,4 +25,4 @@
                                 char))))
                    (apply str)))]
 
- :uses #{'defn 'int 'char '+ '- 'mod 'map '->> 'apply 'str 'seq}}
+ :uses #{defn int char + - mod map ->> apply str seq}}

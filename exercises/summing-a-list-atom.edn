@@ -4,9 +4,9 @@
             "summing-a-list-apply"
             "summing-a-list-naive-recursion"
             "summing-a-list-safe-recursion"}
- :solution '(defn sum [values]
+ :solution (defn sum [values]
               (let [total (atom 0)]
                 (doseq [v values]
                   (swap! total + v))
                 @total))
- :uses #{'let 'atom '@ 'swap! :working-with-atoms :math-operations '+}}
+ :uses #{let atom @ swap! :working-with-atoms :math-operations +}}

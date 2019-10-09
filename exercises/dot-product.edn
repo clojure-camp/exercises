@@ -1,12 +1,12 @@
 {:title "dot products"
  :instructions ["Write a function to compute the dot product of two vectors"
-                '(defn dot [v1 v2])
-                '(is (= 0 (dot [1 0] [0 1])))
-                '(is (= 3 (dot [1 1 1] [1 1 1])))
-                '(is (= 32 (dot [1 2 3] [4 5 6])))]
- :solution '(defn dot
+                (defn dot [v1 v2])
+                (is (= 0 (dot [1 0] [0 1])))
+                (is (= 3 (dot [1 1 1] [1 1 1])))
+                (is (= 32 (dot [1 2 3] [4 5 6])))]
+ :solution (defn dot
               [v1 v2]
               (->> (map * v1 v2)
                   (reduce + 0)))
  :type #{:word-problem}
- :uses #{'defn '->> 'map 'reduce '+ '*}}
+ :uses #{defn ->> map reduce + *}}

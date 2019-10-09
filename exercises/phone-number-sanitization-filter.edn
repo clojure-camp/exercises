@@ -6,10 +6,10 @@
          (is (= "6139950253" (sanitize "613-995-0253")))
          (is (= "6139950253" (sanitize "1 613 995 0253")))
          (is (= "6139950253" (sanitize "613.995.0253")))]
- :solution '(defn sanitize [phonenumber]
+ :solution (defn sanitize [phonenumber]
               (->> phonenumber
                    (filter #{\0 \1 \2 \3 \4 \5 \6 \7 \8 \9})
                    (take-last 10)
                    (apply str)))
- :uses #{'filter 'take-last}
+ :uses #{filter take-last}
  :source "https://exercism.io/tracks/clojure/exercises/phone-number"}

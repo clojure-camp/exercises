@@ -4,6 +4,6 @@
             "summing-a-list-atom"
             "summing-a-list-naive-recursion"
             "summing-a-list-safe-recursion"}
- :solution '(defn sum [values]
+ :solution (defn sum [values]
               (reduce + values))
- :uses #{'reduce :math-operations '+}}
+ :uses #{reduce :math-operations +}}

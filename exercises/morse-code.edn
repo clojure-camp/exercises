@@ -1,16 +1,19 @@
 {:title "morse"
  :type #{:word-problem}
  :instructions ["Write a function to convert to & from morse code"
-                '(defn morse->english [morse]
+                (defn morse->english [morse]
                    )
-                '(defn english->morse [morse]
+                (defn english->morse [morse]
                    )
 
-                '(is (= "SOS" (morse->english "... --- ...")))
-                '(is (= "... --- ..." (english->morse "SOS")))
+                (is (= "SOS" (morse->english "... --- ...")))
+                (is (= "... --- ..." (english->morse "SOS")))
                 ]
 
- :solution ['(def alphabet->morse
+ :solution [(require '[clojure.set :refer [map-invert]])
+            (require '[clojure.string :as string])
+
+            (def alphabet->morse
                {"A" ".-"
                 "B" "-..."
                 "C" "-.-."
@@ -48,21 +51,18 @@
                 "9" "----."
                 "0" "-----"})
 
-            '(require '[clojure.set :refer [map-invert]])
-            '(def morse->alphabet (map-invert alphabet->morse))
+            (def morse->alphabet (map-invert alphabet->morse))
 
-            '(require '[clojure.string :as string])
-
-            '(defn morse->english
+            (defn morse->english
                [morse]
                (->> (string/split morse #"\s+")
-                   (map morse->alphabet)
-                   (string/join "")))
+                    (map morse->alphabet)
+                    (string/join "")))
 
-            '(defn english->morse
+            (defn english->morse
                [english]
                (->> (string/split english #"")
                    (map alphabet->morse)
                    (string/join " ")))]
- :uses #{'defn 'def :maps 'map-invert 'clojure.string/split 'clojure.string/join
-        '->> 'map}}
+ :uses #{defn def :maps map-invert clojure.string/split clojure.string/join
+        ->> map}}

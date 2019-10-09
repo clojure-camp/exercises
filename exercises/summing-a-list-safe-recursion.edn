@@ -4,11 +4,11 @@
             "summing-a-list-apply"
             "summing-a-list-atom"
             "summing-a-list-naive-recursion"}
- :solution ['(defn sum* [values accumulator]
+ :solution [(defn sum* [values accumulator]
                (if (empty? values)
                  accumulator
                  (recur (rest values) (+ (first values) accumulator))))
 
-            '(defn sum [values]
+            (defn sum [values]
                (sum* values 0))]
- :uses #{:recursion 'first 'rest 'recur 'empty? :math-operations 'if '+}}
+ :uses #{:recursion first rest recur empty? :math-operations if +}}
