@@ -1,0 +1,10 @@
+{:title "number deltas"
+ :type #{:word-problem}
+ :instructions ["Given a list of numbers, return a new list of the differences betwene the adjacent numbers"
+                '(defn deltas [nums])
+                '(is (= [1 1 2 -8 13]
+                        (deltas [1 2 3 5 -3 10])))]
+ :solution '(defn deltas
+              [nums]
+              (map - (rest nums) nums))
+ :uses #{'- 'map 'defn 'rest}}
