@@ -1,0 +1,11 @@
+{:title "run length decode"
+ :instructions ["Decode a run-length encoded list"
+                '(defn run-length-decode [runs])
+                '(is (= [:a :a :a :b :b :c :d :d :d :d]
+                        (run-length-decode
+                          [[:a 3] [:b 2] [:c 1] [:d 4]])))]
+ :type #{:word-problem}
+ :solution '(defn run-length-decode
+              [runs]
+              (mapcat (fn [[val len]] (repeat len val)) runs))
+ :uses #{'defn 'mapcat :destructuring 'repeat}}
