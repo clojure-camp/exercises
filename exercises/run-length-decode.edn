@@ -1,4 +1,5 @@
 {:title "run length decode"
+ :related #{"run-length-encode"}
  :instructions ["Decode a run-length encoded list"
                 (defn run-length-decode [runs])]
  :tests [(is (= [:a :a :a :b :b :c :d :d :d :d]
