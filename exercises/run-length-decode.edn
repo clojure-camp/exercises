@@ -9,4 +9,5 @@
  :solution (defn run-length-decode
               [runs]
               (mapcat (fn [[val len]] (repeat len val)) runs))
- :uses #{defn mapcat :destructuring repeat}}
+ :uses #{defn mapcat :destructuring repeat}
+ :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}

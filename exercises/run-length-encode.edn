@@ -19,4 +19,5 @@
                              (conj (vec (butlast vs)) [v (inc c)])
                              (conj vs [x 1]))))
                        []
-                       xs))]}
+                       xs))]
+ :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}
