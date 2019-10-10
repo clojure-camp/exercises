@@ -1,0 +1,17 @@
+{:title "redact (with whitelist)"
+ :instructions "Write a function `redact`, which, given some text and a whitelist of words, returns the text, with non-whitelisted words replaced with ████ (being as long as the word being replaced)."
+ :solution [(require '[clojure.string :as string])
+
+            (defn redact-word [word]
+              (apply str (repeat (count word) "█")))
+
+            (defn redact [text whitelist]
+              (let [whitelist? (set whitelist)]
+                (->> (string/split text #" ")
+                     (map (fn [word]
+                            (if (whitelist? word)
+                              word
+                              (redact-word word))) )
+                     (string/join " "))))]
+ :tests [(is (= "hello world ███"
+                (redact "hello world foo" ["hello" "world"])))]}
