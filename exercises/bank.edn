@@ -103,5 +103,5 @@
          update update-in java.util.Date not contains?
          conj -> ->>}
 
- :source "https://exercism.io/tracks/clojure/exercises/bank-account/solutions/e25524778b204b6f9d0b97c240d8d33c"
+ :source "https://exercism.io/tracks/clojure/exercises/bank-account"
  }
