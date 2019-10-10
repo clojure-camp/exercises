@@ -2,7 +2,10 @@
  :instructions ["Write a function to determine if some 3 side lengths are sufficient to make a triangle."]
  :related #{"classify-triangle"}
  :solution (defn triangle? [a b c]
-              (and (> a (+ b c))
-                (> b (+ a c))
-                (> c (+ a b))))
- :uses #{and :math-operations :math-comparisons + >}}
+             (and
+               (< a (+ b c))
+               (< b (+ a c))
+               (< c (+ a b))))
+ :tests [(is (= true (triangle? 3 4 5)))
+         (is (= false (triangle? 1 1 2)))]
+ :uses #{and :math-operations :math-comparisons + <}}
