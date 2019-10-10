@@ -1,13 +1,12 @@
 {:title "find largest"
- :instructions ["Find the largest number in a list."
-                (defn largest [nums])
-                "Try to implement the function again using `reduce`."]
+ :instructions ["Write a function to find the largest number in a list, making use of either `apply` or `reduce`."
+                (defn largest [nums])]
  :tests [(is (= 3 (largest [1 2 -1 3 3 2 1 0])))]
  :solution [(defn largest
-               [nums]
-               (apply max nums))
-             (defn largest-reduce
-               [nums]
-               (reduce max ##-Inf nums))]
+              [nums]
+              (apply max nums))
+            (defn largest-reduce
+              [nums]
+              (reduce max ##-Inf nums))]
  :type #{:word-problem}
  :uses #{defn apply max reduce ##-Inf}}
