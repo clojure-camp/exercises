@@ -22,4 +22,5 @@
                 :isosceles
                 :else
                 :scalene))]
- :uses #{:math-operations :math-comparisons + < cond not = or :keywords}}
+ :uses #{:math-operations :math-comparisons + < cond not = or :keywords}
+ :source "https://exercism.io/tracks/clojure/exercises/triangle"}
