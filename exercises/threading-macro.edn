@@ -1,0 +1,20 @@
+{:title "threading macro"
+ :instructions ["Refactor the below functions to use the \"threading macros\" \"->\" and \"->>\""
+                (defn process-number [n]
+                  (* (+ (inc (/ n 1.5)) 2) 10))
+                (defn process-list [coll]
+                  (map (fn [x] (* x 10)) (filter even? (map inc coll))))]
+ :teaches #{-> ->>}
+ :uses #{map filter}
+ :solution [(defn process-number [n]
+              (-> n
+                  (/ 1.5)
+                  inc
+                  (+ 2)
+                  (* 10)))
+
+            (defn process-list
+              [coll]
+              (->> (map inc coll)
+                   (filter even?)
+                   (map (fn [x] (* x 10)))))]}
