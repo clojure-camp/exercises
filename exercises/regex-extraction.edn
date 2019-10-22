@@ -1,0 +1,18 @@
+{:title "regex extraction"
+ :instructions ["Given a string like \"Lastname, Firstname (some title)\", use a regular expression to extract out the first name, last name, and title"]
+ :tests [(is (= {:first "Hello"
+                 :last "World"
+                 :title "Cool Person"}
+                (extract-info "World, Hello (Cool Person)")))
+         (is (= {:first "Garf Buzz"
+                 :last "Beep-Boop III"
+                 :title "🐱"}
+                (extract-info "Beep-Boop III, Garf Buzz (🐱🐶)")))]
+ :solution (defn extract-info
+             [info-str]
+             (let [[_ lastn firstn title] (re-matches #"([^,]+), ([^(]+) \(([^)]+)\)" info-str)]
+               {:first firstn
+                :last lastn
+                :title title}))
+ :uses #{re-matches}
+ :related #{"regex-searching"}}
