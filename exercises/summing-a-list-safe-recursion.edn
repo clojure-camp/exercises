@@ -1,4 +1,5 @@
 {:title "summing a list (safe recursion)"
+ :category :learning-functions
  :instructions ["Write a function to sum a list of numbers, using recursion, but in a way that doesn't blow the stack."]
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
@@ -11,4 +12,5 @@
 
             (defn sum [values]
                (sum* values 0))]
- :uses #{:recursion first rest recur empty? :math-operations if +}}
+ :teaches #{recur}
+ :uses #{:recursion first rest empty? :math-operations if +}}

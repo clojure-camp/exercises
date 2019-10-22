@@ -1,4 +1,5 @@
 {:title "Caeser Cipher"
+ :category :starter
  :type #{:word-problem}
  :instructions ["Write a function that takes a string and a \"secret key\" which is a number that indicates how many characters to rotate the letters by."
                 "You can assume that only upper-case letters will be used, leave spaces unchanged"

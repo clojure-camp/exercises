@@ -1,4 +1,5 @@
 {:title "numbers to english"
+ :category :synthesis
  :type #{:word-problem}
  :instructions ["Write a function to convert a number into the equivalent English string."
                 "To simplify things, you can assume a limited domain (e.g. under 10,000)."

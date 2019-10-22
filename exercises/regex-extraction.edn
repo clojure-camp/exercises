@@ -1,4 +1,5 @@
 {:title "regex extraction"
+ :category :learning-functions
  :instructions ["Given a string like \"Lastname, Firstname (some title)\", use a regular expression to extract out the first name, last name, and title"]
  :tests [(is (= {:first "Hello"
                  :last "World"
@@ -14,5 +15,5 @@
                {:first firstn
                 :last lastn
                 :title title}))
- :uses #{re-matches}
+ :teaches #{re-matches}
  :related #{"regex-searching"}}

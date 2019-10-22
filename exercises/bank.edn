@@ -1,4 +1,5 @@
 {:title "bank"
+ :category :synthesis
  :instructions ["Implement an in-memory bank system, which keeps track of multiple accounts. Accounts can be created, and each account supports make withdrawals, deposits and transfers, and retrieving the current balance and a log of transactions."
                 "Withdrawals and transfers should only occur when there is a sufficient balance. Otherwise, throw an error."
                 "Prevent accounts from being re-created."

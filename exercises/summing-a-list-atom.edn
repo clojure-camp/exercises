@@ -1,4 +1,5 @@
 {:title "summing a list (atom)"
+ :category :learning-functions
  :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`"]
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
@@ -9,4 +10,5 @@
                 (doseq [v values]
                   (swap! total + v))
                 @total))
- :uses #{let atom @ swap! :working-with-atoms :math-operations +}}
+ :teaches #{atom @ swap! :working-with-atoms}
+ :uses #{let :math-operations +}}

@@ -1,4 +1,5 @@
 {:title "linear interpolation (higher-order-function)"
+ :category :starter
  :instructions "" ; TODO
  :related #{"linear-interpolation"}
  :solution (defn make-interpolator [[x0 x1] [y0 y1]]

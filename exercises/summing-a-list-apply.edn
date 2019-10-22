@@ -1,4 +1,5 @@
 {:title "summing a list (apply)"
+ :category :learning-functions
  :instructions ["Write a function to sum a list of numbers, using `apply`"]
  :related #{"summing-a-list-reduce"
             "summing-a-list-atom"
@@ -6,4 +7,5 @@
             "summing-a-list-safe-recursion"}
  :solution (defn sum [values]
               (apply + values))
- :uses #{apply :math-operations +}}
+ :teaches #{apply}
+ :uses #{:math-operations +}}

@@ -1,4 +1,5 @@
 {:title "summing a list (naive recursion)"
+ :category :starter
  :instructions ["Write a function to sum a list of numbers, using recursion"]
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"

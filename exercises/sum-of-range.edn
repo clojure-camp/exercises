@@ -1,4 +1,5 @@
 {:title "sum of range"
+ :category :starter
  :type #{:word-problem}
  :instructions ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive"
                 (defn sum-to [n])]

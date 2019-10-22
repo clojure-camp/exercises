@@ -1,4 +1,5 @@
 {:title "measuring sort comparisons"
+ :category :synthesis
  :instructions ["Explore how many comparisons it typically takes to sort a list."
                 "Step 1: Create a function `sort-count`, that, given a list, returns the number of comparisons performed when sorting that list"
                 "Step 2: Create a function `random-list` that returns a shuffled a list of values from 0 to N"

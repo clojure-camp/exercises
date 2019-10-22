@@ -1,4 +1,5 @@
 {:title "Unit converter"
+ :category :starter
  :type #{:word-problem}
  :instructions ["Write a function that can convert between many different types of units"
                 (defn convert [num unit])]

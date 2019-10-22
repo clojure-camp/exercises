@@ -1,4 +1,5 @@
 {:title "grouping things"
+ :category :learning-functions
  :instructions ["Given a list of strings, categorize them by their starting character."]
  :tests [(is (= {\a ["abc" "apple"]
                  \b ["beep"]

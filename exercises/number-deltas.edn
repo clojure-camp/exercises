@@ -1,4 +1,5 @@
 {:title "number deltas"
+ :category :starter
  :type #{:word-problem}
  :instructions ["Given a list of numbers, return a new list of the differences betwene the adjacent numbers"
                 (defn deltas [nums])]

@@ -1,4 +1,5 @@
 {:title "phone number sanitization"
+ :category :learning-functions
  :instructions ["Implement a function to clean-up phone numbers so that they can be stored in a standardized way."
                 "Make use of `clojure.string/replace`"]
  :related #{"phone-number-sanitization-filter"}
@@ -10,5 +11,6 @@
               (->> (string/replace #"[^0-9]" "" phonenumber)
                    (take-last 10)
                    (apply str)))
- :uses #{clojure.string/replace take-last}
+ :teaches #{clojure.string/replace}
+ :uses #{take-last}
  :source "https://exercism.io/tracks/clojure/exercises/phone-number"}

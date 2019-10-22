@@ -1,4 +1,5 @@
 {:title "insert in vector"
+ :category :learning-functions
  :type #{:word-problem}
  :instructions ["Write a function that inserts a value at the given index in a vector, moving everything else down"
                 (defn insert-at [v idx val])]
@@ -9,4 +10,5 @@
               (into
                 (conj (subvec v 0 idx) val)
                 (subvec v idx)))
- :uses #{defn into conj subvec}}
+ :uses #{defn into}
+ :teaches #{conj subvec}}

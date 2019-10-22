@@ -1,4 +1,5 @@
 {:title "clamp"
+ :category :starter
  :instructions ["Write a function `clamp` to restrict a value to a given range:"
                 (defn clamp [x min max])]
  :tests [(is (= 2 (clamp 2 1 4)))

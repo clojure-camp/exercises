@@ -1,4 +1,5 @@
 {:title "counting DNA nucleotides"
+ :category :starter
  :instructions ["Given a string that represents a section of DNA, ex. \"ATAGCAGGTA\", return a count of each nucleotide."]
  :tests [(is (= {"A" 20
                  "C" 12

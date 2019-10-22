@@ -1,4 +1,5 @@
 {:title "grouping things continued"
+ :category :synthesis
  :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length"]
  :tests [(is (= {\a {3 ["abc"] 5 ["apple"]}
                  \b {4 ["beep"]}

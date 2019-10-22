@@ -1,4 +1,5 @@
 {:title "run length decode"
+ :category :learning-functions
  :related #{"run-length-encode"}
  :instructions ["Decode a run-length encoded list"
                 (defn run-length-decode [runs])]
@@ -9,5 +10,6 @@
  :solution (defn run-length-decode
               [runs]
               (mapcat (fn [[val len]] (repeat len val)) runs))
- :uses #{defn mapcat :destructuring repeat}
+ :teaches #{mapcat repeat}
+ :uses #{defn :destructuring}
  :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}

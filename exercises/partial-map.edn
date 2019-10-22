@@ -6,4 +6,5 @@
                        (f x)
                        x))
                    values))
- :uses #{map if fn :higher-order-functions}}
+ :uses #{map if fn :higher-order-functions}
+ :category :starter}

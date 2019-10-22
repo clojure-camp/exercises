@@ -1,4 +1,5 @@
 {:title "lazy debugging"
+ :category :starter
  :instructions ["Debug the following code:"
                 (defn process
                    "For a given list, return the sum of all the

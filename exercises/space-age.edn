@@ -1,4 +1,5 @@
 {:title "space age"
+ :category :starter
  :instructions ["Implement a function that lets someone convert their age on one planet to their age on another."
                 "For example:"
                 "30 years on Earth is about 1 year on Saturn (a year being a single revolution around the sun)."

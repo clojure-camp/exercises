@@ -1,4 +1,5 @@
 {:title "threading macro"
+ :category :learning-functions
  :instructions ["Refactor the below functions to use the \"threading macros\" \"->\" and \"->>\""
                 (defn process-number [n]
                   (* (+ (inc (/ n 1.5)) 2) 10))

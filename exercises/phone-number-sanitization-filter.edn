@@ -1,4 +1,5 @@
 {:title "phone number sanitization (filter)"
+ :category :learning-functions
  :instructions ["Implement a function to clean-up phone numbers so that they can be stored in a standardized way."
                 "Make use of `filter`"]
  :related #{"phone-number-sanitization"}
@@ -11,5 +12,6 @@
                    (filter #{\0 \1 \2 \3 \4 \5 \6 \7 \8 \9})
                    (take-last 10)
                    (apply str)))
- :uses #{filter take-last}
+ :teaches #{filter}
+ :uses #{take-last}
  :source "https://exercism.io/tracks/clojure/exercises/phone-number"}

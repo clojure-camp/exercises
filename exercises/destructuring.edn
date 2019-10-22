@@ -1,4 +1,5 @@
 {:title "destructuring"
+ :category :starter
  :instructions ["Refactor the below function to use destructuring instead of unpacking values"
                 (defn process-person
                   [arg]
