@@ -1,0 +1,11 @@
+{:title "basic files"
+ :instructions ["Read a file in, reverse the content, and write it to file named with the reverse of the original file name"]
+ :solution [(defn reverse-string [s]
+              (apply str (reverse s)))
+            (defn reverse-file
+              [file-name]
+              (->> (slurp file-name)
+                   reverse-string
+                   (spit (reverse-string file-name))))]
+ :teaches #{spit slurp}
+ :uses #{reverse apply str}}
