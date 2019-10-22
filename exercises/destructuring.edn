@@ -33,5 +33,6 @@
                                    "They like " interest-1 " and " (count other-interests) " other things.")
                  :name name
                  :info info}))]
+
  :teaches #{:destructuring}
  :uses #{:maps str first second rest}}
