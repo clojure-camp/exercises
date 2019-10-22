@@ -6,9 +6,10 @@
                  "G" 17
                  "T" 21}
                 (count-nucleotides "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")))]
- :solution (defn count-nucleotides [s]
+ :solution [(require '[clojure.string :as string])
+            (defn count-nucleotides [s]
               (-> s
                   (string/split #"")
-                  frequencies))
+                  frequencies))]
  :uses #{clojure.string/split frequencies}
  :source "https://exercism.io/tracks/clojure/exercises/nucleotide-count"}

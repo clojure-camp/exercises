@@ -7,10 +7,11 @@
          (is (= "6139950253" (sanitize "613-995-0253")))
          (is (= "6139950253" (sanitize "1 613 995 0253")))
          (is (= "6139950253" (sanitize "613.995.0253")))]
- :solution (defn sanitize [phonenumber]
+ :solution [(require '[clojure.string :as string])
+            (defn sanitize [phonenumber]
               (->> (string/replace #"[^0-9]" "" phonenumber)
                    (take-last 10)
-                   (apply str)))
+                   (apply str)))]
  :teaches #{clojure.string/replace}
  :uses #{take-last}
  :source "https://exercism.io/tracks/clojure/exercises/phone-number"}
