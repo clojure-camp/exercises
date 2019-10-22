@@ -1,0 +1,11 @@
+{:title "grouping things"
+ :instructions ["Given a list of strings, categorize them by their starting character"]
+ :tests [(is (= {\a ["abc" "apple"]
+                 \b ["beep"]
+                 \d ["dialectics" "data"]
+                 \t ["things" "toffee" "theosophy"]}
+                (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
+                             "data" "theosophy"])))]
+ :solution (defn categorize
+             [strings]
+             (group-by first strings))}
