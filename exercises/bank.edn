@@ -100,7 +100,7 @@
                          (transactions :b)))))]
 
  :uses #{:atoms :data :math-operations :keywords :testing
-         defn defn atom thrown? throw ex-info select-keys swap!
+         defn atom thrown? throw ex-info select-keys swap!
          update update-in java.util.Date not contains?
          conj -> ->>}
 
