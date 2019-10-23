@@ -4,7 +4,9 @@
  :related #{"linear-interpolation"}
  :tests [(let [lerp (make-interpolator [1 3] [5 10])]
            ;; i.e. half-way between x=1 & x=5, y = 6.5
-           (is (= 13/2 (lerp 1/2))))]
+           (is (= 13/2 (lerp 1/2)))
+           (is (= 5 (lerp 0)))
+           (is (= 10 (lerp 1))))]
  :solution (defn make-interpolator [[x0 y0] [x1 y1]]
               (let [m (/ (- y1 y0) (- x1 x0))
                     b (- y0 (* m x0))
