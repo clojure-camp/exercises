@@ -1,10 +1,13 @@
 {:title "partial-map"
  :instructions ["Write a function that takes two functions and a list, then transforms the list by applying fn-a to values in the list that pass fn-b."]
+ :tests [(is (= [1 20 3 40 5 60]
+                (partial-map (fn [x] (* x 10)) even? [1 2 3 4 5 6])))]
  :solution (defn partial-map [f pred? values]
               (map (fn [x]
                      (if (pred? x)
                        (f x)
                        x))
                    values))
- :uses #{map if fn :higher-order-functions}
- :category :starter}
+ :teaches #{map}
+ :uses #{if fn :higher-order-functions}
+ :category :learning-functions}

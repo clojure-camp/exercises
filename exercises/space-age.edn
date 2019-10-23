@@ -4,6 +4,8 @@
                 "For example:"
                 "30 years on Earth is about 1 year on Saturn (a year being a single revolution around the sun)."
                 "10 years on Mars is 78 years on Mercury."]
+ :tests [(is (= 1 (convert-space-age 30 :earth :saturn)))
+         (is (= 78 (convert-space-age 10 :mars :mercury)))]
  :solution [(def lookup
                {:mercury 0.2408467
                 :venus 0.61519726

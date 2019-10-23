@@ -3,9 +3,10 @@
  :related #{"run-length-decode"}
  :instructions ["Write a function that does a run-length encoding of a sequence"
                 (defn run-length [things])
-                (is (= [[:a 2] [:b 1] [:c 3]]
-                        (run-length [:a :a :b :c :c :c])))
+
                 "Additional challange: Try implementing this with a reduce"]
+ :tests [(is (= [[:a 2] [:b 1] [:c 3]]
+                (run-length [:a :a :b :c :c :c])))]
  :type #{:word-problem}
  :uses #{defn partition-by map juxt
         reduce conj vec butlast inc peek}
