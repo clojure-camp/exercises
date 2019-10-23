@@ -15,4 +15,5 @@
                               (redact-word word))) )
                      (string/join " "))))]
  :tests [(is (= "hello world ███"
-                (redact "hello world foo" ["hello" "world"])))]}
+                (redact "hello world foo" ["hello" "world"])))]
+ :uses #{->> clojure.string/split repeat count set map clojure.string/join}}

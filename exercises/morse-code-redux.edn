@@ -19,7 +19,8 @@
                    1 0 1 1 1 1 0 1 0 0 1 0 0 0 0
                    1 1 1 1 0 0 1 0 1 0 0])
                 "HELLO WORLD"))]
-
+ :uses #{:maps clojure.string/split clojure.string/join :regex
+        partition-by reduce count conj update clojure.string/blank? cond map -> ->>}
  :solution [(require '[clojure.string :as string])
             (require '[clojure.set :refer [map-invert]])
 
