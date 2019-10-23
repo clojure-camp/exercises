@@ -1,0 +1,12 @@
+{:title "2d transpose"
+ :instructions ["Write a function that takes a matrix as a vector of vectors and inverts it"]
+ :tests [(is (= [[1 2 3]
+                 [4 5 6]]
+                (transpose [[1 4]
+                            [2 5]
+                            [3 6]])))]
+ :category :starter
+ :uses #{apply mapv vector}
+ :solution (defn transpose
+             [matrix]
+             (apply mapv vector matrix))}
