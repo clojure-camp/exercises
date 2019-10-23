@@ -10,4 +10,4 @@
                 (<= min x max) x
                 (< x min) min
                 :else max))
- :uses #{defn cond :math-comparisons <= <=}}
+ :uses #{defn cond :math-comparisons <= <}}
