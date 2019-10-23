@@ -1,0 +1,19 @@
+{:title "concurrent word-count"
+ :category :synthesis
+ :instructions ["Write a function that takes a list of file names and returns the total word count across all the files."
+                "To try to speed it up, make your function sum the files in parallel"]
+ :uses #{atom deref swap! pmap doall}
+ :solution [(require '[clojure.string :as string])
+
+            (defn word-count-files
+              [file-names]
+              (let [counts (atom 0)]
+                (doall
+                  (pmap
+                    (fn [file-name]
+                      (let [text (slurp file-name)]
+                        (->> (string/split text #"\s+")
+                            (count)
+                            (swap! counts +))))
+                    file-names))
+                @counts))]}
