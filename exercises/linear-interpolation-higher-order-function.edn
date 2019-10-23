@@ -1,10 +1,15 @@
 {:title "linear interpolation (higher-order-function)"
  :category :starter
- :instructions "" ; TODO
+ :instructions ["Write a function that takes two x-y points and returns a function that can be used to linerally interpolate between those two points."]
  :related #{"linear-interpolation"}
- :solution (defn make-interpolator [[x0 x1] [y0 y1]]
-              (let [m (/ (- y1 y0) (- x0 x1))
-                    b (- y0 (* m x0))]
-                (fn [x]
-                  (+ (* m x) b))))
+ :tests [(let [lerp (make-interpolator [1 3] [5 10])]
+           ;; i.e. half-way between x=1 & x=5, y = 6.5
+           (is (= 13/2 (lerp 1/2))))]
+ :solution (defn make-interpolator [[x0 y0] [x1 y1]]
+              (let [m (/ (- y1 y0) (- x1 x0))
+                    b (- y0 (* m x0))
+                    Δ (- x1 x0)]
+                (fn [x%]
+                  (let [x (+ (* x% Δ) x0)]
+                    (+ (* m x) b)))))
  :uses #{let :destructuring :math-operations :closure :higher-order-functions + * - /}}
