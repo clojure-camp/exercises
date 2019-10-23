@@ -1,9 +1,13 @@
 {:title "linear interpolation"
  :category :starter
- :instructions ["" ; TODO
-                "y = mx + b"]
- :solution (defn interpolate [x [x0 x1] [y0 y1]]
-              (let [m (/ (- y1 y0) (- x0 x1))
-                    b (- y0 (* m x0))]
-                (+ (* m x) b)))
+ :instructions ["Write a function that takes a fraction between 0 and 1, two x/y points, and the value of y at the indicated fraction between the first & second x values"]
+ :tests [(is (= 8 (lerp 0 [2 8] [11 45])))
+         (is (= 45 (lerp 1 [2 8] [11 45])))
+         (is (= 53/2 (lerp 1/2 [2 8] [11 45])))]
+ :solution (defn lerp
+             [x% [x0 y0] [x1 y1]]
+             (let [m (/ (- y1 y0) (- x1 x0))
+                   b (- y0 (* m x0))
+                   Δ (- x1 x0)]
+               (+ (* m (+ x0 (* x% Δ))) b)))
  :uses #{let :destructuring :math-operations + * / -}}
