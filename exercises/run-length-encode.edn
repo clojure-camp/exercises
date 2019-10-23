@@ -1,4 +1,5 @@
 {:title "run-length encoding"
+ :difficulty :mid
  :category :synthesis
  :related #{"run-length-decode"}
  :instructions ["Write a function that does a run-length encoding of a sequence"

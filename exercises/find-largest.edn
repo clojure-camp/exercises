@@ -1,4 +1,5 @@
 {:title "find largest"
+ :difficulty :low
  :category :learning-functions
  :instructions ["Write a function to find the largest number in a list, making use of either `apply` or `reduce`."
                 (defn largest [nums])]

@@ -1,4 +1,5 @@
 {:title "key-by"
+ :difficulty :mid
  :category :starter
  :instructions ["Implement `key-by`, a function that given a a list of items, converts it to a map, with each item keyed by a given function"
                 (defn key-by [f values])]

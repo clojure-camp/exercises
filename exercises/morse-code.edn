@@ -1,5 +1,6 @@
 {:title "morse"
  :category :synthesis
+ :difficulty :low
  :type #{:word-problem}
  :instructions ["Write a function to convert to & from morse code"
                 (defn morse->english [morse])

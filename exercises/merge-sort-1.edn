@@ -1,5 +1,6 @@
 {:title "merge sort part 1"
  :category :synthesis
+ :difficulty :high
  :related #{"merge-sort-2"}
  :instructions ["Implement mergesort."]
  :tests [(is (= [1 2 3 4 5 6]

@@ -1,4 +1,5 @@
 {:title "insert in vector"
+ :difficulty :mid
  :category :learning-functions
  :type #{:word-problem}
  :instructions ["Write a function that inserts a value at the given index in a vector, moving everything else down"

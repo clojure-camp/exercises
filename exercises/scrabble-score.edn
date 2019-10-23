@@ -1,4 +1,5 @@
 {:title "scrabble score"
+ :difficulty :low
  :category :starter
  :instructions ["Implement a function `score` that calculates the scrabble score for a given word."]
  :tests [(is (= 8 (score "hello")))

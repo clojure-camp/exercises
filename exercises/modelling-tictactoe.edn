@@ -1,4 +1,5 @@
 {:title "modelling tic-tac-toe"
+ :difficulty :mid
  :category :starter
  :instructions ["Devise a data model to represent a game of tic-tac-toe."
                 "For example, describe a game whose board currently looks like the below:"

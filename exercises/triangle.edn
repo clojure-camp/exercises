@@ -1,4 +1,5 @@
 {:title "triangle?"
+ :difficulty :low
  :category :starter
  :instructions ["Write a function to determine if some 3 side lengths are sufficient to make a triangle."]
  :related #{"classify-triangle"}

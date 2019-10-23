@@ -1,5 +1,6 @@
 {:title "classify triangle"
  :category :starter
+ :difficulty :low
  :related #{"triangle"}
  :instructions ["Write a function `classify-triangle`, which, given 3 numbers, returns whether a triangle is equilateral (3 equal sides), isosceles (2 equal sides), scalene, or, not a triangle."]
  :tests [(is (= :equilateral (classify-triangle 1 1 1)))

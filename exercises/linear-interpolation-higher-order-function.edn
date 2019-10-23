@@ -1,4 +1,5 @@
 {:title "linear interpolation (higher-order-function)"
+ :difficulty :mid
  :category :starter
  :instructions ["Write a function that takes two x-y points and returns a function that can be used to linerally interpolate between those two points."]
  :related #{"linear-interpolation"}

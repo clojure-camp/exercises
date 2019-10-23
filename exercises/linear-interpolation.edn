@@ -1,4 +1,5 @@
 {:title "linear interpolation"
+ :difficulty :low
  :category :starter
  :instructions ["Write a function that takes a fraction between 0 and 1, two x/y points, and the value of y at the indicated fraction between the first & second x values"]
  :tests [(is (= 8 (lerp 0 [2 8] [11 45])))

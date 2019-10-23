@@ -1,4 +1,5 @@
 {:title "clamp"
+ :difficulty :low
  :category :starter
  :instructions ["Write a function `clamp` to restrict a value to a given range:"
                 (defn clamp [x min max])]

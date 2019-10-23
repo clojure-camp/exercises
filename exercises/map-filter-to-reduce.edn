@@ -1,4 +1,5 @@
 {:title "almighty reduce"
+ :difficulty :mid
  :category :learning-functions
  :instructions ["Refactor the following code to use a single reduce instead of map + filter"
                 (defn long-lengths

@@ -1,4 +1,5 @@
 {:title "destructuring"
+ :difficulty :low
  :category :starter
  :instructions ["Refactor the below function to use destructuring instead of unpacking values"
                 (defn process-person

@@ -1,5 +1,6 @@
 {:title "morse code redux"
  :category :synthesis
+ :difficulty :mid
  :related #{"morse-code"}
  :instructions ["Convert from morse code to English, where the input is a signal, given as a sequence of ones or zeros."
                 "If the signal stays high for more than three samples, consider it a dash"

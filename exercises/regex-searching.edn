@@ -1,4 +1,5 @@
 {:title "regex searching"
+ :difficulty :mid
  :category :learning-functions
  :instructions ["Given a string of text, find all thing inside of it that look like phone numbers"]
  :tests [(is (= ["(416) 333 4444"

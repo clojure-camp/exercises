@@ -1,4 +1,5 @@
 {:title "2d transpose"
+ :difficulty :low
  :instructions ["Write a function that takes a matrix as a vector of vectors and inverts it"]
  :tests [(is (= [[1 2 3]
                  [4 5 6]]

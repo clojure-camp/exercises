@@ -1,5 +1,6 @@
 {:title "remove from vector"
  :category :learning-functions
+ :difficulty :mid
  :type #{:word-problem}
  :instructions ["Write a function that removes a value at the given index in a vector, moving everything else down"
                 (defn dissoc-at [v idx])]
