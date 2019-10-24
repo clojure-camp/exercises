@@ -17,4 +17,5 @@
                 :last lastn
                 :title title}))
  :teaches #{re-matches}
+ :uses #{}
  :related #{"regex-searching"}}
