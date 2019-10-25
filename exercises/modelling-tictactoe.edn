@@ -19,4 +19,4 @@
                           :location 5}
                          {:player "O"
                           :location 6}]})]
- :uses #{def :maps :vectors :strings :numbers}}
+ :uses #{:maps :vectors :strings :numbers}}

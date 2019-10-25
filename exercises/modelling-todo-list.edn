@@ -23,4 +23,4 @@
                         :assigned-user-id 1
                         :created-at #inst "2019-10-27T19:47:05-05:00"
                         :content "Teach the class"}]})]
- :uses #{def :maps :vectors :strings :numbers}}
+ :uses #{:maps :vectors :strings :numbers}}

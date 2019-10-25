@@ -25,4 +25,4 @@
                                 (+ char-base)
                                 char))))
                    (apply str)))]
- :uses #{defn int char + - mod map ->> apply str seq}}
+ :uses #{int char + - mod map ->> apply str seq}}

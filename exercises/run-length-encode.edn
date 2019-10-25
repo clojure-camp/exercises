@@ -9,7 +9,7 @@
  :tests [(is (= [[:a 2] [:b 1] [:c 3]]
                 (run-length [:a :a :b :c :c :c])))]
  :type #{:word-problem}
- :uses #{defn partition-by map juxt
+ :uses #{partition-by map juxt
         reduce conj vec butlast inc peek}
  :solution [(defn run-length [xs]
                (->> (partition-by identity xs)

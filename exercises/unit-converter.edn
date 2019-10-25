@@ -24,4 +24,4 @@
               (-> ((get-in conv-fn [from-unit to-unit]) num)
                   (Math/round)))]
 
- :uses #{defn update :math-operations :maps fn}}
+ :uses #{update :math-operations :maps fn}}

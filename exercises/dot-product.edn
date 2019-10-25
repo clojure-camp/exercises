@@ -11,4 +11,4 @@
              (->> (map * v1 v2)
                   (reduce + 0)))
  :type #{:word-problem}
- :uses #{defn ->> map reduce + *}}
+ :uses #{->> map reduce + *}}

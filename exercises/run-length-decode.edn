@@ -12,5 +12,5 @@
               [runs]
               (mapcat (fn [[val len]] (repeat len val)) runs))
  :teaches #{mapcat repeat}
- :uses #{defn :destructuring}
+ :uses #{:destructuring}
  :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}

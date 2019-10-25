@@ -9,4 +9,4 @@
  :solution (defn deltas
               [nums]
               (map - (rest nums) nums))
- :uses #{- map defn rest}}
+ :uses #{- map rest}}

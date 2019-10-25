@@ -19,5 +19,5 @@
             (defn convert-space-age [age source-planet target-planet]
                (int (* age (/ (lookup source-planet)
                               (lookup target-planet)))))]
- :uses #{int :maps :math-operations defn def}
+ :uses #{int :maps :math-operations}
  :source "https://exercism.io/tracks/clojure/exercises/space-age"}

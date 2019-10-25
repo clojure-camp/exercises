@@ -10,5 +10,5 @@
               (into
                 (subvec v 0 idx)
                 (subvec v (inc idx))))
- :uses #{defn into}
+ :uses #{into}
  :teaches #{subvec}}

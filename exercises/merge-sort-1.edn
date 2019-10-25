@@ -5,7 +5,7 @@
  :instructions ["Implement mergesort."]
  :tests [(is (= [1 2 3 4 5 6]
                 (merge-sort [5 6 3 1 2 4])))]
- :uses #{defn loop subvec count / :math-operations recur cond
+ :uses #{loop subvec count / :math-operations recur cond
         compare pos?}
  :solution [(defn merge-vecs
               [a b]

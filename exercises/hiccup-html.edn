@@ -33,6 +33,6 @@
                                      (when ?attrs (hiccup-attrs ?attrs)) ">"
                                      (apply str (map hiccup->html body))
                                      "</" (name tag) ">"))))]
- :uses #{defn :recursion name apply str map string? vector? map cond?}
+ :uses #{:recursion name apply str map string? vector? map cond?}
  :difficulty :mid
  :category :synthesis}

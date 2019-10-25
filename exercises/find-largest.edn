@@ -11,5 +11,5 @@
               [nums]
               (reduce max nums))]
  :type #{:word-problem}
- :uses #{defn max}
+ :uses #{max}
  :teaches #{apply reduce}}

@@ -12,4 +12,4 @@
                            (div? n 3) "fizz"
                            (div? n 5) "buzz"
                            :else n))))]
- :uses #{defn mod println doseq range =}}
+ :uses #{mod println doseq range =}}

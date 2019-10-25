@@ -11,5 +11,5 @@
               (into
                 (conj (subvec v 0 idx) val)
                 (subvec v idx)))
- :uses #{defn into}
+ :uses #{into}
  :teaches #{conj subvec}}

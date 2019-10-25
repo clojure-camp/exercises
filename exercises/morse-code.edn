@@ -61,5 +61,5 @@
                (->> (string/split english #"")
                    (map alphabet->morse)
                    (string/join " ")))]
- :uses #{defn def :maps map-invert clojure.string/split clojure.string/join
+ :uses #{:maps map-invert clojure.string/split clojure.string/join
         ->> map}}

@@ -62,5 +62,5 @@
                         (when (< rest 100)
                           "and ")
                         (number->english rest)))))]
- :uses #{defn cond :math-operations :java-interop :maps :recursion}
+ :uses #{cond :math-operations :java-interop :maps :recursion}
  :source "https://exercism.io/tracks/clojure/exercises/say"}
