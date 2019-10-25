@@ -1,0 +1,20 @@
+{:title "map transforms"
+ :category :learning-functions
+ :teaches #{assoc dissoc update}
+ :uses #{-> :keywords :strings :maps inc}
+ :instructions ["Write a function that takes a map with the below format:"
+                {:name "james" :disabled? true :points 0}
+                "and returns a map with the same value for :name, the :disabled? key removed, 1 added to the :points value, add a key called :activated added with the value \"now\" and all other keys left as-is"]
+ :difficulty :low
+ :tests [(is (= {:name "james" :points 1 :activated "now"}
+                (activate {:name "james" :disabled? true :points 0})))
+         (is (= {:name "james" :points 1 :activated "now"
+                 :beep 'boop :blaap 123}
+                (activate {:name "james" :disabled? true :points 0
+                           :beep 'boop :blaap 123})))]
+ :solution (defn activate
+             [person]
+             (-> person
+                 (dissoc :disabled?)
+                 (assoc :activated "now")
+                 (update :points inc)))}
