@@ -1,0 +1,15 @@
+{:title "sequences"
+ :instructions ["Write a function that takes some sequence and a value and adds that value to the sequence, regardless of what type it is"]
+ :tests [(is (= '(:a 2 3 4)
+                (add-element :a (list 2 3 4))))
+         (is (= [2 3 4 :a]
+                (add-element :a [2 3 4])))
+         (is (= #{2 :a 3 4}
+                (add-element :a #{2 3 4})))]
+ :difficulty :low
+ :category :learning-functions
+ :solution (defn add-element
+             [x col]
+             (conj col x))
+ :teaches #{conj}
+ :uses #{:lists :vectors :sets}}
