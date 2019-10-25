@@ -22,7 +22,8 @@
                 ;; if we don't need to worry about quotes, we can take the easy path
                 (for [line lines]
                   (if (nil? (string/index-of line "\""))
-                    (->> (string/split line #"(?<!\\),")
+                    ;; you could write the pattern as #"(?<!\\),", just doing it this way because the syntax highlighter complains
+                    (->> (string/split line (re-pattern "(?<!\\\\),"))
                          (mapv (fn [col] (string/replace col #"\\," ","))))
                     (loop [accum [[]]
                            in-quote? false
