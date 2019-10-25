@@ -1,0 +1,53 @@
+{:title "tic-tac-toe winner"
+ :category :starter
+ :difficulty :mid
+ :instructions ["Given a data structure representing a tic-tac-toe game, return the winner, \"C\" in the case of a tie, or nil if there is no winner yet."]
+ :tests [(is (= "X"
+                (winner [["X" nil "O"]
+                         [nil "X" "O"]
+                         [nil nil "X"]])))
+         (is (= "O"
+                (winner [["X" nil "O"]
+                         [nil "X" "O"]
+                         [nil nil "O"]])))
+         (is (= "O"
+                (winner [["X" "X" "O"]
+                         ["O" "O" "O"]
+                         ["X" "X" nil]])))
+         (is (= "C"
+                (winner [["X" "X" "O"]
+                         ["O" "O" "X"]
+                         ["X" "X" "O"]])))
+
+         (is (= nil (winner [[nil nil nil]
+                             [nil "X" "O"]
+                             [nil "X" "O"]])))]
+ :uses #{or filter first apply = map vector}
+ :solution [(defn winner-row
+              [board]
+              (first (first (filter (fn [row] (apply = row)) board))))
+            (defn transpose
+              [board]
+              (apply map vector board))
+            (defn winner-column
+              [board]
+              (->> board transpose winner-row))
+            (defn winner-diagonal-l-to-r
+              [[[a _ _] [_ b _] [_ _ c]]]
+              (when (= a b c) a))
+            (defn winner-diagonal-r-to-l
+              [[[_ _ a] [_ b _] [c _ _]]]
+              (when (= a b c) a))
+            (defn winner-diagonal
+              [board]
+              (or (winner-diagonal-l-to-r board)
+                  (winner-diagonal-r-to-l board)))
+            (defn winner
+              [board]
+              (if-let [w (or (winner-row board)
+                             (winner-column board)
+                             (winner-diagonal board))]
+                w
+                (if (every? (fn [row] (every? some? row)) board)
+                  "C"
+                  nil)))]}
