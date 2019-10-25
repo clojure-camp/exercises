@@ -18,7 +18,7 @@
  :solution [(require '[clojure.string :as string])
             (defn parse-csv
               [file-name]
-              (let [lines (string/split (slurp "/Users/james/tmp/test.csv") #"\n")]
+              (let [lines (string/split (slurp file-name) #"\n")]
                 ;; if we don't need to worry about quotes, we can take the easy path
                 (for [line lines]
                   (if (nil? (string/index-of line "\""))
