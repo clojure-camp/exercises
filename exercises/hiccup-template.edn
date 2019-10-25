@@ -1,0 +1,22 @@
+{:title "hiccup template"
+ :category :synthesis
+ :difficulty :low
+ :instructions ["Write a function that reads a hiccup template .edn file and replaces symbols in that template with values in a map."
+                "For example, with a file that looks like the below:"
+                [:div {:class class-name}
+                 [:p "hello " some-stuff]]
+                "You should be able to call your function like"
+                (hiccup-template "name-of-file.edn" {'class-name "theclass"
+                                                     'some-stuff "world!"})
+                "Which would return"
+                [:div {:class "theclass"}
+                 [:p "hello " "world!"]]]
+ :related #{"hiccup-html"}
+ :uses #{defn clojure.edn/read-string slurp clojure.walk/postwalk-replace}
+ :solution [(require '[clojure.edn :as edn])
+            (require '[clojure.walk :as walk])
+            (defn hiccup-template
+              [file-name template-vars]
+              (->> (slurp file-name)
+                  (edn/read-string)
+                  (walk/postwalk-replace template-vars)))]}
