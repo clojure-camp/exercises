@@ -1,4 +1,6 @@
 {:title "java interop"
+ :category :learning-functions
+ :difficulty :mid
  :instructions ["Use the Java's standard library java.security.MessageDigest class to write a function that generates the hex-encoded SHA-256 hash of the input string."]
  :tests [(is (= "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
                 (sha256 "hello world")))]
