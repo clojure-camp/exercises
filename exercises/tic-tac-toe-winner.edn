@@ -22,7 +22,7 @@
          (is (= nil (winner [[nil nil nil]
                              [nil "X" "O"]
                              [nil "X" "O"]])))]
- :uses #{or filter first apply = map vector}
+ :uses #{or filter first apply = map vector :destructuring}
  :solution [(defn winner-row
               [board]
               (first (first (filter (fn [row] (apply = row)) board))))
