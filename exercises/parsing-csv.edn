@@ -14,7 +14,7 @@
                  ["james" "james@james.com" "alright, but weird" "1"]
                  ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
                  ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]]
- :uses #{slurp clojure.string/split}
+ :uses #{slurp clojure.string/split loop recur cond empty? conj map clojure.string/replace}
  :solution [(require '[clojure.string :as string])
             (defn parse-csv
               [file-name]
