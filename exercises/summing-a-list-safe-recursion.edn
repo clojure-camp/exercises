@@ -9,12 +9,11 @@
  :tests [(is (= 10 (sum [1 2 3 4])))
          (is (= 0 (sum [])))
          (is (= 0 (sum [1 -1 1 -1 1 -1 0])))]
- :solution [(defn sum* [values accumulator]
-               (if (empty? values)
+ :solution [(defn sum
+              ([values] (sum values 0))
+              ([values accumulator]
+                (if (empty? values)
                  accumulator
-                 (recur (rest values) (+ (first values) accumulator))))
-
-            (defn sum [values]
-               (sum* values 0))]
+                 (recur (rest values) (+ (first values) accumulator)))))]
  :teaches #{recur}
  :uses #{:recursion first rest empty? :math-operations if +}}
