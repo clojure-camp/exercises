@@ -8,4 +8,4 @@
  :solution (defn my-pmap
              [f coll]
              (->> (map (fn [x] (future (f x))) coll)
-                 (map deref)))}
+                  (map deref)))}
