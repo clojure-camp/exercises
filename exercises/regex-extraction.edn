@@ -9,7 +9,7 @@
          (is (= {:first "Garf Buzz"
                  :last "Beep-Boop III"
                  :title "🐱"}
-                (extract-info "Beep-Boop III, Garf Buzz (🐱🐶)")))]
+                (extract-info "Beep-Boop III, Garf Buzz (🐱)")))]
  :solution (defn extract-info
              [info-str]
              (let [[_ lastn firstn title] (re-matches #"([^,]+), ([^(]+) \(([^)]+)\)" info-str)]
