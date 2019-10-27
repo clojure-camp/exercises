@@ -1,7 +1,7 @@
 {:title "basic files"
  :difficulty :low
  :category :learning-functions
- :instructions ["Read in a text file (assuming it's in the current directory), reverse the content, and write it to a file prepended with \"rev-\""]
+ :instructions ["Read in a text file (assuming it's in the current directory), reverse the file's contents, and write the result to a new file (the name now prefixed by \"rev-\")."]
  :solution [(require '[clojure.string :as string])
 
             (defn reverse-file

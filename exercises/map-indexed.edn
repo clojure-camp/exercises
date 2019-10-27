@@ -1,11 +1,11 @@
 {:title "map indexed"
  :category :learning-functions
  :difficulty :mid
- :instructions ["Given a list, return a new list where each element is a list of the corresponding element in the input, repeated a number of times equal to its position in the initial list"]
- :tests [(is (= [[] [:b] [:c :c] [:d :d :d] [:e :e :e :e]]
+ :instructions ["Given a list, repeat each element in the list multiple times (the number of times being equal to the item's position in the list)."]
+ :tests [(is (= [:a :b :b :c :c :c :d :d :d :d :e :e :e :e :e]
                 (increasing-repeat [:a :b :c :d :e])))]
  :solution (defn increasing-repeat
              [coll]
-             (map-indexed (fn [i v] (repeat i v)) coll))
+             (flatten (map-indexed (fn [i v] (repeat (inc i) v)) coll)))
  :teaches #{map-indexed}
- :uses #{repeat fn}}
+ :uses #{repeat fn flatten}}

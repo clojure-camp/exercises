@@ -1,6 +1,7 @@
 {:title "associative collections"
- :instructions ["Write a function that takes a key, a value, and a collection (a vector or map)"
-                "Return a vector of the value that was at that key in the original collection, and an updated collection with the new value inserted at the given key"]
+ :instructions ["Write a function `get-and-set` that makes a change to a collection at some location, and return the original value at that location and the changed collection."
+                "`get-and-set` should take 3 arguments: a key, a value, and a collection (a vector or map)."
+                "It should return a vector of two things: (1) the value that was at that key in the original collection, and (2) the updated collection."]
  :tests [(is (= [1 [2 3 4]]
                 (get-and-set 0 2 [1 3 4])))
          (is (= ["foo" {:a "baz" :b "quux"}]

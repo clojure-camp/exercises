@@ -2,7 +2,8 @@
  :difficulty :low
  :category :learning-functions
  :uses #{}
- :instructions ["Refactor the below code to use a single cond instead of multiple ifs. Also consider re-ordering the conditionals to simplify the logic."
+ :instructions ["Refactor the below code to use a single `cond` instead of multiple `if`s."
+                "Also, consider re-ordering the conditionals to simplify the logic."
                 (defn process-value
                   [value]
                   (if (and (number? value)

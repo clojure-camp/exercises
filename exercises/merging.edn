@@ -2,15 +2,14 @@
  :title "merging maps"
  :uses #{:maps map}
  :category :learning-functions
- :difficulty :low
- :instructions ["Write a function that takes two lists of maps and combines the corresponding pairs"]
+ :difficulty :med
+ :instructions ["Write a function that takes two lists of maps and combines the corresponding pairs."]
  :tests [(is (= [{:a 1 :b 2}
                  {:a 2 :b 3}
                  {:a 3 :b 4}]
                 (join-maps
                   [{:a 1} {:a 2} {:a 3}]
                   [{:b 2} {:b 3} {:b 4}])))]
-
  :solution (defn join-maps
              [col1 col2]
              (map merge col1 col2))}

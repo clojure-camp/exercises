@@ -4,8 +4,8 @@
  :category :learning-functions
  :difficulty :low
  :instructions ["`pmap` is a built-in function that acts just like `map`, except it runs the functions over the collection in parallel."
-                "Implement a version of this and test that it's working by using a function that uses `Thread/sleep` to take a relatively long term per element and `time` to compare the performance of the normal `map` and your version of pmap."]
- :solution (defn my-pmap
-             [f coll]
-             (->> (map (fn [x] (future (f x))) coll)
-                  (map deref)))}
+                "Implement your own version of `pmap` and test that it works by using `time` to compare the performance of the normal `map` and your version of `pmap`. You can use `Thread/sleep` inside a function to simulate a long running process."]
+ :solution [(defn my-pmap
+              [f coll]
+              (->> (map (fn [x] (future (f x))) coll)
+                   (map deref)))]}

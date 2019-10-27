@@ -1,12 +1,12 @@
 {:title "using sets"
- :instructions ["Given two sets of user interests, return sets indicating the common interests, the interests to unique each user, and all of the interests between the two of them."]
- :tests [(is (= {:shared #{"coding" "boardgames"}
-                 :all #{"coding" "boardgames" "lifting" "reading" "movies" "sculpting"}
+ :instructions ["Given two sets of user interests, return sets indicating: (1) their common interests, (2) each of their unique interests, and (3) all of their interests."]
+ :tests [(is (= {:shared #{"programming" "boardgames"}
+                 :all #{"programming" "boardgames" "lifting" "reading" "movies" "sculpting"}
                  :unique-a #{"lifting" "reading"}
                  :unique-b #{"movies" "sculpting"}}
                 (interests-info
-                  #{"coding" "boardgames" "lifting" "reading"}
-                  #{"coding" "movies" "boardgames" "sculpting"})))]
+                  #{"programming" "boardgames" "lifting" "reading"}
+                  #{"programming" "movies" "boardgames" "sculpting"})))]
  :solution [(require '[clojure.set :as set])
             (defn interests-info
               [a b]

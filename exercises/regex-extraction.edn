@@ -1,7 +1,7 @@
 {:title "regex extraction"
  :difficulty :mid
  :category :learning-functions
- :instructions ["Given a string like \"Lastname, Firstname (some title)\", use a regular expression to extract out the first name, last name, and title"]
+ :instructions ["Given a string like `\"Lastname, Firstname (some title)\"`, use a regular expression to extract out the first name, last name, and title."]
  :tests [(is (= {:first "Hello"
                  :last "World"
                  :title "Cool Person"}

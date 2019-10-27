@@ -1,26 +1,16 @@
 {:title "run-length encoding"
  :difficulty :mid
  :category :synthesis
- :related #{"run-length-decode"}
- :instructions ["Write a function that does a run-length encoding of a sequence"
-                (defn run-length [things])
-
-                "Additional challange: Try implementing this with a reduce"]
+ :related #{"run-length-decode"
+            "run-length-encode-reduce"}
+ :instructions ["Run-length-encoding is a form of lossless data compression. For example, the array `[:a :a :b :b :b :c :a :a :d :d]` could be represented as: `[[:a 2] [:b 3] [:c 1] [:a 2] [:d 2]]`."
+                "Write a function that does a run-length encoding of a given sequence."]
  :tests [(is (= [[:a 2] [:b 1] [:c 3]]
                 (run-length [:a :a :b :c :c :c])))]
  :type #{:word-problem}
- :uses #{partition-by map juxt
-        reduce conj vec butlast inc peek}
+ :uses #{partition-by identity
+         map juxt first count}
  :solution [(defn run-length [xs]
                (->> (partition-by identity xs)
-                   (map (juxt first count))))
-
-            (defn run-length-reduce [xs]
-               (reduce (fn [vs x]
-                         (let [[v c] (peek vs)]
-                           (if (= v x)
-                             (conj (vec (butlast vs)) [v (inc c)])
-                             (conj vs [x 1]))))
-                       []
-                       xs))]
+                    (map (juxt first count))))]
  :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}

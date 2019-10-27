@@ -2,14 +2,15 @@
  :difficulty :mid
  :category :learning-functions
  :type #{:word-problem}
- :instructions ["Write a function that inserts a value at the given index in a vector, moving everything else down"
-                (defn insert-at [v idx val])]
+ :related #{"dissoc-at"}
+ :instructions ["Write a function that inserts a value into a vector at a given index (moving all subsequent values)."
+                (defn insert-at [v index value])]
  :tests [(is (= [1 2 3 4]
                 (insert-at [1 3 4] 1 2)))]
  :solution (defn insert-at
-              [v idx val]
+              [v index value]
               (into
-                (conj (subvec v 0 idx) val)
-                (subvec v idx)))
+                (conj (subvec v 0 index) value)
+                (subvec v index)))
  :uses #{into}
  :teaches #{conj subvec}}

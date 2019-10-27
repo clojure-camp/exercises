@@ -1,7 +1,7 @@
 {:title "summing a list (safe recursion)"
  :difficulty :mid
  :category :learning-functions
- :instructions ["Write a function to sum a list of numbers, using recursion, but in a way that doesn't blow the stack."]
+ :instructions ["Write a function to sum a list of numbers. Use recursion, but in a way that doesn't blow the stack."]
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
             "summing-a-list-atom"

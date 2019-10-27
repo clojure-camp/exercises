@@ -12,4 +12,4 @@
              (group-by first strings))
  :teaches #{group-by}
  :uses #{first}
- :related #{"grouping-part2"}}
+ :related #{"grouping-and-counting" "grouping-part2"}}

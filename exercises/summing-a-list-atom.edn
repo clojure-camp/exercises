@@ -1,11 +1,11 @@
 {:title "summing a list (atom)"
  :difficulty :low
  :category :learning-functions
- :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`"]
+ :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`."]
  :related #{"summing-a-list-reduce"
-           "summing-a-list-apply"
-           "summing-a-list-naive-recursion"
-           "summing-a-list-safe-recursion"}
+            "summing-a-list-apply"
+            "summing-a-list-naive-recursion"
+            "summing-a-list-safe-recursion"}
  :tests [(is (= 10 (sum [1 2 3 4])))
          (is (= 0 (sum [])))
          (is (= 0 (sum [1 -1 1 -1 1 -1 0])))]

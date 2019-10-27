@@ -1,7 +1,7 @@
 {:title "threading macro"
  :difficulty :low
  :category :learning-functions
- :instructions ["Refactor the below functions to use the \"threading macros\" \"->\" and \"->>\""
+ :instructions ["Refactor the below functions to use the \"threading macros\" `->` and `->>`"
                 (defn process-number [n]
                   (* (+ (inc (/ n 1.5)) 2) 10))
                 (defn process-list [coll]

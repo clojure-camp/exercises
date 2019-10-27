@@ -1,7 +1,7 @@
 {:title "regex searching"
  :difficulty :mid
  :category :learning-functions
- :instructions ["Given a string of text, find all thing inside of it that look like phone numbers"]
+ :instructions ["Given a string of text, find all the sustrings inside of it that are phone numbers."]
  :tests [(is (= ["(416) 333 4444"
                  "+1 647 123 4578"
                  "1-800-888-9999"

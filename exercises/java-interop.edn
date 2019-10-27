@@ -1,16 +1,16 @@
 {:title "java interop"
  :category :learning-functions
  :difficulty :mid
- :instructions ["Use the Java's standard library java.security.MessageDigest class to write a function that generates the hex-encoded SHA-256 hash of the input string."]
+ :instructions ["Use `java.security.MessageDigest` class from the Java standard library to write a function that generates the hex-encoded SHA-256 hash of an input string."]
  :tests [(is (= "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
                 (sha256 "hello world")))]
- :teaches #{:interop doto}
+ :teaches #{:interop doto import}
  :uses #{-> ->> map apply format}
  :solution [(import '(java.security MessageDigest))
             (defn sha256
               [s]
               (-> (doto (MessageDigest/getInstance "SHA-256")
-                    (.update (.getBytes s "UTF-8")))
+                        (.update (.getBytes s "UTF-8")))
                   (.digest)
                   (->> (map (fn [b] (format "%02x" b)))
                        (apply str))))]}

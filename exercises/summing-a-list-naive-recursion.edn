@@ -1,7 +1,7 @@
 {:title "summing a list (naive recursion)"
  :difficulty :low
  :category :starter
- :instructions ["Write a function to sum a list of numbers, using recursion"]
+ :instructions ["Write a function to sum a list of numbers, using recursion."]
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
             "summing-a-list-atom"

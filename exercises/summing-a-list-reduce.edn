@@ -1,7 +1,7 @@
 {:title "summing a list (reduce)"
  :difficulty :low
  :category :learning-functions
- :instructions ["Write a function to sum a list of numbers, using `reduce`"]
+ :instructions ["Write a function to sum a list of numbers, using `reduce`."]
  :related #{"summing-a-list-apply"
             "summing-a-list-atom"
             "summing-a-list-naive-recursion"

@@ -1,0 +1,21 @@
+{:title "grouping and counting"
+ :related #{"group-by"}
+ :difficulty :low
+ :category :starter
+ :instructions ["Given a list of strings, count how many words start with each character."]
+ :tests [(is (= {\a 2
+                 \b 1
+                 \d 2
+                 \t 3}
+                (count-by-start ["beep" "abc" "apple" "things" "toffee" "dialectics"
+                                 "data" "theosophy"])))]
+ :teaches #{}
+ :uses #{map group-by count frequencies into}
+ :solution [(defn count-by-start [strings]
+              (->> (group-by first strings)
+                   (map (fn [[k v]]
+                          [k (count v)]))
+                   (into {})))
+            (defn count-by-start-alternate [strings]
+              (->> (map first strings)
+                   (frequencies)))]}
