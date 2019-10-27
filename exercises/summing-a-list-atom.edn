@@ -14,5 +14,5 @@
                (doseq [v values]
                  (swap! total + v))
                @total))
- :teaches #{atom "@" deref swap! :working-with-atoms}
+ :teaches #{atom doseq "@" deref swap! :working-with-atoms}
  :uses #{let :math-operations +}}
