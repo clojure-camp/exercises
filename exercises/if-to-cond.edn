@@ -1,8 +1,8 @@
-{:title "Refactor ifs"
+{:title "refactor ifs"
  :difficulty :low
  :category :learning-functions
  :uses #{}
- :instructions ["Refactor the below code to use a single cond instead of multiple ifs"
+ :instructions ["Refactor the below code to use a single cond instead of multiple ifs. Also consider re-ordering the conditionals to simplify the logic."
                 (defn process-value
                   [value]
                   (if (and (number? value)
