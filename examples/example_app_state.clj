@@ -56,7 +56,7 @@
            [:p desc]])
         (state :interests))])
 
-(defn people-comparision-view
+(defn people-comparison-view
   [person-a person-b]
   (let [[age-a age-b] (->> [person-a person-b]
                           (map :birthdate)
@@ -76,8 +76,7 @@
 
 (comment
   (prn (people-page initial-state))
-  (people-comparision-view (get-in initial-state [:people 1])
+  (people-comparison-view (get-in initial-state [:people 1])
                            (get-in initial-state [:people 2]))
-  (people-comparision-view (get-in initial-state [:people 1])
-                           (get-in initial-state [:people 3]))
-  )
+  (people-comparison-view (get-in initial-state [:people 1])
+                           (get-in initial-state [:people 3])))
