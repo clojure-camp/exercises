@@ -23,7 +23,7 @@
               (cond
                 (string? value) :a-string
                 (not (number? value)) :something-else
-                (zero? number) :zero
-                (> number 10) :pretty-big
+                (zero? value) :zero
+                (> value 10) :pretty-big
                 (< value 0) :negative
                 :else :small-number))]}
