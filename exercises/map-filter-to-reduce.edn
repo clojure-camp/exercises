@@ -8,7 +8,7 @@
  :tests [(is (= [8 6 7]
                 (long-lengths ["foo" "aoeusnth" "q" "aoeus"
                                "abcdef" "1234567"])))]
- :solution (defn long-lengths-reduce
+ :solution (defn long-lengths
              [strings]
              (reduce (fn [counts string]
                        (let [len (count string)]
