@@ -1,4 +1,5 @@
 {:teaches #{merge}
+ :title "merging maps"
  :uses #{:maps map}
  :category :learning-functions
  :difficulty :low
