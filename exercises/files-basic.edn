@@ -1,13 +1,13 @@
 {:title "basic files"
  :difficulty :low
  :category :learning-functions
- :instructions ["Read a file in, reverse the content, and write it to file named with the reverse of the original file name"]
- :solution [(defn reverse-string [s]
-              (apply str (reverse s)))
+ :instructions ["Read in a text file (assuming it's in the current directory), reverse the content, and write it to a file prepended with \"rev-\""]
+ :solution [(require '[clojure.string :as string])
+
             (defn reverse-file
               [file-name]
               (->> (slurp file-name)
-                   reverse-string
-                   (spit (reverse-string file-name))))]
+                   string/reverse
+                   (spit (str "rev-" file-name))))]
  :teaches #{spit slurp}
- :uses #{reverse apply str}}
+ :uses #{clojure.string/reverse str ->>}}
