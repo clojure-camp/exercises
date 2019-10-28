@@ -1,11 +1,14 @@
 {:title "modelling todo list"
  :difficulty :mid
  :category :starter
- :instructions ["Devise a data model to represent a multi-user todo list."]
+ :instructions ["Devise a data model to represent a multi-user todo list."
+                "Next, come up with and write a few helper functions to work with your model, such as:"
+                "`incomplete-tasks-for` - given then id of user, returns a list of their incomplete tasks"
+                "`completed-tasks` - returns a list of all completed tasks"]
  :solution [(def todo-list-state
               {:users {1 {:name "rafd"}
                        2 {:name "jamesnvc"}}
-               :todos [{:id 1
+               :tasks [{:id 1
                         :completed? false
                         :created-user-id 1
                         :assigned-user-id 2
@@ -22,5 +25,12 @@
                         :created-user-id 2
                         :assigned-user-id 1
                         :created-at #inst "2019-10-27T19:47:05-05:00"
-                        :content "Teach the class"}]})]
- :uses #{:maps :vectors :strings :numbers}}
+                        :content "Teach the class"}]})
+            (defn incomplete-tasks-for [state user-id]
+              (filter (fn [task]
+                        (= user-id (task :assigned-user-id)))
+                      (state :tasks)))
+            (defn completed-tasks [state]
+              (filter :completed? (state :tasks)))
+            ]
+ :uses #{:maps :vectors :strings :numbers filter}}

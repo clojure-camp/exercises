@@ -6,7 +6,8 @@
                 "`_|X|O`"
                 "`_|_|X`"
                 "`O|_|_`"
-                "In your model, include a history of the moves played."]
+                "In your model, include a history of the moves played."
+                "Write a function `turns-played` that returns how many turns have been played."]
  :solution [(def game-state
               {:current-player "X"
                :board [nil "X" "O"
@@ -19,5 +20,11 @@
                          {:player "X"
                           :location 5}
                          {:player "O"
-                          :location 6}]})]
- :uses #{:maps :vectors :strings :numbers}}
+                          :location 6}]})
+
+            (defn moves-played [state]
+              (count (state :history)))
+
+            (defn moves-played-alt [state]
+              (count (remove nil? (state :board))))]
+ :uses #{:maps :vectors :strings :numbers count}}

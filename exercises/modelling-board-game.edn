@@ -1,5 +1,6 @@
 {:title "modelling board game"
  :category :starter
  :difficulty :high
- :instructions ["Devise a data model for the board game of your choice."]
+ :instructions ["Devise a data model for the state of a board game of your choice."
+                "Come up with some helper functions to work with that state."]
  :uses #{:maps :strings :vectors :numbers}}
