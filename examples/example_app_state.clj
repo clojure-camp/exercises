@@ -20,7 +20,8 @@
 
 (defn birthdate->age
   [date]
-  (int (/ (- (.getTime (java.util.Date.)) (.getTime date))
+  (int (/ (- (.getTime (java.util.Date.))
+             (.getTime date))
           (* 1000 60 60 24 365))))
 
 (defn person-detail
@@ -30,19 +31,21 @@
    [:h3 "Age"]
    (birthdate->age birthdate)
    [:h3 "Interests"]
-   [:div (->> interests
-             (map (fn [interest]
-                    [:a {:href (str "/interest/" (name interest))}
-                     (name interest)]))
-             (string/join "\n"))]])
+   [:div
+    (->> interests
+         (map (fn [interest]
+                [:a {:href (str "/interest/" (name interest))}
+                 (name interest)]))
+         (string/join "\n"))]])
 
 (defn people-page
   [state]
   [:div.people
    (map (fn [[id {:keys [name] :as person}]]
           [:details
-           [:summary [:a {:href (str "/person/" id)}
-                      (str "Info for " name)]]
+           [:summary
+            [:a {:href (str "/person/" id)}
+             (str "Info for " name)]]
            (person-detail person)])
         (:people state))])
 
@@ -59,8 +62,8 @@
 (defn people-comparison-view
   [person-a person-b]
   (let [[age-a age-b] (->> [person-a person-b]
-                          (map :birthdate)
-                          (map birthdate->age))
+                           (map :birthdate)
+                           (map birthdate->age))
         age-diff (Math/abs (- age-a age-b))
         common-interests (intersection (:interests person-a)
                                        (:interests person-b))]
@@ -77,6 +80,6 @@
 (comment
   (prn (people-page initial-state))
   (people-comparison-view (get-in initial-state [:people 1])
-                           (get-in initial-state [:people 2]))
+                          (get-in initial-state [:people 2]))
   (people-comparison-view (get-in initial-state [:people 1])
-                           (get-in initial-state [:people 3])))
+                          (get-in initial-state [:people 3])))
