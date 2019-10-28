@@ -7,10 +7,10 @@
                 (defn process-value
                   [value]
                   (if (and (number? value)
-                           (> number 10))
+                           (> value 10))
                     :pretty-big
-                    (if (and (number?  value)
-                             (< number 0))
+                    (if (and (number? value)
+                             (< value 0))
                       :negative
                       (if (and (number? value) (zero? value))
                         :zero
