@@ -1,5 +1,11 @@
 [
+ "if-to-cond"
  "triangle"
  "classify-triangle"
  "clamp"
+ "threading-macro"
+ "find-largest"
+ "scrabble-score"
+ "space-age"
+ "modelling-tictactoe"
 ]
