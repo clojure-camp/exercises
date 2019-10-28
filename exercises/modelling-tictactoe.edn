@@ -3,9 +3,10 @@
  :category :starter
  :instructions ["Devise a data model to represent a game of tic-tac-toe."
                 "For example, describe a game whose board currently looks like the below:"
-                "_|X|O"
-                "_|_|X"
-                "O|_|_"]
+                "`_|X|O`"
+                "`_|_|X`"
+                "`O|_|_`"
+                "In your model, include a history of the moves played."]
  :solution [(def game-state
               {:current-player "X"
                :board [nil "X" "O"

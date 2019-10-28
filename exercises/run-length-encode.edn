@@ -8,8 +8,8 @@
  :tests [(is (= [[:a 2] [:b 1] [:c 3]]
                 (run-length [:a :a :b :c :c :c])))]
  :type #{:word-problem}
- :uses #{partition-by identity
-         map juxt first count}
+ :teaches #{partition-by}
+ :uses #{identity map juxt first count}
  :solution [(defn run-length [xs]
                (->> (partition-by identity xs)
                     (map (juxt first count))))]

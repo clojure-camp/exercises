@@ -1,5 +1,5 @@
 {:title "generated HTML"
- :instructions ["Implement a simple version of 'hiccup', the sort-of standard Clojure format for representing HTML as Clojure data"]
+ :instructions ["Implement a simple version of 'hiccup', a common Clojure format for representing HTML as Clojure data."]
  :tests [(is (= "<html><head><title>Hello world</title></head><body><div id=\"app\"><p class=\"hello\" style=\"color: red\">Some stuff</p><ul><li>foo</li><li>bar</li></ul></div></body></html>"
                 (hiccup->html
                   [:html

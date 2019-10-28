@@ -1,4 +1,4 @@
-{:title "lazy debugging"
+{:title "debugging"
  :difficulty :high
  :category :starter
  :instructions ["Debug the following code:"

@@ -1,7 +1,7 @@
 {:title "grouping things continued"
  :difficulty :mid
  :category :synthesis
- :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length"]
+ :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length."]
  :tests [(is (= {\a {3 ["abc"] 5 ["apple"]}
                  \b {4 ["beep"]}
                  \d {10 ["dialectics"] 4 ["data"]}

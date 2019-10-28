@@ -1,9 +1,10 @@
 {:title "fibonacci"
  :instructions ["Write a recursive function to calculate the nth Fibonacci number."
-                "Use `time` to measure its performance, then memoize it & compare"]
+                "Use `time` to measure its performance, then use `memoize` & compare."]
  :category :synthesis
  :difficulty :low
- :uses #{:recursion memoize time with-redefs}
+ :teaches #{memoize}
+ :uses #{:recursion time with-redefs}
  :solution [(defn fib
               [n]
               (cond

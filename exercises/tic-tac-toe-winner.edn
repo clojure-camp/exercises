@@ -1,7 +1,7 @@
 {:title "tic-tac-toe winner"
  :category :starter
  :difficulty :mid
- :instructions ["Given a data structure representing a tic-tac-toe game, return the winner, \"C\" in the case of a tie, or nil if there is no winner yet."]
+ :instructions ["Given a structure representing a tic-tac-toe game (see tests), return the winner, `:tie` in the case of a tie, or `nil` if there is no winner yet."]
  :tests [(is (= "X"
                 (winner [["X" nil "O"]
                          [nil "X" "O"]
@@ -14,7 +14,7 @@
                 (winner [["X" "X" "O"]
                          ["O" "O" "O"]
                          ["X" "X" nil]])))
-         (is (= "C"
+         (is (= :tie
                 (winner [["X" "X" "O"]
                          ["O" "O" "X"]
                          ["X" "X" "O"]])))
@@ -49,5 +49,5 @@
                              (winner-diagonal board))]
                 w
                 (if (every? (fn [row] (every? some? row)) board)
-                  "C"
+                  :tie
                   nil)))]}

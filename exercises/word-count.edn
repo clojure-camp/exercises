@@ -2,17 +2,16 @@
  :difficulty :mid
  :category :synthesis
  :type #{:word-problem}
- :instructions ["Given a phrase, count the occurrences of each word in that phrase. Ignore punctuation and case."
-                (defn word-count [text])]
+ :instructions ["Given a phrase, count the occurrences of each word in that phrase. Ignore punctuation and case."]
  :tests [(is (= {"one" 1 "fish" 4 "two" 1 "red" 1 "blue" 1}
                 (word-count "one fish two fish red fish blue fish")))
          (is (= {"foo" 1 "bar" 1 "baz" 1 "2" 1}
                 (word-count "Foo! Bar, baz 2.")))]
  :solution [(require '[clojure.string :as string])
             (defn word-count [text]
-               (->> text
-                    clojure.string/lower-case
-                    (re-seq #"\w+")
-                    frequencies))]
+              (->> text
+                   clojure.string/lower-case
+                   (re-seq #"\w+")
+                   frequencies))]
  :uses #{clojure.string/lower-case re-seq frequencies}
  :source "https://exercism.io/tracks/clojure/exercises/word-count"}

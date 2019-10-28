@@ -70,35 +70,38 @@
                                       (update-in [to-id :balance] + amount)
                                       (update-in [to-id :transactions] conj {:time (java.util.Date.)
                                                                              :type :transfer-in
-                                                                             :amount amount}))))))]
+                                                                             :amount amount}))))))
 
- :tests [(do (is (thrown? Exception (deposit! :a 100)))
-             (is (thrown? Exception (withdraw! :a 100)))
-             (is (thrown? Exception (transfer! :a :b 100)))
-             (create-account! :a)
-             (create-account! :b)
-             (is (thrown? Exception (create-account! :a)))
-             (deposit! :a 100)
-             (withdraw! :a 50)
-             (is (thrown? Exception (withdraw! :a 100)))
-             (is (thrown? Exception (transfer! :a :b 100)))
-             (transfer! :a :b 50)
-             (is (= 0 (balance :a)))
-             (is (= 50 (balance :b)))
-             (is (= [{:type :deposit
-                      :amount 100}
-                     {:type :withdrawal
-                      :amount 50}
-                     {:type :transfer-out
-                      :amount 50}]
-                    (map (fn [tx]
-                           (select-keys tx [:type :amount]))
-                         (transactions :a))))
-             (is (= [{:type :transfer-in
-                      :amount 50}]
-                    (map (fn [tx]
-                           (select-keys tx [:type :amount]))
-                         (transactions :b)))))]
+            ;; tests included here to not bias your own implementation choices
+            (do (is (thrown? Exception (deposit! :a 100)))
+                (is (thrown? Exception (withdraw! :a 100)))
+                (is (thrown? Exception (transfer! :a :b 100)))
+                (create-account! :a)
+                (create-account! :b)
+                (is (thrown? Exception (create-account! :a)))
+                (deposit! :a 100)
+                (withdraw! :a 50)
+                (is (thrown? Exception (withdraw! :a 100)))
+                (is (thrown? Exception (transfer! :a :b 100)))
+                (transfer! :a :b 50)
+                (is (= 0 (balance :a)))
+                (is (= 50 (balance :b)))
+                (is (= [{:type :deposit
+                         :amount 100}
+                        {:type :withdrawal
+                         :amount 50}
+                        {:type :transfer-out
+                         :amount 50}]
+                       (map (fn [tx]
+                              (select-keys tx [:type :amount]))
+                            (transactions :a))))
+                (is (= [{:type :transfer-in
+                         :amount 50}]
+                       (map (fn [tx]
+                              (select-keys tx [:type :amount]))
+                            (transactions :b)))))]
+
+ :tests []
 
  :uses #{:atoms :data :math-operations :keywords :testing
          defn atom thrown? throw ex-info select-keys swap!

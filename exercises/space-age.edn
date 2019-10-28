@@ -4,7 +4,8 @@
  :instructions ["Implement a function that lets someone convert their age on one planet to their age on another."
                 "For example:"
                 "30 years on Earth is about 1 year on Saturn (a year being a single revolution around the sun)."
-                "10 years on Mars is 78 years on Mercury."]
+                "10 years on Mars is 78 years on Mercury."
+                "You will need to look up the relevant data on planets yourself."]
  :tests [(is (= 1 (convert-space-age 30 :earth :saturn)))
          (is (= 78 (convert-space-age 10 :mars :mercury)))]
  :solution [(def lookup
@@ -19,5 +20,5 @@
             (defn convert-space-age [age source-planet target-planet]
                (int (* age (/ (lookup source-planet)
                               (lookup target-planet)))))]
- :uses #{int :maps :math-operations}
+ :uses #{int :maps :math-operations * /}
  :source "https://exercism.io/tracks/clojure/exercises/space-age"}

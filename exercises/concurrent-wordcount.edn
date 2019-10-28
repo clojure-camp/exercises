@@ -2,10 +2,9 @@
  :category :synthesis
  :difficulty :low
  :instructions ["Write a function that takes a list of file names and returns the total word count across all the files."
-                "To try to speed it up, make your function sum the files in parallel"]
- :uses #{atom deref swap! pmap doall}
+                "To try to speed it up, make your function sum the files in parallel (you can measure how long excution takes with `time`)."]
+ :uses #{atom deref swap! pmap doall time}
  :solution [(require '[clojure.string :as string])
-
             (defn word-count-files
               [file-names]
               (let [counts (atom 0)]

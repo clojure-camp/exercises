@@ -1,9 +1,9 @@
-{:title "merge sort part 2"
+{:title "merge sort - parallel"
  :category :synthesis
  :difficulty :mid
  :related #{"merge-sort-1"}
  :uses #{loop recur compare cond :recursion empty? into conj}
- :instructions ["Take your merge sort implementation from part 1, parallelize it, and compare the timings"]
+ :instructions ["Take your merge sort implementation (see related exercise), parallelize it, and compare the timings."]
  :tests [(let [rng (range 100000)
                test-content (vec (shuffle rng))]
            (is (= rng

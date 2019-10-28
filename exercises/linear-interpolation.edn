@@ -1,15 +1,17 @@
 {:title "linear interpolation"
  :difficulty :low
  :category :starter
- :instructions ["Write a function that takes a fraction between 0 and 1 and two (x, y) points as a vector."
-                "The function should return the value of y at the indicated fraction between the first & second x values"]
- :tests [(is (= 8 (lerp 0 [2 8] [11 45])))
-         (is (= 45 (lerp 1 [2 8] [11 45])))
-         (is (= 53/2 (lerp 1/2 [2 8] [11 45])))]
- :solution (defn lerp
-             [x% [x0 y0] [x1 y1]]
+ :instructions ["Say you have some data that goes from 0 to 100, but you need to display it on a chart that's only 50px wide. To draw the chart, you need to be able to transform values from the input range (0 - 100) to the output range (0 - 50), and for that, you'll need to do some linear interpolation."
+                "Write a function that takes a number and two ranges and transforms the number from one range to the other."
+                "The given ranges shouldn't need to start at 0 and the given value shouldn't have to fall inside the input range."]
+ :tests [(is (= 50 (transform 5 [0 10] [0 100])))
+         (is (= 70 (transform 7 [0 10] [0 100])))
+         (is (= 110 (transform 11 [0 10] [0 100])))
+         (is (= 50 (transform 15 [10 20] [0 100])))]
+ :related #{"linear-interpolation-higher-order-function"}
+ :solution (defn transform
+             [x [x0 x1] [y0 y1]]
              (let [m (/ (- y1 y0) (- x1 x0))
-                   b (- y0 (* m x0))
-                   Δ (- x1 x0)]
-               (+ (* m (+ x0 (* x% Δ))) b)))
+                   b (- y0 (* m x0))]
+               (+ (* m x) b)))
  :uses #{let :destructuring :math-operations + * / -}}

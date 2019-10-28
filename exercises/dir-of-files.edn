@@ -1,15 +1,16 @@
 {:category :synthesis
  :title "directory of files"
  :difficulty :mid
- :uses #{file-seq :java-interop}
- :instructions ["Write a function that takes as input the path to a directory of files and file extension and returns the sum of sizes of files with that extension within the directory."]
- :teaches #{file-seq clojure.java.io/file memfn}
+ :uses #{:java-interop .isFile .length .getName memfn map reduce filter clojure.string/ends-with?}
+ :instructions ["Write a function that calculates the total size of files with a certain extension in a certain directory."
+                (defn directory-file-size [directory-path extension])]
+ :teaches #{file-seq clojure.java.io/file}
  :solution [(require '[clojure.java.io :as io])
             (require '[clojure.string :as string])
-            (defn sum-dir-files
-              [dir ext]
-              (->> (file-seq (io/file dir))
+            (defn directory-file-size
+              [directory-path extension]
+              (->> (file-seq (io/file directory-path))
                    (filter (memfn isFile))
-                   (filter (fn [f] (string/ends-with? (.getName f) ext)))
+                   (filter (fn [f] (string/ends-with? (.getName f) extension)))
                    (map (fn [f] (.length f)))
                    (reduce +)))]}

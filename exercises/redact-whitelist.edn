@@ -1,7 +1,8 @@
-{:title "redact (with whitelist)"
+{:title "redact"
  :difficulty :mid
  :category :synthesis
- :instructions "Write a function `redact`, which, given some text and a whitelist of words, returns the text, with non-whitelisted words replaced with ████ (being as long as the word being replaced)."
+ :instructions ["Write a function `redact`, which, given some text and a whitelist of words, returns the text, with non-whitelisted words replaced with ████ (being as long as the word being replaced)."
+                "How much work does it take to make this function use a blacklist instead?"]
  :solution [(require '[clojure.string :as string])
 
             (defn redact-word [word]

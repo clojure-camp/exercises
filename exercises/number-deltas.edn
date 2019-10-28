@@ -2,11 +2,17 @@
  :difficulty :mid
  :category :starter
  :type #{:word-problem}
- :instructions ["Given a list of numbers, return a new list of the differences betwene the adjacent numbers"
-                (defn deltas [nums])]
+ :instructions ["Given a list of numbers, return a list of the differences between the adjacent numbers."]
  :tests [(is (= [1 1 2 -8 13]
                 (deltas [1 2 3 5 -3 10])))]
- :solution (defn deltas
+ :solution [(defn deltas
               [nums]
               (map - (rest nums) nums))
- :uses #{- map rest}}
+
+            (defn deltas-v2
+              [nums]
+              (->> nums
+                   (partition 2 1)
+                   (map (fn [[a b]]
+                          (- b a)))))]
+ :uses #{- map rest partition}}

@@ -5,10 +5,10 @@
                 "For example, with a file that looks like the below:"
                 [:div {:class class-name}
                  [:p "hello " some-stuff]]
-                "You should be able to call your function like"
+                "You should be able to call your function like follows:"
                 (hiccup-template "name-of-file.edn" {'class-name "theclass"
                                                      'some-stuff "world!"})
-                "Which would return"
+                "Which would return:"
                 [:div {:class "theclass"}
                  [:p "hello " "world!"]]]
  :related #{"hiccup-html"}
@@ -18,5 +18,5 @@
             (defn hiccup-template
               [file-name template-vars]
               (->> (slurp file-name)
-                  (edn/read-string)
-                  (walk/postwalk-replace template-vars)))]}
+                   (edn/read-string)
+                   (walk/postwalk-replace template-vars)))]}

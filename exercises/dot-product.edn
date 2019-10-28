@@ -1,8 +1,7 @@
 {:title "dot products"
  :difficulty :low
  :category :starter
- :instructions ["Write a function to compute the dot product of two vectors"
-                (defn dot [v1 v2])]
+ :instructions ["Write a function to compute the dot product of two vectors."]
  :tests [(is (= 0 (dot [1 0] [0 1])))
          (is (= 3 (dot [1 1 1] [1 1 1])))
          (is (= 32 (dot [1 2 3] [4 5 6])))]

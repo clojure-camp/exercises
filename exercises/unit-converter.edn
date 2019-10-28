@@ -1,9 +1,8 @@
-{:title "Unit converter"
+{:title "unit converter"
  :difficulty :mid
  :category :starter
  :type #{:word-problem}
- :instructions ["Write a function that can convert between many different types of units"
-                (defn convert [num unit])]
+ :instructions ["Write a function that can convert between many different types of units."]
  :tests [(is (= 100 (convert 220 :lb :kg)))
          (is (= 45 (convert 20.45 :kg :lb)))
          (is (= -18 (convert 0 :fahrenheit :celsius)))
@@ -23,5 +22,4 @@
               [num from-unit to-unit]
               (-> ((get-in conv-fn [from-unit to-unit]) num)
                   (Math/round)))]
-
  :uses #{update :math-operations :maps fn}}

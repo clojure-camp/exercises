@@ -1,19 +1,19 @@
 {:title "CSV parsing"
  :category :synthesis
  :difficulty :high
- :instructions ["Write a function that a csv string and parses it into a series of vectors."
+ :instructions ["Write a function to parse a CSV string into a series of vectors."
                 "For example, if the file looks like this:"
-                ""
-                "name,email,comment"
-                "james,james@james.com,alright\\, but weird"
-                "raf,raf@raf.com,they say \"works, plays\""
-                "beep,beep@beep.com,they say\\, \"works, plays\",3"
-                ""
-                "The output would look like:"
+                (def content
+                 "name,email,comment
+                 james,james@james.com,alright\\, but weird
+                 raf,raf@raf.com,they say \"works, plays\"
+                 beep,beep@beep.com,they say\\, \"works, plays\",3")
+                "The output would be:"
                 [["name" "email" "comment" "id"]
                  ["james" "james@james.com" "alright, but weird" "1"]
                  ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
-                 ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]]
+                 ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]
+                "In practice, you'd use a library to parse CSVs, but for this exercise, do it from scratch."]
  :uses #{slurp clojure.string/split loop recur cond empty? conj map clojure.string/replace}
  :solution [(require '[clojure.string :as string])
             (defn parse-csv

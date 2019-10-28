@@ -1,29 +1,36 @@
-{:title "file number stats"
- :instructions ["Read a bunch of integers from a file and return the mean, median, mode and standard-deviation."]
+{:title "number stats"
+ :instructions ["Read a bunch of integers from a string and return the mean, median, mode and standard-deviation. Round each value to two decimal places."]
  :category :synthesis
  :difficulty :mid
- :uses #{slurp clojure.string/split map Long. / Math/pow Math/sqrt clojure.set/map-invert
-        sort nth}
+ :uses #{slurp clojure.string/split map Integer/parseInt / Math/pow Math/sqrt clojure.set/map-invert
+         sort nth Math/round quot count double}
  :solution [(require '[clojure.string :as string])
             (require '[clojure.set :refer [map-invert]])
-            (defn file-stats
-              [file-name]
-              (let [nums (->> (string/split (slurp "/home/james/tmp/number-test") #"\s+")
-                             (map (fn [num-str] (Long. num-str))))
-                    count-nums (count nums)
-                    mean (/ (reduce + nums) count-nums)]
-                {:mean (float mean)
-                 :stddev (-> (reduce (fn [s v] (+ s (Math/pow (- v mean) 2)))
-                                     0 nums)
-                             (/ (dec count-nums))
-                             (Math/sqrt))
-                 :median (let [sorted (sort nums)
-                               mid (quot count-nums 2)]
-                           (prn sorted mid (nth nums mid))
-                           (if (odd? count-nums)
-                             (nth sorted mid)
-                             (/ (+ (nth sorted mid) (nth sorted (inc mid)))
-                                2)))
-                 :mode (->> nums frequencies map-invert
-                           (sort-by identity (fn [a b] (compare b a)))
-                           first second)}))]}
+            (defn round [n]
+              (double (/ (Math/round (double (* n 100))) 100)))
+            (defn mean [nums]
+              (/ (reduce + nums) (count nums)))
+            (defn stddev [nums]
+              (-> (reduce (fn [s v] (+ s (Math/pow (- v (mean nums)) 2)))
+                          0 nums)
+                  (/ (dec (count nums)))
+                  (Math/sqrt)))
+            (defn median [nums]
+              (let [sorted (sort nums)
+                    mid (quot (count nums) 2)]
+                (if (odd? (count nums))
+                  (nth sorted mid)
+                  (/ (+ (nth sorted mid) (nth sorted (inc mid)))
+                     2))))
+            (defn mode [nums]
+              (->> nums frequencies map-invert
+                   sort last second))
+            (defn stats [s]
+              (let [nums (->> (string/split s #"\s+")
+                              (map (fn [num-str] (Integer/parseInt num-str))))]
+                {:mean (round (mean nums))
+                 :stddev (round (stddev nums))
+                 :median (round (median nums))
+                 :mode (round (mode nums))}))]
+ :tests [(is (= {:mean 5.09 :median 5.0 :mode 1.0 :stddev 3.18}
+                (stats "1 1 2 3 4 5 6 7 8 9 10")))]}
