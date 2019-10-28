@@ -1,7 +1,8 @@
 {:title "scrabble score"
  :difficulty :low
  :category :starter
- :instructions ["Implement a function `score` that calculates the scrabble score for a given word."]
+ :instructions ["Implement a function `score` that calculates the scrabble score for a given word."
+                "Use google to find out how much each letter is worth."]
  :tests [(is (= 8 (score "hello")))
          (is (= 17 (score "question")))
          (is (= 35 (score "quizzed")))]
