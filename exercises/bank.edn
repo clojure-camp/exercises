@@ -101,9 +101,9 @@
                               (select-keys tx [:type :amount]))
                             (transactions :b)))))]
 
- :tests []
-
- :uses #{:atoms :data :math-operations :keywords :testing
+ :test-cases
+[]
+:uses #{:atoms :data :math-operations :keywords :testing
          defn atom thrown? throw ex-info select-keys swap!
          update update-in java.util.Date not contains?
          conj -> ->>}

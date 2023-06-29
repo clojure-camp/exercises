@@ -2,12 +2,13 @@
  :difficulty :mid
  :category :synthesis
  :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length."]
- :tests [(is (= {\a {3 ["abc"] 5 ["apple"]}
-                 \b {4 ["beep"]}
-                 \d {10 ["dialectics"] 4 ["data"]}
-                 \t {6 ["things"  "toffee"] 9 ["theosophy"]}}
-                (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
-                             "data" "theosophy"])))]
+ :function-template (defn categorize [strings])
+ :test-cases [{:input (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
+                                   "data" "theosophy"])
+               :output {\a {3 ["abc"] 5 ["apple"]}
+                        \b {4 ["beep"]}
+                        \d {10 ["dialectics"] 4 ["data"]}
+                        \t {6 ["things"  "toffee"] 9 ["theosophy"]}}}]
  :solution (defn categorize
              [strings]
              (->> (group-by first strings)

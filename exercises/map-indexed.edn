@@ -2,8 +2,9 @@
  :category :learning-functions
  :difficulty :mid
  :instructions ["Given a list, repeat each element in the list multiple times (the number of times being equal to the item's position in the list)."]
- :tests [(is (= [:a :b :b :c :c :c :d :d :d :d :e :e :e :e :e]
-                (increasing-repeat [:a :b :c :d :e])))]
+ :function-template (defn increasing-repeat [coll])
+ :test-cases [{:input (increasing-repeat [:a :b :c :d :e])
+               :output [:a :b :b :c :c :c :d :d :d :d :e :e :e :e :e]} ]
  :solution (defn increasing-repeat
              [coll]
              (flatten (map-indexed (fn [i v] (repeat (inc i) v)) coll)))

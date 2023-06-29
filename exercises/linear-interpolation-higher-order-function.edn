@@ -4,13 +4,13 @@
  :instructions ["Like before (see related exercise), but this time, instead of having to pass the input and output ranges each time, create a function that will return an interpolation function that can be reused."
                 "In other words: create a function `make-interpolator`, which, given two ranges, returns a function; this generated function, when given a single value, returns the interpolated result."]
  :related #{"linear-interpolation"}
- :tests [(let [transform (make-interpolator [0 10] [0 100])]
-           (is (= 50 (transform 5)))
-           (is (= 70 (transform 7)))
-           (is (= 110 (transform 11))))
-         (let [transform (make-interpolator [10 20] [0 100])]
-           (is (= 50 (transform 15))))]
- :solution (defn make-interpolator [[x0 x1] [y0 y1]]
+ :function-template (defn make-interpolator [[x0 x1] [y0 y1]])
+ :test-cases
+[{:input nil
+  :output (make-interpolator [0 10] [0 100])}
+ {:input nil
+  :output (make-interpolator [10 20] [0 100])}]
+:solution (defn make-interpolator [[x0 x1] [y0 y1]]
              (let [m (/ (- y1 y0) (- x1 x0))
                    b (- y0 (* m x0))]
                (fn [x]

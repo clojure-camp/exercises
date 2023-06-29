@@ -5,10 +5,15 @@
  :related #{"morse-code-redux"}
  :instructions ["Write functions to convert to & from morse code:"
                 (defn morse->english [morse])
-                (defn english->morse [morse])]
- :tests [(is (= "SOS" (morse->english "... --- ...")))
-         (is (= "... --- ..." (english->morse "SOS")))]
- :solution [(require '[clojure.set :refer [map-invert]])
+                (defn english->morse [english])]
+ :function-template [(defn morse->english [morse])
+                     (defn english->morse [english])]
+ :test-cases
+[{:input (morse->english "... --- ...")
+  :output "SOS"}
+ {:input (english->morse "SOS")
+  :output "... --- ..."}]
+:solution [(require '[clojure.set :refer [map-invert]])
             (require '[clojure.string :as string])
 
             (def alphabet->morse

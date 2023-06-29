@@ -4,11 +4,17 @@
  :instructions ["Say you have some data that goes from 0 to 100, but you need to display it on a chart that's only 50px wide. To draw the chart, you need to be able to transform values from the input range (0 - 100) to the output range (0 - 50), and for that, you'll need to do some linear interpolation."
                 "Write a function that takes a number and two ranges and transforms the number from one range to the other."
                 "The given ranges shouldn't need to start at 0 and the given value shouldn't have to fall inside the input range."]
- :tests [(is (= 50 (transform 5 [0 10] [0 100])))
-         (is (= 70 (transform 7 [0 10] [0 100])))
-         (is (= 110 (transform 11 [0 10] [0 100])))
-         (is (= 50 (transform 15 [10 20] [0 100])))]
- :related #{"linear-interpolation-higher-order-function"}
+ :function-template (defn transform [x [x0 x1] [y0 y1]])
+ :test-cases
+[{:input (transform 5 [0 10] [0 100])
+  :output 50}
+ {:input (transform 7 [0 10] [0 100])
+  :output 70}
+ {:input (transform 11 [0 10] [0 100])
+  :output 110}
+ {:input (transform 15 [10 20] [0 100])
+  :output 50}]
+:related #{"linear-interpolation-higher-order-function"}
  :solution (defn transform
              [x [x0 x1] [y0 y1]]
              (let [m (/ (- y1 y0) (- x1 x0))

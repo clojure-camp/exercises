@@ -2,9 +2,11 @@
  :category :synthesis
  :difficulty :high
  :instructions ["Implement merge sort."]
- :tests [(is (= [1 2 3 4 5 6]
-                (merge-sort [5 6 3 1 2 4])))]
- :uses #{loop subvec count / :math-operations recur cond
+ :function-template (defn merge-sort [coll])
+ :test-cases
+[{:input (merge-sort [5 6 3 1 2 4])
+  :output [1 2 3 4 5 6]}]
+:uses #{loop subvec count / :math-operations recur cond
         compare pos?}
  :solution [(defn merge-vecs
               [a b]

@@ -14,13 +14,18 @@
                                        "They like " interest-1 " and " (count other-interests) " other things.")
                      :name name
                      :info info}))]
- :tests [(is (= {:name "James"
-                 :info {:age 30
-                        :interests ["highland games" "code" "reading"]}
-                 :description "James is 30 years old.\nThey like highland games and 2 other things."}
-                (process-person ["James" {:age 30
-                                          :interests ["highland games" "code" "reading"]}])))]
- :solution [(defn process-person
+ :function-template (defn process-person [arg])
+ :test-cases
+[{:input (process-person ["James"
+                          {:age 30
+                           :interests ["highland games" "code" "reading"]}])
+  :output
+  {:name "James"
+   :info {:age 30
+          :interests ["highland games" "code" "reading"]}
+   :description
+   "James is 30 years old.\nThey like highland games and 2 other things."}}]
+:solution [(defn process-person
               [[name {:keys [age] [interest-1 & other-interests] :interests :as info}]]
               {:description (str name " is " age " years old.\n"
                                  "They like " interest-1 " and " (count other-interests) " other things.")

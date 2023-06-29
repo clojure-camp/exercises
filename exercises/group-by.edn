@@ -2,12 +2,13 @@
  :difficulty :low
  :category :learning-functions
  :instructions ["Given a list of strings, categorize them by their starting character."]
- :tests [(is (= {\a ["abc" "apple"]
-                 \b ["beep"]
-                 \d ["dialectics" "data"]
-                 \t ["things"  "toffee" "theosophy"]}
-                (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
-                             "data" "theosophy"])))]
+ :function-template (defn categorize [strings])
+ :test-cases [{:input (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
+                                  "data" "theosophy"])
+               :output {\a ["abc" "apple"]
+                        \b ["beep"]
+                        \d ["dialectics" "data"]
+                        \t ["things"  "toffee" "theosophy"]}}]
  :solution (defn categorize [strings]
              (group-by first strings))
  :teaches #{group-by}

@@ -3,11 +3,17 @@
  :difficulty :low
  :related #{"triangle"}
  :instructions ["Write a function `classify-triangle`, which, given 3 numbers, returns whether a triangle is equilateral (3 equal sides), isosceles (2 equal sides), scalene, or, not a triangle."]
- :tests [(is (= :equilateral (classify-triangle 1 1 1)))
-         (is (= :invalid (classify-triangle 0 0 0)))
-         (is (= :invalid (classify-triangle 1 1 2)))
-         (is (= :isosceles (classify-triangle 4 4 5)))
-         (is (= :scalene (classify-triangle 3 4 5)))]
+ :function-template (defn classify-triangle [a b c])
+ :test-cases [{:input (classify-triangle 1 1 1)
+               :output :equilateral }
+              {:input (classify-triangle 0 0 0)
+               :output :invalid}
+              {:input (classify-triangle 1 1 2)
+               :output :invalid}
+              {:input (classify-triangle 4 4 5)
+               :output :isosceles}
+              {:input (classify-triangle 3 4 5)
+               :output :scalene}]
  :solution [(defn triangle? [a b c]
               (and
                 (< a (+ b c))

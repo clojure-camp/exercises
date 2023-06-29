@@ -7,18 +7,19 @@
                              :points 5}}}
                 "as well as an id and a number."
                 "Return the same map but with the person with the given id having their name converted to upper-case and the given number added to their points."]
- :tests [(is (= {:people {1 {:name "james"
-                             :points 1}
-                          2 {:name "RAFD"
-                             :points 8}}}
-                (update-info
-                  {:people {1 {:name "james"
-                               :points 1}
-                            2 {:name "rafd"
-                               :points 5}}}
-
-                  2 3)))]
- :category :learning-functions
+ :function-template (defn update-info [info id points])
+ :test-cases
+[{:input (update-info {:people {1 {:name "james"
+                                   :points 1}
+                                2 {:name "rafd"
+                                   :points 5}}}
+                      2
+                      3)
+  :output {:people {1 {:name "james"
+                       :points 1}
+                    2 {:name "RAFD"
+                       :points 8}}}}]
+:category :learning-functions
  :difficulty :low
  :teaches #{update-in}
  :uses #{+ clojure.string/upper-case -> :maps :vectors :keywords}

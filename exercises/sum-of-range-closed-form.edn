@@ -5,8 +5,11 @@
  :related #{:sum-of-range}
  :instructions ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive."
                 "Note, this can be done with a formula: https://en.wikipedia.org/wiki/Arithmetic_progression"]
- :tests [(is (= 15 (sum-to 5)))]
- :solution (defn sum-to [n]
+ :function-template (defn sum-to [n])
+ :test-cases
+[{:input (sum-to 5)
+  :output 15}]
+:solution (defn sum-to [n]
               (/ (* n (+ n 1))
                  2))
  :uses #{+ / *}}

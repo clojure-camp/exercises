@@ -2,9 +2,13 @@
  :difficulty :low
  :category :starter
  :instructions ["Write a function to compute the dot product of two vectors."]
- :tests [(is (= 0 (dot [1 0] [0 1])))
-         (is (= 3 (dot [1 1 1] [1 1 1])))
-         (is (= 32 (dot [1 2 3] [4 5 6])))]
+ :function-template (defn dot [v1 v2])
+ :test-cases [{:input (dot [1 0] [0 1])
+               :output 0}
+              {:input (dot [1 1 1] [1 1 1])
+               :output 3}
+              {:input (dot [1 2 3] [4 5 6])
+               :output 32}]
  :solution (defn dot
              [v1 v2]
              (->> (map * v1 v2)

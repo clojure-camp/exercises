@@ -6,9 +6,10 @@
             "summing-a-list-apply"
             "summing-a-list-atom"
             "summing-a-list-naive-recursion"}
- :tests [(is (= 10 (sum [1 2 3 4])))
-         (is (= 0 (sum [])))
-         (is (= 0 (sum [1 -1 1 -1 1 -1 0])))]
+ :function-template (defn sum [values])
+ :test-cases [{:input (sum [1 2 3 4]) :output 10}
+              {:input (sum []) :output 0}
+              {:input (sum [1 -1 1 -1 1 -1 0]) :output 0}]
  :solution [(defn sum
               ([values] (sum values 0))
               ([values accumulator]

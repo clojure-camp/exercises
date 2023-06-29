@@ -5,7 +5,10 @@
  :type #{:word-problem}
  :instructions ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive."
                 "Use sequences"]
- :tests [(is (= 15 (sum-to 5)))]
- :solution (defn sum-to [n]
+ :function-template (defn sum-to [n])
+ :test-cases
+[{:input (sum-to 5)
+  :output 15}]
+:solution (defn sum-to [n]
               (apply + (range (inc n))))
  :uses #{range + apply reduce inc}}

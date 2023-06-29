@@ -3,13 +3,16 @@
  :difficulty :low
  :category :starter
  :instructions ["Given a list of strings, count how many words start with each character."]
- :tests [(is (= {\a 2
-                 \b 1
-                 \d 2
-                 \t 3}
-                (count-by-start ["beep" "abc" "apple" "things" "toffee" "dialectics"
-                                 "data" "theosophy"])))]
- :teaches #{}
+ :function-template (defn county-by-start [strings])
+ :test-cases
+[{:input
+  (count-by-start
+   ["beep" "abc" "apple" "things" "toffee" "dialectics" "data" "theosophy"])
+  :output {\a 2
+           \b 1
+           \d 2
+           \t 3}}]
+:teaches #{}
  :uses #{map group-by count frequencies into}
  :solution [(defn count-by-start [strings]
               (->> (group-by first strings)

@@ -5,21 +5,171 @@
  :instructions ["Convert from morse code to English, where the input is a signal, given as a sequence of ones or zeros."
                 "If the signal stays high for more than three samples, consider it a dash; otherwise, it's a dot."
                 "The signal being low for more than three samples indicates the end of a character and being low for more than five samples indicates a gap between words."]
-
- :tests [(is (= (morse-signal->english
-                  [0 0 1 1 0 1 1 0 0 1 0 1 0 0 0 0
-                   1 0 0 0 0
-                   1 0 1 1 1 1 0 0 1 1 0 1 0 0 0 0
-                   1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 0 0 0 0
-                   1 1 1 1 0 0 1 1 1 1 1 0 0 1 1 1 1 0 0 0 0
-                   0 0 0
-                   1 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 0
-                   1 1 1 1 0 0 0 1 1 1 1 1 0 1 1 1 1 0 0 0 0 0
-                   1 1 0 0 1 1 1 1 0 1 0 0 0 0
-                   1 0 1 1 1 1 0 1 0 0 1 0 0 0 0
-                   1 1 1 1 0 0 1 0 1 0 0])
-                "HELLO WORLD"))]
- :uses #{:maps clojure.string/split clojure.string/join :regex
+ :function-template (defn morse-signal->english [signal])
+ :test-cases
+[{:input "HELLO WORLD"
+  :output (morse-signal->english
+           [0
+            0
+            1
+            1
+            0
+            1
+            1
+            0
+            0
+            1
+            0
+            1
+            0
+            0
+            0
+            0
+            1
+            0
+            0
+            0
+            0
+            1
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            0
+            1
+            0
+            0
+            0
+            0
+            1
+            1
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            0
+            0
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            0
+            0
+            0
+            0
+            0
+            1
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            1
+            1
+            1
+            0
+            0
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            0
+            1
+            1
+            1
+            1
+            1
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            0
+            0
+            0
+            1
+            1
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            1
+            0
+            0
+            0
+            0
+            1
+            0
+            1
+            1
+            1
+            1
+            0
+            1
+            0
+            0
+            1
+            0
+            0
+            0
+            0
+            1
+            1
+            1
+            1
+            0
+            0
+            1
+            0
+            1
+            0
+            0])}]
+:uses #{:maps clojure.string/split clojure.string/join :regex
         partition-by reduce count conj update clojure.string/blank? cond map -> ->>}
  :solution [(require '[clojure.string :as string])
             (require '[clojure.set :refer [map-invert]])

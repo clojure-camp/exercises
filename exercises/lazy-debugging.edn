@@ -13,12 +13,13 @@
                                           (str thing)))]
                      {:str-things str-things
                       :sum @sum}))]
- :tests [(is (= {:str-things ["hello" "2" ":world" "1"]
-                 :sum 3}
-                (process ["hello" 2 :world 1])))
-         (is (= 3
-                (:sum (process ["hello" 2 :world 1]))))]
- :solution (defn process
+ :test-cases
+[{:input (process ["hello" 2 :world 1])
+  :output {:str-things ["hello" "2" ":world" "1"]
+           :sum 3}}
+ {:input (:sum (process ["hello" 2 :world 1]))
+  :output 3}]
+:solution (defn process
               "For a given list, return the sum of all the
                numbers as well as all the values as strings."
               [things]

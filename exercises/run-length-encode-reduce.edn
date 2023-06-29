@@ -3,9 +3,11 @@
  :category :synthesis
  :related #{"run-length-decode"}
  :instructions ["As before, write a function that does a run-length encoding of a given sequence, but this time, use `reduce`."]
- :tests [(is (= [[:a 2] [:b 1] [:c 3]]
-                (run-length [:a :a :b :c :c :c])))]
- :type #{:word-problem}
+ :function-template (defn run-length [xs])
+ :test-cases
+[{:input (run-length [:a :a :b :c :c :c])
+  :output [[:a 2] [:b 1] [:c 3]]}]
+:type #{:word-problem}
  :teaches #{reduce}
  :uses #{conj vec butlast inc peek}
  :solution [(defn run-length [xs]

@@ -1,21 +1,23 @@
 {:title "redact"
  :difficulty :mid
  :category :synthesis
- :instructions ["Write a function `redact`, which, given some text and a whitelist of words, returns the text, with non-whitelisted words replaced with ████ (being as long as the word being replaced)."
-                "How much work does it take to make this function use a blacklist instead?"]
+ :instructions ["Write a function `redact`, which, given some text and an allow-list of words, returns the text, with non-allow-listed words replaced with ████ (being as long as the word being replaced)."
+                "How much work does it take to make this function use a deny-list instead?"]
  :solution [(require '[clojure.string :as string])
 
             (defn redact-word [word]
               (apply str (repeat (count word) "█")))
 
-            (defn redact [text whitelist]
-              (let [whitelist? (set whitelist)]
+            (defn redact [text allow-list]
+              (let [allow-list? (set allow-list)]
                 (->> (string/split text #" ")
                      (map (fn [word]
-                            (if (whitelist? word)
+                            (if (allow-list? word)
                               word
                               (redact-word word))) )
                      (string/join " "))))]
- :tests [(is (= "hello world ███"
-                (redact "hello world foo" ["hello" "world"])))]
- :uses #{->> clojure.string/split repeat count set map clojure.string/join}}
+ :function-template (defn redact [text allow-list])
+ :test-cases
+[{:input (redact "hello world foo" ["hello" "world"])
+  :output "hello world ███"}]
+:uses #{->> clojure.string/split repeat count set map clojure.string/join}}

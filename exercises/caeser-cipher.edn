@@ -5,13 +5,15 @@
  :instructions ["Write a function to decode a Caeser Cipher. A Caeser Cipher is a rotation cipher: each letter in some text is shifted in the alphabet by a fixed number. For example, \"IBM\" and -1 results in \"HAL\"."
                 "Create a function `caesar-decode` that takes a string and a \"secret key\" which is a number that indicates how many characters to rotate the letters by."
                 "You can assume that only upper-case letters will be used, leave spaces unchanged."]
- :tests [(is (= "KHOOR ZRUOG"
-                (caeser-decode 3 "HELLO WORLD")))
-         (is (= "HELLO WORLD"
-                (caeser-decode -3 "KHOOR ZRUOG")))
-         (is (= "HELLO WORLD"
-                (caeser-decode 13 (caeser-decode 13 "HELLO WORLD"))))]
- :solution [(def char-base (int \A))
+ :function-template (defn caeser-decode [key message])
+ :test-cases
+[{:input (caeser-decode 3 "HELLO WORLD")
+  :output "KHOOR ZRUOG"}
+ {:input (caeser-decode -3 "KHOOR ZRUOG")
+  :output "HELLO WORLD"}
+ {:input (caeser-decode 13 (caeser-decode 13 "HELLO WORLD"))
+  :output "HELLO WORLD"}]
+:solution [(def char-base (int \A))
             (defn caeser-decode
               [key message]
               (->> (seq message)

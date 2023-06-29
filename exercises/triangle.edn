@@ -9,6 +9,9 @@
                (< a (+ b c))
                (< b (+ a c))
                (< c (+ a b))))
- :tests [(is (= true (triangle? 3 4 5)))
-         (is (= false (triangle? 1 1 2)))]
+ :function-template (defn triangle? [a b c])
+ :test-cases [{:input (triangle? 3 4 5)
+               :output true}
+              {:input (triangle? 1 1 2)
+               :output false}]
  :uses #{and :math-operations :math-comparisons + <}}

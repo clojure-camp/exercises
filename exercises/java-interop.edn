@@ -8,8 +8,9 @@
                  "`md.update(s.getBytes(\"UTF-8\"))`"
                  "`byte[] dig = md.digest()`"
                 "You can convert a byte to its character in Clojure using `(format \"%02x\" the-byte)`"]
- :tests [(is (= "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
-                (sha256 "hello world")))]
+ :function-template (defn sha256 [s])
+ :test-cases [{:input (sha256 "hello world")
+               :output "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"}]
  :teaches #{:interop doto import}
  :uses #{-> ->> map apply format}
  :solution [(import '(java.security MessageDigest))

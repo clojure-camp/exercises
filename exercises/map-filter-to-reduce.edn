@@ -5,10 +5,10 @@
                 (defn long-lengths
                   [strings]
                   (map count (filter (fn [string] (< 5 (count string))) strings)))]
- :tests [(is (= [8 6 7]
-                (long-lengths ["foo" "aoeusnth" "q" "aoeus"
-                               "abcdef" "1234567"])))]
- :solution (defn long-lengths
+ :test-cases
+[{:input (long-lengths ["foo" "aoeusnth" "q" "aoeus" "abcdef" "1234567"])
+  :output [8 6 7]}]
+:solution (defn long-lengths
              [strings]
              (reduce (fn [counts string]
                        (let [length (count string)]
