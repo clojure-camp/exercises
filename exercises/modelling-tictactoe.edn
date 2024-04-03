@@ -7,7 +7,7 @@
                 "`_|_|X`"
                 "`O|_|_`"
                 "In your model, include a history of the moves played."
-                "Write a function `turns-played` that returns how many turns have been played."]
+                "Write a function `moves-played` that returns how many moves have been played."]
  :solution [(def game-state
               {:current-player "X"
                :board [nil "X" "O"
