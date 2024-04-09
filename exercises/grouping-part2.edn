@@ -3,18 +3,26 @@
  :category :synthesis
  :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length."]
  :function-template (defn categorize [strings])
- :test-cases [{:input (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
-                                   "data" "theosophy"])
-               :output {\a {3 ["abc"] 5 ["apple"]}
-                        \b {4 ["beep"]}
-                        \d {10 ["dialectics"] 4 ["data"]}
-                        \t {6 ["things"  "toffee"] 9 ["theosophy"]}}}]
+ :test-cases [{:input (categorize
+                        ["beep boop" "abc" "apple" "two things"
+                         "toffee" "clojure camp" "so much data" "clojure"])
+               :output
+               {1 {3 ["abc"]
+                   5 ["apple"]
+                   6 ["toffee"]
+                   7 ["clojure"]}
+                2 {9 ["beep boop"]
+                   10 ["two things"]
+                   12 ["clojure camp"]}
+                3 {12 ["so much data"]}}}]
  :solution (defn categorize
              [strings]
-             (->> (group-by first strings)
-                  (map (fn [[char words]]
-                         [char (group-by count words)]))
+             (->> strings
+                  (group-by (fn [string]
+                              (count (clojure.string/split string #" "))))
+                  (map (fn [[word-count grouped-strings]]
+                         [word-count (group-by count grouped-strings)]))
                   (into {})))
  :teaches #{group-by}
- :uses #{map first into count}
+ :uses #{map first into count string/split}
  :related #{"group-by"}}

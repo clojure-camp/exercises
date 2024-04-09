@@ -2,23 +2,25 @@
  :related #{"group-by"}
  :difficulty :low
  :category :starter
- :instructions ["Given a list of strings, count how many words start with each character."]
- :function-template (defn county-by-start [strings])
+ :instructions ["Given a list of strings, count how many words have each length."]
+ :function-template (defn count-by-length [strings])
  :test-cases
 [{:input
-  (count-by-start
-   ["beep" "abc" "apple" "things" "toffee" "dialectics" "data" "theosophy"])
-  :output {\a 2
-           \b 1
-           \d 2
-           \t 3}}]
+  (count-by-length
+    ["beep" "abc" "apple" "things"
+     "toffee" "camp" "data" "clojure"])
+  :output {6 2
+           7 1
+           3 1
+           5 1
+           4 3}}]
 :teaches #{}
  :uses #{map group-by count frequencies into}
- :solution [(defn count-by-start [strings]
-              (->> (group-by first strings)
+ :solution [(defn count-by-length [strings]
+              (->> (group-by count strings)
                    (map (fn [[k v]]
                           [k (count v)]))
                    (into {})))
-            (defn count-by-start-alternate [strings]
-              (->> (map first strings)
+            (defn count-by-length-alternate [strings]
+              (->> (map count strings)
                    (frequencies)))]}

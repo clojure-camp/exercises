@@ -1,16 +1,19 @@
 {:title "grouping things"
  :difficulty :low
  :category :learning-functions
- :instructions ["Given a list of strings, categorize them by their starting character."]
+ :instructions ["Given a list of strings, categorize them by the number of characters."]
  :function-template (defn categorize [strings])
- :test-cases [{:input (categorize ["beep" "abc" "apple" "things" "toffee" "dialectics"
-                                  "data" "theosophy"])
-               :output {\a ["abc" "apple"]
-                        \b ["beep"]
-                        \d ["dialectics" "data"]
-                        \t ["things"  "toffee" "theosophy"]}}]
+ :test-cases [{:input
+               (categorize ["beep" "abc" "apple" "things"
+                            "toffee" "camp" "data" "clojure"])
+               :output
+               {4 ["beep" "camp" "data"]
+                3 ["abc"]
+                5 ["apple"]
+                6 ["things" "toffee"]
+                7 ["clojure"]}}]
  :solution (defn categorize [strings]
-             (group-by first strings))
+             (group-by count strings))
  :teaches #{group-by}
- :uses #{first}
+ :uses #{count}
  :related #{"grouping-and-counting" "grouping-part2"}}
