@@ -1,5 +1,9 @@
-{:title "sequences"
- :instructions ["Write a function that takes some sequence and a value and adds that value to the sequence, regardless of what type it is."]
+{:title 
+ {:en-US "sequences"
+  :pt-BR "sequências (sequences)"}
+ :instructions 
+ {:en-US ["Write a function that takes some sequence and a value and adds that value to the sequence, regardless of what type it is."]
+  :pt-BR ["Escreva uma função que recebe uma sequência e um valor e adiciona esse valor à sequência, independentemente do tipo dela."]}
  :function-template (defn add-element [x col])
  :test-cases
 [{:input (add-element :a (list 2 3 4))

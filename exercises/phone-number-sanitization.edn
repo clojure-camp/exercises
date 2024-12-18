@@ -1,8 +1,13 @@
-{:title "phone number sanitization"
+{:title 
+ {:en-US "phone number sanitization"
+  :pt-BR "sanitização de número de telefone"}
  :difficulty :low
  :category :learning-functions
- :instructions ["Implement a function to clean up phone numbers so that they can be stored in a standarized way: a string of 10 digits."
-                "Make use of `clojure.string/replace`."]
+ :instructions 
+ {:en-US ["Implement a function to clean up phone numbers so that they can be stored in a standarized way: a string of 10 digits."
+          "Make use of `clojure.string/replace`."]
+  :pt-BR ["Implemente uma função para limpar números de telefone de modo que eles possam ser armazenados de forma padronizada: uma string de 10 dígitos."
+          "Faça uso de `clojure.string/replace`."]}
  :related #{"phone-number-sanitization-filter"}
  :function-template (defn sanitize [phone-number])
  :test-cases

@@ -1,7 +1,11 @@
-{:title "regex extraction"
+{:title 
+ {:en-US "regex extraction"
+  :pt-BR "extração com regex"}
  :difficulty :mid
  :category :learning-functions
- :instructions ["Given a string like `\"Lastname, Firstname (some title)\"`, use a regular expression to extract out the first name, last name, and title."]
+ :instructions 
+ {:en-US ["Given a string like `\"Lastname, Firstname (some title)\"`, use a regular expression to extract out the first name, last name, and title."]
+  :pt-BR ["Dada uma string como `\"Sobrenome, Nome (algum título)\"`, use uma expressão regular (regex) para extrair o primeiro nome, sobrenome, e título."]}
  :function-template (defn extract-info [info-str])
  :test-cases
  [{:input (extract-info "World, Hello (Cool Person)")
