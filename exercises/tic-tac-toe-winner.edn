@@ -1,7 +1,11 @@
-{:title "tic-tac-toe winner"
+{:title 
+ {:en-US "tic-tac-toe winner"
+  :pt-BR "vencedor do jogo da velha"}
  :category :starter
  :difficulty :mid
- :instructions ["Given a structure representing a tic-tac-toe game (see tests), return the winner, `:tie` in the case of a tie, or `nil` if there is no winner yet."]
+ :instructions 
+ {:en-US ["Given a structure representing a tic-tac-toe game (see tests), return the winner, `:tie` in the case of a tie, or `nil` if there is no winner yet."]
+  :pt-BR ["Dada uma estrutura representando um jogo da velha (veja os testes), retorne o vencedor, `:tie` no caso de empate, ou `nil` se ainda não houver vencedor."]}
  :function-template (defn winner [board])
  :test-cases
 [{:input (winner [["X" nil "O"] [nil "X" "O"] [nil nil "X"]])

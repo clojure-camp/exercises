@@ -1,19 +1,35 @@
-{:title "destructuring"
+{:title 
+ {:en-US "destructuring"
+  :pt-BR "desestruturação (destructuring)"}
  :difficulty :low
  :category :starter
- :instructions ["Refactor the below function to use destructuring instead of unpacking values"
-                (defn process-person
-                  [arg]
-                  (let [name (first arg)
-                        info (second arg)
-                        age (:age info)
-                        interests (:interests info)
-                        interest-1 (first interests)
-                        other-interests (rest interests)]
-                    {:description (str name " is " age " years old.\n"
-                                       "They like " interest-1 " and " (count other-interests) " other things.")
-                     :name name
-                     :info info}))]
+ :instructions 
+ {:en-US ["Refactor the below function to use destructuring instead of unpacking values"
+          (defn process-person
+            [arg]
+            (let [name (first arg)
+                  info (second arg)
+                  age (:age info)
+                  interests (:interests info)
+                  interest-1 (first interests)
+                  other-interests (rest interests)]
+              {:description (str name " is " age " years old.\n"
+                                 "They like " interest-1 " and " (count other-interests) " other things.")
+               :name name
+               :info info}))]
+  :pt-BR ["Refatore a seguinte função para usar desestruturação (destructuring) ao invés de acessar cada valor"
+          (defn process-person
+            [arg]
+            (let [name (first arg)
+                  info (second arg)
+                  age (:age info)
+                  interests (:interests info)
+                  interest-1 (first interests)
+                  other-interests (rest interests)]
+              {:description (str name " is " age " years old.\n"
+                                 "They like " interest-1 " and " (count other-interests) " other things.")
+               :name name
+               :info info}))]}
  :function-template (defn process-person [arg])
  :test-cases
 [{:input (process-person ["James"

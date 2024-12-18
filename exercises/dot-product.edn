@@ -1,7 +1,11 @@
-{:title "dot products"
+{:title 
+ {:en-US "dot products"
+  :pt-BR "produtos escalares"}
  :difficulty :low
  :category :starter
- :instructions ["Write a function to compute the dot product of two vectors."]
+ :instructions 
+ {:en-US ["Write a function to compute the dot product of two vectors."]
+  :pt-BR ["Escreva uma função para calcular o produto escalar de dois vetores."]}
  :function-template (defn dot [v1 v2])
  :test-cases [{:input (dot [1 0] [0 1])
                :output 0}

@@ -1,10 +1,17 @@
-{:title "modelling todo list"
+{:title 
+ {:en-US "modelling todo list"
+  :pt-BR "modelando lista de tarefas (todo list)"}
  :difficulty :mid
  :category :starter
- :instructions ["Devise a data model to represent a multi-user todo list."
-                "Next, come up with and write a few helper functions to work with your model, such as:"
-                "`incomplete-tasks-for` - given then id of user, returns a list of their incomplete tasks"
-                "`completed-tasks` - returns a list of all completed tasks"]
+ :instructions 
+ {:en-US ["Devise a data model to represent a multi-user todo list."
+          "Next, come up with and write a few helper functions to work with your model, such as:"
+          "`incomplete-tasks-for` - given then id of user, returns a list of their incomplete tasks"
+          "`completed-tasks` - returns a list of all completed tasks"]
+  :pt-BR ["Crie um modelo de dados para representar uma lista de tarefas compartilhada entre vários usuários."
+          "Em seguida, crie e escreva algumas funções auxiliares para trabalhar com seu modelo, como:"
+          "`incomplete-tasks-for` - dado o id de um usuário, retorna uma lista de suas tarefas incompletas"
+          "`completed-tasks` - retorna uma lista de todas as tarefas completas"]}
  :solution [(def todo-list-state
               {:users {1 {:name "rafd"}
                        2 {:name "jamesnvc"}}

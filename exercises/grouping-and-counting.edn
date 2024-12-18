@@ -1,8 +1,12 @@
-{:title "grouping and counting"
+{:title 
+ {:en-US "grouping and counting"
+  :pt-BR "agrupando e contando"}
  :related #{"group-by"}
  :difficulty :low
  :category :starter
- :instructions ["Given a list of strings, count how many words have each length."]
+ :instructions 
+ {:en-US ["Given a list of strings, count how many words have each length."]
+  :pt-BR ["Dada uma lista de strings, conte quantas palavras têm de cada tamanho."]}
  :function-template (defn count-by-length [strings])
  :test-cases
 [{:input
