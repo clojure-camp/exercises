@@ -1,7 +1,11 @@
-{:title "grouping things continued"
+{:title 
+ {:en-US "grouping things continued"
+  :pt-BR "agrupando coisas - continuação"}
  :difficulty :mid
  :category :synthesis
- :instructions ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length."]
+ :instructions 
+ {:en-US ["Given a list of strings, categorize them by their starting character and within those groupings, categorize them by length."]
+  :pt-BR ["Dada uma lista de strings, categorize-as pelo seu caractere inicial e dentro desses agrupamentos, categorize-as pelo tamanho."]}
  :function-template (defn categorize [strings])
  :test-cases [{:input (categorize
                         ["beep boop" "abc" "apple" "two things"

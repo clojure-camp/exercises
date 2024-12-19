@@ -1,6 +1,11 @@
-{:title "fibonacci"
- :instructions ["Write a recursive function to calculate the nth Fibonacci number."
-                "Use `time` to measure its performance, then use `memoize` & compare."]
+{:title 
+ {:en-US "fibonacci"
+  :pt-BR "fibonacci"}
+ :instructions 
+ {:en-US ["Write a recursive function to calculate the nth Fibonacci number."
+          "Use `time` to measure its performance, then use `memoize` & compare."]
+  :pt-BR ["Escreva uma função recursiva para calcular o enésimo número de Fibonacci."
+          "Use `time` para medir a performance, depois use `memoize` e compare."]}
  :category :synthesis
  :difficulty :low
  :teaches #{memoize}

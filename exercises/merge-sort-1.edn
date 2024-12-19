@@ -1,7 +1,11 @@
-{:title "merge sort"
+{:title 
+ {:en-US "merge sort"
+  :pt-BR "merge sort (ordenação por mistura)"}
  :category :synthesis
  :difficulty :high
- :instructions ["Implement merge sort."]
+ :instructions 
+ {:en-US ["Implement merge sort."]
+  :pt-BR ["Implemente o merge sort."]}
  :function-template (defn merge-sort [coll])
  :test-cases
  [{:input (merge-sort [5 6 3 1 2 4])

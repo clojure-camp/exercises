@@ -1,10 +1,15 @@
-{:title "poker-deal"
+{:title 
+ {:en-US "poker-deal"
+  :pt-BR "distribuição de cartas"}
  :category :synthesis
  :uses #{partition take shuffle}
  :difficulty :low
  :related #{"poker-rank"}
- :instructions ["Create a function that deals a certain number of cards to some given number of players."
-                "It's up to you to decide how to represent the cards."]
+ :instructions 
+ {:en-US ["Create a function that deals a certain number of cards to some given number of players."
+          "It's up to you to decide how to represent the cards."]
+  :pt-BR ["Crie uma função que distribui um certo número de cartas para um dado número de jogadores."
+          "Cabe a você decidir como representar as cartas."]}
  :solution [(def suits [:hearts :spades :clubs :diamonds])
             (def ranks [2 3 4 5 6 7 8 9 10 :jack :queen :king :ace])
             (def deck

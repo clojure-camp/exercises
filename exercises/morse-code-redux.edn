@@ -1,10 +1,16 @@
-{:title "morse code redux"
+{:title 
+ {:en-US "morse code redux"
+  :pt-BR "código morse redux"}
  :category :synthesis
  :difficulty :mid
  :related #{"morse-code"}
- :instructions ["Convert from morse code to English, where the input is a signal, given as a sequence of ones or zeros."
-                "If the signal stays high for more than three samples, consider it a dash; otherwise, it's a dot."
-                "The signal being low for more than three samples indicates the end of a character and being low for more than five samples indicates a gap between words."]
+ :instructions 
+ {:en-US ["Convert from morse code to English, where the input is a signal, given as a sequence of ones or zeros."
+          "If the signal stays high for more than three samples, consider it a dash; otherwise, it's a dot."
+          "The signal being low for more than three samples indicates the end of a character and being low for more than five samples indicates a gap between words."]
+  :pt-BR ["Converta de código morse para inglês, onde a entrada é um sinal, dado como uma sequência de uns ou zeros."
+          "Se o sinal permanecer alto por mais de três amostras, considere-o um traço; caso contrário, é um ponto."
+          "O sinal estar baixo por mais de três amostras indica o fim de um caractere e estar baixo por mais de cinco amostras indica uma lacuna entre palavras."]}
  :function-template (defn morse-signal->english [signal])
  :test-cases
 [{:input "HELLO WORLD"

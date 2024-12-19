@@ -1,11 +1,17 @@
-{:title "morse code"
+{:title 
+ {:en-US "morse code"
+  :pt-BR "código morse"}
  :category :synthesis
  :difficulty :low
  :type #{:word-problem}
  :related #{"morse-code-redux"}
- :instructions ["Write functions to convert to & from morse code:"
-                (defn morse->english [morse])
-                (defn english->morse [english])]
+ :instructions 
+ {:en-US ["Write functions to convert to & from morse code:"
+          (defn morse->english [morse])
+          (defn english->morse [english])]
+  :pt-BR ["Escreva funções para converter de e para código morse:"
+          (defn morse->english [morse])
+          (defn english->morse [english])]}
  :function-template [(defn morse->english [morse])
                      (defn english->morse [english])]
  :test-cases
