@@ -1,5 +1,9 @@
-{:title "generated HTML"
- :instructions ["Implement a simple version of 'hiccup', a common Clojure format for representing HTML as Clojure data."]
+{:title 
+ {:en-US "generated HTML"
+  :pt-BR "HTML gerado"}
+ :instructions 
+ {:en-US ["Implement a simple version of 'hiccup', a common Clojure format for representing HTML as Clojure data."]
+  :pt-BR ["Implemente uma versão simples de 'hiccup', um formato comum em Clojure para representar HTML como dados Clojure."]}
  :function-template (defn hiccup->html [hiccup])
  :test-cases [{:input
                (hiccup->html

@@ -1,13 +1,23 @@
-{:title "bank"
+{:title 
+ {:en-US "bank"
+  :pt-BR "banco"}
  :category :synthesis
  :difficulty :high
- :instructions ["Implement an in-memory bank system, which keeps track of multiple accounts. Accounts can be created, and each account supports make withdrawals, deposits and transfers, and retrieving the current balance and a log of transactions."
-                "Withdrawals and transfers should only occur when there is a sufficient balance. Otherwise, throw an error."
-                "Prevent accounts from being re-created."
-                "Withdrawals, deposits and transfers should throw an error if an incorrect id is given."
-                "Transactions should include: time, type and amount."
-                "You are free to come up with your own names for functions, what values they take and what they return."
-                "Write your own tests. Also test for errors being thrown."]
+ :instructions 
+ {:en-US ["Implement an in-memory bank system, which keeps track of multiple accounts. Accounts can be created, and each account supports make withdrawals, deposits and transfers, and retrieving the current balance and a log of transactions."
+          "Withdrawals and transfers should only occur when there is a sufficient balance. Otherwise, throw an error."
+          "Prevent accounts from being re-created."
+          "Withdrawals, deposits and transfers should throw an error if an incorrect id is given."
+          "Transactions should include: time, type and amount."
+          "You are free to come up with your own names for functions, what values they take and what they return."
+          "Write your own tests. Also test for errors being thrown."]
+  :pt-BR ["Implemente um sistema bancário em memória, que mantém o controle de múltiplas contas. Contas podem ser criadas, e cada conta suporta saques, depósitos e transferências, e recuperar o saldo atual e um log de transações."
+          "Saques e transferências só devem ocorrer quando houver saldo suficiente. Caso contrário, lance um erro."
+          "Evite que contas sejam recriadas."
+          "Saques, depósitos e transferências devem lançar um erro se um id incorreto for fornecido."
+          "Transações devem incluir: tempo, tipo e valor."
+          "Você é livre para criar seus próprios nomes para funções, quais valores elas recebem e o que retornam."
+          "Escreva seus próprios testes. Teste também se erros são lançados."]}
 
  :solution [(def accounts (atom {}))
 

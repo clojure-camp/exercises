@@ -1,7 +1,12 @@
-{:title "partial-map"
+{:title 
+ {:en-US "partial-map"
+  :pt-BR "mapeamento parcial"}
  :difficulty :low
- :instructions ["Write a function that takes two functions and a list."
-                "Transform the given list by applying the first function to all the values in the list that return true for the second function; other values should remain as is."]
+ :instructions 
+ {:en-US ["Write a function that takes two functions and a list."
+          "Transform the given list by applying the first function to all the values in the list that return true for the second function; other values should remain as is."]
+  :pt-BR ["Escreva uma função que receba duas funções e uma lista."
+          "Transforme a lista dada aplicando a primeira função a todos os valores na lista que retornam verdadeiro para a segunda função; outros valores devem permanecer como estão."]}
  :function-template (defn partial-map [f pred? values])
  :test-cases
 [{:input (partial-map (fn [x]

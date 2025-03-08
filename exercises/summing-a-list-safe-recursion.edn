@@ -1,7 +1,11 @@
-{:title "summing a list (safe recursion)"
+{:title 
+ {:en-US "summing a list (safe recursion)"
+  :pt-BR "somando uma lista (recursão segura)"}
  :difficulty :mid
  :category :learning-functions
- :instructions ["Write a function to sum a list of numbers. Use recursion, but in a way that doesn't blow the stack."]
+ :instructions 
+ {:en-US ["Write a function to sum a list of numbers. Use recursion, but in a way that doesn't blow the stack."]
+  :pt-BR ["Escreva uma função para somar uma lista de números. Use recursão, mas de uma forma que não estoure a pilha."]}
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
             "summing-a-list-atom"

@@ -1,5 +1,9 @@
-{:title "number stats"
- :instructions ["Read a bunch of integers from a string and return the mean, median, mode and standard-deviation. Round each value to two decimal places."]
+{:title
+ {:en-US "number stats"
+  :pt-BR "estatísticas de números"}
+ :instructions
+ {:en-US ["Read a bunch of integers from a string and return the mean, median, mode and standard-deviation. Round each value to two decimal places."]
+  :pt-BR ["Leia uma série de inteiros de uma string e retorne a média, mediana, moda e desvio padrão. Arredonde cada valor para duas casas decimais."]}
  :category :synthesis
  :difficulty :mid
  :uses #{slurp clojure.string/split map Integer/parseInt / Math/pow Math/sqrt clojure.set/map-invert

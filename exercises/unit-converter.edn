@@ -1,8 +1,11 @@
-{:title "unit converter"
+{:title
+ {:en-US "unit converter"
+  :pt-BR "conversor de unidades"}
  :difficulty :mid
  :category :starter
- :type #{:word-problem}
- :instructions ["Write a function that can convert between many different types of units."]
+ :instructions
+ {:en-US ["Write a function that can convert between many different types of units."]
+  :pt-BR ["Escreva uma função que pode converter entre muitos tipos diferentes de unidades."]}
  :function-template (defn convert [num from-unit to-unit])
  :test-cases [{:input (convert 220 :lb :kg)
                :output 100}

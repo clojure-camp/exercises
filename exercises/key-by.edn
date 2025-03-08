@@ -1,7 +1,11 @@
-{:title "key-by"
+{:title 
+ {:en-US "key-by"
+  :pt-BR "agrupa por chave (key-by)"}
  :difficulty :mid
  :category :starter
- :instructions ["Implement `key-by`, a function that given a a list of items, converts it to a map, with each item keyed by a given function"]
+ :instructions 
+ {:en-US ["Implement `key-by`, a function that given a a list of items, converts it to a map, with each item keyed by a given function"]
+  :pt-BR ["Implemente `key-by`, uma função que, dada uma lista de itens, a converte em um mapa, com cada item indexado pela função dada"]}
  :function-template (defn key-by [f values])
  :test-cases
 [{:input (key-by :id

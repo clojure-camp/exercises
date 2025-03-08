@@ -1,8 +1,13 @@
-{:title "scrabble score"
+{:title 
+ {:en-US "scrabble score"
+  :pt-BR "pontuação do scrabble (jogo)"}
  :difficulty :low
  :category :starter
- :instructions ["Implement a function `score` that calculates the scrabble score for a given word."
-                "Use google to find out how much each letter is worth."]
+ :instructions 
+ {:en-US ["Implement a function `score` that calculates the scrabble score for a given word."
+          "Use google to find out how much each letter is worth."]
+  :pt-BR ["Implemente uma função `score` que calcula a pontuação do scrabble para uma palavra dada."
+          "Use o google para descobrir quanto cada letra vale."]}
  :function-template (defn score [s])
  :test-cases
 [{:input (score "hello")

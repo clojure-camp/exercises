@@ -1,7 +1,11 @@
-{:title "summing a list (atom)"
+{:title 
+ {:en-US "summing a list (atom)"
+  :pt-BR "somando uma lista (atom)"}
  :difficulty :low
  :category :learning-functions
- :instructions ["Write a function to sum a list of numbers, using an `atom` and `doseq`."]
+ :instructions 
+ {:en-US ["Write a function to sum a list of numbers, using an `atom` and `doseq`."]
+  :pt-BR ["Escreva uma função para somar uma lista de números, usando um `atom` e `doseq`."]}
  :related #{"summing-a-list-reduce"
             "summing-a-list-apply"
             "summing-a-list-naive-recursion"

@@ -1,8 +1,11 @@
-{:title "word count"
+{:title
+ {:en-US "word count"
+  :pt-BR "contagem de palavras"}
  :difficulty :mid
  :category :synthesis
- :type #{:word-problem}
- :instructions ["Given a phrase, count the occurrences of each word in that phrase. Ignore punctuation and case."]
+ :instructions
+ {:en-US ["Given a phrase, count the occurrences of each word in that phrase. Ignore punctuation and case."]
+  :pt-BR ["Dada uma frase, conte as ocorrências de cada palavra nessa frase. Ignore pontuação e maiúscula/minúscula."]}
  :function-template (defn word-count [text])
  :test-cases
 [{:input (word-count "one fish two fish red fish blue fish")

@@ -1,5 +1,9 @@
-{:title "count-if"
- :instructions ["Write a function `count-if` that counts the number of items in a collection that pass a certain predicate."]
+{:title 
+ {:en-US "count-if"
+  :pt-BR "conte se (count-if)"}
+ :instructions 
+ {:en-US ["Write a function `count-if` that counts the number of items in a collection that pass a certain predicate."]
+  :pt-BR ["Escreva uma função `count-if` que conta o número de itens em uma coleção que passam por um certo predicado."]}
  :difficulty :low
  :category :starter
  :solution (defn count-if [pred? coll]
