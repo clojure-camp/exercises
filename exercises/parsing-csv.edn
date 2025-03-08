@@ -4,29 +4,31 @@
  :difficulty   :high
  :instructions {:en-US ["Write a function to parse a CSV string into a series of vectors."
                         "For example, if the file looks like this:"
-                (def content
-                  "name,email,comment
-                 james,james@james.com,alright\\, but weird
-                 raf,raf@raf.com,they say \"works, plays\"
-                 beep,beep@beep.com,they say\\, \"works, plays\",3")
+                        [:file
+                         "name,email,comment"
+                         "james,james@james.com,alright\\, but weird"
+                         "raf,raf@raf.com,they say \"works, plays\""
+                         "beep,beep@beep.com,they say\\, \"works, plays\",3"]
                         "The output would be:"
-                        [["name" "email" "comment" "id"]
-                         ["james" "james@james.com" "alright, but weird" "1"]
-                         ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
-                         ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]
+                        [:code
+                         [["name" "email" "comment" "id"]
+                          ["james" "james@james.com" "alright, but weird" "1"]
+                          ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
+                          ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]]
                         "In practice, you'd use a library to parse CSVs, but for this exercise, do it from scratch."]
                 :pt-BR ["Escreva uma função para fazer o parse de uma string CSV em uma série de vetores."
                         "Por exemplo, se o arquivo se parece com isso:"
-                        (def content
-                          "name,email,comment
-             james,james@james.com,alright\\, but weird
-             raf,raf@raf.com,they say \"works, plays\"
-             beep,beep@beep.com,they say\\, \"works, plays\",3")
+                        [:file
+                         "name,email,comment"
+                         "james,james@james.com,alright\\, but weird"
+                         "raf,raf@raf.com,they say \"works, plays\""
+                         "beep,beep@beep.com,they say\\, \"works, plays\",3"]
                         "O resultado será:"
-                        [["name" "email" "comment" "id"]
-                         ["james" "james@james.com" "alright, but weird" "1"]
-                         ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
-                         ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]
+                        [:code
+                         [["name" "email" "comment" "id"]
+                          ["james" "james@james.com" "alright, but weird" "1"]
+                          ["raf" "raf@raf.com" "they say \"works, plays\"" "2"]
+                          ["beep" "beep@beep.com" "they say, \"works, plays\"" "3"]]]
                         "Na prática, você usaria uma biblioteca para fazer o parse de CSVs, mas para esse exercício, faça do zero."]}
  :uses         #{slurp clojure.string/split loop recur cond empty? conj map clojure.string/replace}
  :solution     [(require '[clojure.string :as string])
