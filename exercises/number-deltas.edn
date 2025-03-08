@@ -1,10 +1,9 @@
-{:title 
+{:title
  {:en-US "number deltas"
   :pt-BR "diferenças entre números"}
  :difficulty :mid
  :category :starter
- :type #{:word-problem}
- :instructions 
+ :instructions
  {:en-US ["Given a list of numbers, return a list of the differences between the adjacent numbers."]
   :pt-BR ["Dada uma lista de números, retorne uma lista com as diferenças entre os números adjacentes."]}
  :function-template (defn deltas [nums])

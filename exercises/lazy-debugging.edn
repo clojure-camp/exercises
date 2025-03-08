@@ -1,9 +1,9 @@
-{:title 
+{:title
  {:en-US "debugging"
   :pt-BR "depuração"}
  :difficulty :high
  :category :starter
- :instructions 
+ :instructions
  {:en-US ["Debug the following code:"
           (defn process
             "For a given list, return the sum of all the
@@ -44,5 +44,4 @@
                                        (str thing))))]
                 {:str-things str-things
                  :sum @sum}))
- :type #{:debugging}
  :uses #{when atom for do doall :lazy-evaluation}}

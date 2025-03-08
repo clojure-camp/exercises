@@ -1,11 +1,10 @@
-{:title 
+{:title
  {:en-US "insert in vector"
   :pt-BR "inserção em vetor"}
  :difficulty :mid
  :category :learning-functions
- :type #{:word-problem}
  :related #{"dissoc-at"}
- :instructions 
+ :instructions
  {:en-US ["Write a function that inserts a value into a vector at a given index (moving all subsequent values)."]
   :pt-BR ["Escreva uma função que insere um valor em um vetor em um índice dado (movendo todos os valores subsequentes)."]}
  :function-template (defn insert-at [v index value])

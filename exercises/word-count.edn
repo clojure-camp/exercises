@@ -1,10 +1,9 @@
-{:title 
+{:title
  {:en-US "word count"
   :pt-BR "contagem de palavras"}
  :difficulty :mid
  :category :synthesis
- :type #{:word-problem}
- :instructions 
+ :instructions
  {:en-US ["Given a phrase, count the occurrences of each word in that phrase. Ignore punctuation and case."]
   :pt-BR ["Dada uma frase, conte as ocorrências de cada palavra nessa frase. Ignore pontuação e maiúscula/minúscula."]}
  :function-template (defn word-count [text])

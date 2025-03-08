@@ -1,9 +1,9 @@
-{:title 
+{:title
  {:en-US "find largest"
   :pt-BR "encontrar o maior"}
  :difficulty :low
  :category :learning-functions
- :instructions 
+ :instructions
  {:en-US ["Write a function `largest` to find the largest number in a list, making use of `max` and either `apply` or `reduce`."
           "Note that `max` takes a variable number of arguments, but does not work with arrays, ie. `(max 1 2 3)` works as expected, but `(max [1 2 3])` does not."]
   :pt-BR ["Escreva uma função `largest` para achar o maior número em uma lista, fazendo uso de `max` e `apply` ou `reduce`."
@@ -18,6 +18,5 @@
             (defn largest-reduce
               [nums]
               (reduce max nums))]
- :type #{:word-problem}
  :uses #{max}
  :teaches #{apply reduce}}

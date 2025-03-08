@@ -1,11 +1,10 @@
-{:title 
+{:title
  {:en-US "sum of range"
   :pt-BR "soma de um intervalo"}
  :category :starter
  :difficulty :low
- :related #{:sum-of-range-closed-form}
- :type #{:word-problem}
- :instructions 
+ :related #{"sum-of-range-closed-form"}
+ :instructions
  {:en-US ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive."
           "Use sequences"]
   :pt-BR ["Escreva uma função que, dado um número N, retorna a soma dos números de 1 a N, inclusive."

@@ -1,11 +1,10 @@
-{:title 
+{:title
  {:en-US "morse code"
   :pt-BR "código morse"}
  :category :synthesis
  :difficulty :low
- :type #{:word-problem}
  :related #{"morse-code-redux"}
- :instructions 
+ :instructions
  {:en-US ["Write functions to convert to & from morse code:"
           (defn morse->english [morse])
           (defn english->morse [english])]

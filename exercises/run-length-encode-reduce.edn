@@ -1,17 +1,16 @@
-{:title 
+{:title
  {:en-US "run-length encoding (with reduce)"
   :pt-BR "codificação run-length (com reduce)"}
  :difficulty :mid
  :category :synthesis
  :related #{"run-length-decode"}
- :instructions 
+ :instructions
  {:en-US ["As before, write a function that does a run-length encoding of a given sequence, but this time, use `reduce`."]
   :pt-BR ["Como antes, escreva uma função que faz a codificação run-length dada uma sequência, mas desta vez, use `reduce`."]}
  :function-template (defn run-length [xs])
  :test-cases
 [{:input (run-length [:a :a :b :c :c :c])
   :output [[:a 2] [:b 1] [:c 3]]}]
-:type #{:word-problem}
  :teaches #{reduce}
  :uses #{conj vec butlast inc peek}
  :solution [(defn run-length [xs]

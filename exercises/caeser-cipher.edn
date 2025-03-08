@@ -1,10 +1,9 @@
-{:title 
+{:title
  {:en-US "caeser cipher"
   :pt-BR "cifra de César"}
  :category :starter
  :difficulty :mid
- :type #{:word-problem}
- :instructions 
+ :instructions
  {:en-US ["Write a function to decode a Caeser Cipher. A Caeser Cipher is a rotation cipher: each letter in some text is shifted in the alphabet by a fixed number. For example, \"IBM\" and -1 results in \"HAL\"."
           "Create a function `caesar-decode` that takes a string and a \"secret key\" which is a number that indicates how many characters to rotate the letters by."
           "You can assume that only upper-case letters will be used, leave spaces unchanged."]

@@ -1,9 +1,9 @@
-{:title 
+{:title
  {:en-US "dot products"
   :pt-BR "produtos escalares"}
  :difficulty :low
  :category :starter
- :instructions 
+ :instructions
  {:en-US ["Write a function to compute the dot product of two vectors."]
   :pt-BR ["Escreva uma função para calcular o produto escalar de dois vetores."]}
  :function-template (defn dot [v1 v2])
@@ -17,5 +17,4 @@
              [v1 v2]
              (->> (map * v1 v2)
                   (reduce + 0)))
- :type #{:word-problem}
  :uses #{->> map reduce + *}}
