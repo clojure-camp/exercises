@@ -1,0 +1,182 @@
+embeddings - cosine similarity, search 
+
+kasiski vigenere pattern finding
+
+vigenere - encode and decode
+
+hiccup to text
+  given hiccup, return a string
+  with newlines
+  with links
+
+flexible precision dates
+   ie. how to model a date value that can have various levels of precision
+how to store it? make it comparable? search it? index it?
+   2021-01-01 24:11:23 Toronto 
+   2021-01-01 
+   2021
+   2000s
+   2000-21-20 +/- 5 days
+
+tax bracket calculator
+
+leaky bucket / token bucket
+
+leap year
+   determine if this year is a leap year
+
+time event storage
+   over time, have event that triggers [t , #{ids}]
+
+   how to store?
+      just conj     [ [t #{ids}] ... ]
+      delta encode [ [t  #{plus-ids} #{minus-ids}] ...]
+        per client  {id {:events [t t t t]  :online? true}}
+    
+   query for 
+       - who is online now?
+      - who was online at T=n
+      - who was online between T 1 and 4
+      - ...
+
+
+find N largest in O(n)
+    https://en.wikipedia.org/wiki/Selection_algorithm
+
+    nlogn (sort, then take k)
+
+    nklogk (for each n, insert into a sorted list of k (re-sorting each time))
+
+    nk (find largest, repeat with next largest, repeat...)
+
+    nlogk (for each n, insert into a sorted list of k (binary search insert each time))
+
+
+move item x in vector up / down one; re-ordering pages
+
+
+abbreviate text to a certain length (but only at whitespace breaks)
+
+
+implement banker's rounding (round to even)
+
+apply fn multiple times
+   want to apply "move" fn on an initial position X times
+
+   iterate + nth
+
+   (reduce  ...  [move move move])
+
+   (reduce move [nil nil nil])
+
+   (apply comp (repeat x move))
+
+
+gigaflatten
+   given [1 2 3 #{ 4 5 6} 7 8 #{9 10}]
+   want to flatten, but, flatten doesn't work on sets !
+
+
+reimplement map, partition, etc with reduce
+
+river
+   You're given a two-dimensional array (a matrix) of potentially unequal height and width containing only O sand 1 s. Each 0 represents land, and each 1 represents part of a river. A river consists of any number of 1s that are either horizontally or vertically adjacent (but not diagonally adjacent). The number of adjacent 1s forming a river determine its size.
+   Note that a river can twist. In other words, it doesn't have to be a straight vertical line or a straight horizontal line; it can be L-shaped, for example.
+Write a function that returns an array of the sizes of all rivers represented in the input matrix. The sizes don't need to be in any particular order.
+
+     matrix = [
+       [1, 0, 0, 1, 0],
+       [1, 0, 1, 0, 0], 
+       [0, 0, 1, 0, 1], 
+       [1, 0, 1, 0, 1], 
+       [1, 0, 1, 1, 0],
+     ]
+
+    out: [1, 2, 2, 2, 5]
+
+valley
+   how many times go under
+   (->> "UDDDUDUU"  (map {\U 1  \D -1})  (reductions + 0)  (partition 2 1) (filter (partial = '(0 -1))) count)
+
+
+monte carlo - vase
+    using simulation, determine which probability is greater
+    2 red 8 black, choose 1  (want 1 black)
+    2 red 8 black, choose 3 (want 2 or 3 black)
+
+
+monte carlo - monty hall problem
+
+monte carlo - expected value of exploding dice
+
+monte carlo - expected value of the coin toss
+   https://ergodicityeconomics.com/2023/07/28/the-infamous-coin-toss/
+
+
+matching up
+    given two lists (unsorted)
+    a: [{:id 123 :foo .___} {:id 456 :foo ___} ___]
+    b: [{:id 123 :bar ___}  {:id 789 :bar ___} ___]
+
+    merge together, matching on id
+
+    how to do efficiently?
+
+
+subpath?
+     given two vectors "short" and "long"
+     return if one is a subpath of the other
+
+    [1 2 3] 
+    [1 2 3 4]  
+    yes
+
+    [3]
+    [1 2 3 4]
+    no
+
+    (defn subpath?
+      [short-path long-path]
+      (= (take (count short-path) long-path)
+         short-path))
+
+
+closest N points
+    given a list of 1d points, return N closest points (to each other)
+     ie. dist(a,b) + dist(b,c) + dist(c,a) is minimized
+
+     function(list, n) → [1,1,1]
+
+     given a list of 2d points, return N closest points (to each other)
+
+
+base conversion
+   convert from a number in any base to another
+   https://cs.stackexchange.com/questions/10318/the-math-behind-converting-from-any-base-to-any-base-without-going-through-bases
+   quot rem loop recur
+
+
+factorial number base conversion
+    https://en.m.wikipedia.org/wiki/Factorial_number_system
+
+
+detect anomalies
+
+    given a list of numbers, determine whether any are anomolous
+
+    v1: are the numbers within 10% of each other
+
+    v2: more than a standard-deviation away from mean
+
+    v3: https://en.wikipedia.org/wiki/Grubbs%27s_test
+
+
+dependency tree
+
+finish the brackets
+
+mastermind - scoring
+
+mastermind - ui
+
+mastermind - cheating ai
