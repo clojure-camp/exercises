@@ -1,0 +1,30 @@
+{:title "sonar"
+ :instructions ["We are hunting [the Red October](https://en.wikipedia.org/wiki/The_Hunt_for_Red_October_(film)). Based on its path, and the islands nearby, we need to deduce its location."
+                "An example input is as follows:"
+                "NNWN\n..x\n.x.\nx.."
+                "The first line is a list of the direction the submarine has travelled: north, north, west, south."
+                "The next three lines show the islands in the area (there are 3 of them)."
+
+                "We don't know the starting point of the submarine. We need to determine its end location."
+                "The submarine will always stay in the grid. The submarine cannot enter an island."
+
+                "If there were no islands, given the example path above, the submarine could be either at (0,1):"
+                ".4."
+                ".32"
+                "..1"
+
+                "or (0,0):"
+
+                "4.."
+                "32."
+                ".1."
+
+                "because there is an island at (1,0), the submarine must be at (0,1)."
+
+                ".4."
+                "x32"
+                "..1"
+
+                "Your actual input is:"
+                "TODO"
+                ]}
