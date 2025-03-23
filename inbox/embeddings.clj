@@ -17,10 +17,22 @@
        first
        (get "embedding")))
 
-(defonce word->embedding (memoize openai-embedding))
+(defonce index (atom {}))
 
 (defn distance [va vb]
   (Math/sqrt (apply + (map (fn [a b]
                              (Math/pow (- a b) 2)) va vb))))
 
 (distance [1 1] [0 2])
+
+
+
+
+;; create two functions
+;; index() and search()
+;; index() takes some text, calculates the embedding and stores it
+;; search() takes a query and returns the top-n closest texts to it (by embedding)
+
+(defn index! [text])
+
+(defn search [query top-n])

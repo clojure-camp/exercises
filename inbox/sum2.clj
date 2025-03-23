@@ -1,4 +1,4 @@
-
+;; given a list and a target #, return a pair of numbers from the list that add up to the #
 
 (let [coll [1 2 5 6 7]
       target 11]
