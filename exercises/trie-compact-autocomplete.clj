@@ -9,30 +9,12 @@
  :instructions
  {:en-US ["Autocomplete, but for compacted tries"
           "(compact-autocomplete {\"he\" {\"l\" {\"lo\" {\"\" nil}, \"p\" {\"\" nil}}, \"alth\" {\"\" nil}, \"\" nil}, \"f\" {\"\" nil}} \"he\")"
-          "should return: \"health\""
-          (defn compact-autocomplete [trie prefix])]}
-
- :test-cases [{:input (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "x")
-               :output #{}}
-              {:input (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "h")
-               :output #{"health" "he" "help" "hello"}}
-              {:input (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "he")
-               :output #{"health" "he" "help" "hello"}}
-              {:input (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "hea")
-               :output #{"health"}}]
+          "should return: \"health\""]}
  :teaches #{loop recur map mapcat partial :recursion :trie-data-structure}
- :uses #{:recursion}
- :code [(= #{}
-           (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "x"))
+ :uses #{:recursion}}
 
-        (= #{"health" "he" "help" "hello"}
-           (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "h"))
-
-        (= #{"health" "he" "help" "hello"}
-           (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "he"))
-
-        (= #{"health"}
-           (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "hea"))]}
+;; --- [:function-template]
+(defn compact-autocomplete [trie prefix])
 
 ;; --- [:solution 0]
 
@@ -111,3 +93,18 @@
             (set (map (partial str (string/join "" (flatten (conj valid-path k))))
                       (words subtrie)))
             #{}))))))
+
+;; --- test-cases
+(require '[clojure.test :refer [is]])
+
+(is (= #{}
+       (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "x")))
+
+(is (= #{"health" "he" "help" "hello"}
+       (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "h")))
+
+(is (= #{"health" "he" "help" "hello"}
+       (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "he")))
+
+(is (= #{"health"}
+       (compact-autocomplete (compact (trie ["hello" "help" "health" "he" "f"])) "hea")))

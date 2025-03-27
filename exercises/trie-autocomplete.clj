@@ -10,17 +10,12 @@
  {:en-US ["Given a trie and a prefix, return all words in trie with that prefix."
           "(autocomplete (trie [\"hello\" \"help\" \"health\" \"he\" \"f\"])
                         \"he\")"
-          "should return:  #{\"hello\" \"health\" \"help\" \"he\"}"
-          (defn autocomplete [trie prefix])]}
-
- :test-cases [{:input (autocomplete (trie ["hello" "help" "health" "he" "f"])
-                                    "he")
-               :output #{"hello" "help" "he" "health"}}]
+          "should return:  #{\"hello\" \"health\" \"help\" \"he\"}"]}
  :teaches #{mapcat set map partial str keys :recursion :trie-data-structure}
- :uses #{:recursion}
- :code (= #{"hello" "help" "he" "health"}
-          (autocomplete (trie ["hello" "help" "health" "he" "f"])
-                        "he"))}
+ :uses #{:recursion}}
+
+;; --- [:function-template]
+(defn autocomplete [trie prefix])
 
 ;; --- [:solution 0]
 
@@ -50,3 +45,10 @@
   [trie prefix]
   (set (map (partial str prefix)
             (words (get-in trie (string/split prefix #""))))))
+
+;; --- test-cases
+(require '[clojure.test :refer [is]])
+
+(is (= #{"hello" "help" "he" "health"}
+       (autocomplete (trie ["hello" "help" "health" "he" "f"])
+                     "he")))

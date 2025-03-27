@@ -8,28 +8,19 @@
             "trie-compact-autocomplete"}
  :instructions
  {:en-US ["Write a function to create a trie map from list of words:"
-          "`|---h---|`"
-          "`|---e---|`"
-          "`|---l---|`"
-          "`|-/---\\-|`"
-          "`|l-----p|`"
-          "`|o------|`"
-          (defn trie [words])]}
-
- :test-cases [{:input (trie ["hello" "help" "health" "he" "f"])
-               :output {"h" {"e" {"l" {"l" {"o" {"" nil}}
-                                       "p" {"" nil}}
-                                  "a" {"l" {"t" {"h" {"" nil}}}}
-                                  "" nil}}
-                        "f" {"" nil}}}]
+          [:file
+           "   h   "
+           "   e   "
+           "   l   "
+           " /   \\ "
+           "l     p"
+           "o      "]]}
+ :test-cases []
  :teaches #{reduce assoc-in conj :regex :trie-data-structure}
- :uses #{:reduce :data :string-operations}
- :code (= {"h" {"e" {"l" {"l" {"o" {"" nil}}
-                          "p" {"" nil}}
-                     "a" {"l" {"t" {"h" {"" nil}}}}
-                     "" nil}}
-           "f" {"" nil}}
-          (trie ["hello" "help" "health" "he" "f"]))}
+ :uses #{:reduce :data :string-operations}}
+
+;; --- [:function-template]
+(defn trie [words])
 
 ;; --- [:solution 0]
 
@@ -41,3 +32,13 @@
   (reduce (fn [memo word]
             (assoc-in memo (conj (string/split word #"") "") nil))
           {} words))
+
+;; --- test-cases
+(require '[clojure.test :refer [is]])
+
+(is (= {"h" {"e" {"l" {"l" {"o" {"" nil}}
+                       "p" {"" nil}}
+                  "a" {"l" {"t" {"h" {"" nil}}}}
+                  "" nil}}
+        "f" {"" nil}}
+       (trie ["hello" "help" "health" "he" "f"])))

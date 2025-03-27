@@ -8,22 +8,19 @@
             "trie-compact-autocomplete"}
  :instructions
  {:en-US ["return the list of all words stored in a trie"
-          "`|---h---|`"
-          "`|---e---|`"
-          "`|---l---|`"
-          "`|-/---\\-|`"
-          "`|l-----p|`"
-          "`|o------|`"
-          "should return: #{\"hello\" and \"help\"}"
-          (defn words [trie])]}
-
- :test-cases [{:input (words (trie ["hello" "help" "health" "he" "f"]))
-               :output #{"hello" "f" "health" "help" "he"}}]
+          [:file
+           "   h   "
+           "   e   "
+           "   l   "
+           " /   \\ "
+           "l     p"
+           "o      "]
+          "should return: #{\"hello\" and \"help\"}"]}
  :teaches #{reduce assoc-in conj map partial str :recursion :trie-data-structure}
- :uses #{:recursion}
- :code (= #{"hello" "f" "health" "help" "he"}
-          (words (trie ["hello" "help" "health" "he" "f"])))}
+ :uses #{:recursion}}
 
+;; --- [:function-template]
+(defn words [trie])
 ;; --- [:solution 0]
 
 ;; From part 1
@@ -46,3 +43,8 @@
                    (map (partial str letter) (words subtrie))
                    [""]))
                (keys trie))))
+
+;; --- test-cases
+(require '[clojure.test :refer [is]])
+(is (= #{"hello" "f" "health" "help" "he"}
+       (words (trie ["hello" "help" "health" "he" "f"]))))

@@ -7,43 +7,12 @@
             "trie-autocomplete"
             "trie-compact-autocomplete"}
  :instructions
- {:en-US ["Convert a trie to its compact form"
-          (defn compact [trie])]}
-
- :test-cases [{:input (compact {"" nil})
-               :output {"" nil}}
-              {:input (compact {"a" {"" nil}})
-               :output {"a" {"" nil}}}
-              {:input (compact {"a" {"" nil}
-                                "b" {"" nil}})
-               :output {"a" {"" nil}
-                        "b" {"" nil}}}
-              {:input {"a" {"" nil
-                            "b" {"" nil}}}
-               :output (compact {"a" {"" nil
-                                      "b" {"" nil}}})}
-              {:input {"ba" {"" nil}}
-               :output (compact {"b" {"a" {"" nil}}})}
-              {:input {"dcba" {"" nil}}
-               :output (compact {"d" {"c" {"b" {"a" {"" nil}}}}})}
-              {:input {"b" {"a" {"" nil}
-                            "c" {"" nil}}}
-               :output (compact {"b" {"a" {"" nil}
-                                      "c" {"" nil}}})}
-              {:input {"ba" {"d" {"" nil}
-                             "c" {"" nil}}}
-               :output (compact {"b" {"a" {"d" {"" nil}
-                                           "c" {"" nil}}}})}
-              {:input {"f" {"" nil}
-                       "he"
-                       {"" nil
-                        "alth" {"" nil}
-                        "l"
-                        {"lo" {"" nil}
-                         "p" {"" nil}}}}
-               :output (compact (trie ["hello" "help" "health" "he" "f"]))}]
+ {:en-US ["Convert a trie to its compact form"]}
  :teaches #{map cond :recursion :trie-data-structure :destructuring}
  :uses #{:recursion}}
+
+;; --- [:function-template]
+(defn compact [trie])
 
 ;; --- [:solution 0]
 
@@ -92,45 +61,47 @@
                      [k v']))))
              trie)))
 
-;; ---
+;; --- test-cases
 
-(= {"" nil}
-    (compact {"" nil}))
+(require '[clojure.test :refer [is]])
 
-(= {"a" {"" nil}}
-   (compact {"a" {"" nil}}))
+(is (= {"" "nil"}
+       (compact {"" nil})))
 
-(= {"a" {"" nil}
-    "b" {"" nil}}
-   (compact {"a" {"" nil}
-             "b" {"" nil}}))
+(is (= {"a" {"" nil}}
+       (compact {"a" {"" nil}})))
 
-(= {"a" {"" nil
-         "b" {"" nil}}}
-   (compact {"a" {"" nil
-                  "b" {"" nil}}}))
+(is (= {"a" {"" nil}
+        "b" {"" nil}}
+       (compact {"a" {"" nil}
+                 "b" {"" nil}})))
 
-(= {"ba" {"" nil}}
-   (compact {"b" {"a" {"" nil}}}))
+(is (= {"a" {"" nil
+             "b" {"" nil}}}
+       (compact {"a" {"" nil
+                      "b" {"" nil}}})))
 
-(= {"dcba" {"" nil}}
-   (compact {"d" {"c" {"b" {"a" {"" nil}}}}}))
+(is (= {"ba" {"" nil}}
+       (compact {"b" {"a" {"" nil}}})))
 
-(= {"b" {"a" {"" nil}
-         "c" {"" nil}}}
-   (compact {"b" {"a" {"" nil}
-                  "c" {"" nil}}}))
+(is (= {"dcba" {"" nil}}
+       (compact {"d" {"c" {"b" {"a" {"" nil}}}}})))
 
-(= {"ba" {"d" {"" nil}
-          "c" {"" nil}}}
-   (compact {"b" {"a" {"d" {"" nil}
-                       "c" {"" nil}}}}))
+(is (= {"b" {"a" {"" nil}
+             "c" {"" nil}}}
+       (compact {"b" {"a" {"" nil}
+                      "c" {"" nil}}})))
 
-(= {"f" {"" nil}
-    "he"
-    {"" nil
-     "alth" {"" nil}
-     "l"
-     {"lo" {"" nil}
-      "p" {"" nil}}}}
-   (compact (trie ["hello" "help" "health" "he" "f"])))
+(is (= {"ba" {"d" {"" nil}
+              "c" {"" nil}}}
+       (compact {"b" {"a" {"d" {"" nil}
+                           "c" {"" nil}}}})))
+
+(is (= {"f" {"" nil}
+        "he"
+        {"" nil
+         "alth" {"" nil}
+         "l"
+         {"lo" {"" nil}
+          "p" {"" nil}}}}
+       (compact (trie ["hello" "help" "health" "he" "f"]))))
