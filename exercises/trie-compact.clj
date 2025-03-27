@@ -43,47 +43,7 @@
                          "p" {"" nil}}}}
                :output (compact (trie ["hello" "help" "health" "he" "f"]))}]
  :teaches #{map cond :recursion :trie-data-structure :destructuring}
- :uses #{:recursion}
- :code [(= {"" nil}
-           (compact {"" nil}))
-
-        (= {"a" {"" nil}}
-           (compact {"a" {"" nil}}))
-
-        (= {"a" {"" nil}
-            "b" {"" nil}}
-           (compact {"a" {"" nil}
-                     "b" {"" nil}}))
-
-        (= {"a" {"" nil
-                 "b" {"" nil}}}
-           (compact {"a" {"" nil
-                          "b" {"" nil}}}))
-
-        (= {"ba" {"" nil}}
-           (compact {"b" {"a" {"" nil}}}))
-
-        (= {"dcba" {"" nil}}
-           (compact {"d" {"c" {"b" {"a" {"" nil}}}}}))
-
-        (= {"b" {"a" {"" nil}
-                 "c" {"" nil}}}
-           (compact {"b" {"a" {"" nil}
-                          "c" {"" nil}}}))
-
-        (= {"ba" {"d" {"" nil}
-                  "c" {"" nil}}}
-           (compact {"b" {"a" {"d" {"" nil}
-                               "c" {"" nil}}}}))
-
-        (= {"f" {"" nil}
-            "he"
-            {"" nil
-             "alth" {"" nil}
-             "l"
-             {"lo" {"" nil}
-              "p" {"" nil}}}}
-           (compact (trie ["hello" "help" "health" "he" "f"])))]}
+ :uses #{:recursion}}
 
 ;; --- [:solution 0]
 
@@ -131,3 +91,46 @@
                        [(str k subk) subv])
                      [k v']))))
              trie)))
+
+;; ---
+
+(= {"" nil}
+    (compact {"" nil}))
+
+(= {"a" {"" nil}}
+   (compact {"a" {"" nil}}))
+
+(= {"a" {"" nil}
+    "b" {"" nil}}
+   (compact {"a" {"" nil}
+             "b" {"" nil}}))
+
+(= {"a" {"" nil
+         "b" {"" nil}}}
+   (compact {"a" {"" nil
+                  "b" {"" nil}}}))
+
+(= {"ba" {"" nil}}
+   (compact {"b" {"a" {"" nil}}}))
+
+(= {"dcba" {"" nil}}
+   (compact {"d" {"c" {"b" {"a" {"" nil}}}}}))
+
+(= {"b" {"a" {"" nil}
+         "c" {"" nil}}}
+   (compact {"b" {"a" {"" nil}
+                  "c" {"" nil}}}))
+
+(= {"ba" {"d" {"" nil}
+          "c" {"" nil}}}
+   (compact {"b" {"a" {"d" {"" nil}
+                       "c" {"" nil}}}}))
+
+(= {"f" {"" nil}
+    "he"
+    {"" nil
+     "alth" {"" nil}
+     "l"
+     {"lo" {"" nil}
+      "p" {"" nil}}}}
+   (compact (trie ["hello" "help" "health" "he" "f"])))
