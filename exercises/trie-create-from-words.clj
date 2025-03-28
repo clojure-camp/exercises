@@ -15,7 +15,6 @@
            " /   \\ "
            "l     p"
            "o      "]]}
- :test-cases []
  :teaches #{reduce assoc-in conj :regex :trie-data-structure}
  :uses #{:reduce :data :string-operations}}
 
