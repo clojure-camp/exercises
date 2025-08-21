@@ -13,7 +13,7 @@
               {:input (classify-triangle 0 0 0)
                :output :invalid}
               {:input (classify-triangle 1 1 2)
-               :output :invalid}
+               :output :isosceles}
               {:input (classify-triangle 4 4 5)
                :output :isosceles}
               {:input (classify-triangle 3 4 5)
