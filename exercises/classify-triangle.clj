@@ -9,10 +9,10 @@
   :pt-BR ["Escreva uma função `classify-triangle`, que, dado 3 números, retorna se um triângulo é equilátero (3 lados iguais), isósceles (2 lados iguais), escaleno, ou, não é um triângulo."]}
  :function-template (defn classify-triangle [a b c])
  :test-cases [{:input (classify-triangle 1 1 1)
-               :output :equilateral }
+               :output :equilateral}
               {:input (classify-triangle 0 0 0)
                :output :invalid}
-              {:input (classify-triangle 1 1 2)
+              {:input (classify-triangle 1 1 3)
                :output :invalid}
               {:input (classify-triangle 4 4 5)
                :output :isosceles}
