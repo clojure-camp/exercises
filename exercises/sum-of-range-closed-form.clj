@@ -6,7 +6,7 @@
  :related #{"sum-of-range"}
  :instructions
  {:en-US ["Write a function that, given a number N, returns the sum of numbers from 1 to N, inclusive."
-          "Note, this can be done with a formula: https://en.wikipedia.org/wiki/Arithmetic_progression"]
+          [:p "Note, this can be done with " [:a {:href "https://en.wikipedia.org/wiki/Arithmetic_progression"} "a formula"] "."]]
   :pt-BR ["Escreva uma função que, dado um número N, retorna a soma dos números de 1 a N, inclusive."
           "Observação, isso pode ser feito com uma fórmula: https://pt.wikipedia.org/wiki/Progress%C3%A3o_aritm%C3%A9tica"]}
  :function-template (defn sum-to [n])

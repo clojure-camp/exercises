@@ -6,10 +6,10 @@
  :uses #{-> :keywords :strings :maps inc}
  :instructions
  {:en-US ["Write a function that takes a map with the below format:"
-          {:name "james" :disabled? true :points 0}
+          [:code {:name "james" :disabled? true :points 0}]
           "and returns a map with the `:disabled?` key removed, 1 added to the `:points` value, add a key called `:activated` added with the value `\"now\"`; all other keys should be left as-is."]
   :pt-BR ["Escreva uma função que receba um mapa com a seguinte estrutura:"
-          {:name "james" :disabled? true :points 0}
+          [:code {:name "james" :disabled? true :points 0}]
           "e retorne um mapa com a chave `:disabled?` removida, 1 adicionado ao valor de `:points`, e uma chave chamada `:activated` adicionada com o valor `\"now\"`; todas as outras chaves devem ser mantidas como estão."]}
  :difficulty :low
  :function-template (defn activate [person])

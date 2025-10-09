@@ -6,16 +6,18 @@
  :instructions
  {:en-US ["Devise a data model to represent a game of tic-tac-toe."
           "For example, describe a game whose board currently looks like the below:"
-          "`_|X|O`"
-          "`_|_|X`"
-          "`O|_|_`"
+          [:file
+           "_|X|O"
+           "_|_|X"
+           "O|_|_"]
           "In your model, include a history of the moves played."
           "Write a function `moves-played` that returns how many moves have been played."]
   :pt-BR ["Crie um modelo de dados para representar o jogo da velha."
           "Por exemplo, descreva um jogo cujo tabuleiro atualmente se parece com o abaixo:"
-          "`_|X|O`"
-          "`_|_|X`"
-          "`O|_|_`"
+          [:file
+           "_|X|O"
+           "_|_|X"
+           "O|_|_"]
           "No seu modelo, inclua um histórico das jogadas feitas."
           "Escreva uma função `moves-played` que retorna quantas jogadas foram feitas."]}
  :uses #{:maps :vectors :strings :numbers count}}

@@ -8,8 +8,8 @@
             "trie-compact"}
  :instructions
  {:en-US ["Autocomplete, but for compacted tries"
-          "(compact-autocomplete {\"he\" {\"l\" {\"lo\" {\"\" nil}, \"p\" {\"\" nil}}, \"alth\" {\"\" nil}, \"\" nil}, \"f\" {\"\" nil}} \"he\")"
-          "should return: \"health\""]}
+          [:code "(compact-autocomplete {\"he\" {\"l\" {\"lo\" {\"\" nil}, \"p\" {\"\" nil}}, \"alth\" {\"\" nil}, \"\" nil}, \"f\" {\"\" nil}} \"he\")"]
+          "should return: `\"health\"`"]}
  :teaches #{loop recur map mapcat partial :recursion :trie-data-structure}
  :uses #{:recursion}}
 

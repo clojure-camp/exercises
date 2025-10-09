@@ -4,8 +4,10 @@
  :category :synthesis
  :difficulty :high
  :instructions
- {:en-US ["Implement merge sort."]
-  :pt-BR ["Implemente o merge sort."]}
+ {:en-US ["Implement merge sort."
+          [:a {:href "https://en.wikipedia.org/wiki/Merge_sort"} "https://en.wikipedia.org/wiki/Merge_sort"]]
+  :pt-BR ["Implemente o merge sort."
+          [:a {:href "https://en.wikipedia.org/wiki/Merge_sort"} "https://en.wikipedia.org/wiki/Merge_sort"]]}
  :function-template (defn merge-sort [coll])
  :test-cases
  [{:input (merge-sort [5 6 3 1 2 4])

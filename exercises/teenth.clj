@@ -6,7 +6,7 @@
  :instructions
  {:en-US ["Someone figured out that you can meet on the teenth Tuesday of a month - meaning, on the Tuesday of each month that ends in -teenth (13,14,15,16,17,18,19...) ... "
           "Write a function that determines if a given day is a -teenth day"
-          "Write a function that for a month, and :tuesday, returns the teenth tuesday of that month"
+          "Write a function that for a month, and a keyword for the day-of-week (ex. `:tuesday`), returns the teenth day-of-week of that month"
           "Note that 'Monteenth', 'Tuesteenth' , etc are all made up words. There was a meetup whose members realised that there are exactly 7 days that end in '-teenth'."
           "Therefore, one is guaranteed that each day of the week (Monday, Tuesday, ...) will have exactly one date that is named with '-teenth' in every month."
           #_"https://github.com/exercism/problem-specifications/blob/306c038fcabe3f7c75e4dd7f0684493096301da2/meetup.md"]}

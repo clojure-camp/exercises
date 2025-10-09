@@ -8,10 +8,10 @@
  :instructions
  {:en-US ["Write a function to determine the winning hand in a poker game."
           "The function should take a collection of hands, a hand being a collection of cards. Cards can be represented however you wish."
-          "The function should return the same collection, but sorted according to poker rules (see https://en.wikipedia.org/wiki/List_of_poker_hands)"]
+          [:p "The function should return the same collection, but sorted according to " [:a {:href "https://en.wikipedia.org/wiki/List_of_poker_hands"} "poker rules"] "."]]
   :pt-BR ["Escreva uma função que determina a mão vencedora em um jogo de poker."
           "A função deve receber uma coleção de mãos, uma mão sendo uma coleção de cartas. Cartas podem ser representadas como você desejar."
-          "A função deve retornar a mesma coleção, mas ordenada de acordo com as regras do poker (veja https://pt.wikipedia.org/wiki/Lista_de_jogadas_do_p%C3%B4quer)"]}
+          [:p "A função deve retornar a mesma coleção, mas ordenada de acordo com as " [:a {:href "https://pt.wikipedia.org/wiki/Lista_de_jogadas_do_p%C3%B4quer"} "regras do poker"] "."]]}
  :source "https://exercism.io/tracks/clojure/exercises/poker"}
 
 ;; --- [:solution 0]

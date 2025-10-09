@@ -15,7 +15,7 @@
            " /   \\ "
            "l     p"
            "o      "]
-          "should return: #{\"hello\" and \"help\"}"]}
+          "should return: `#{\"hello\" \"help\"}`"]}
  :teaches #{reduce assoc-in conj map partial str :recursion :trie-data-structure}
  :uses #{:recursion}}
 

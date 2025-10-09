@@ -8,9 +8,8 @@
             "trie-compact-autocomplete"}
  :instructions
  {:en-US ["Given a trie and a prefix, return all words in trie with that prefix."
-          "(autocomplete (trie [\"hello\" \"help\" \"health\" \"he\" \"f\"])
-                        \"he\")"
-          "should return:  #{\"hello\" \"health\" \"help\" \"he\"}"]}
+          [:code "(autocomplete (trie [\"hello\" \"help\" \"health\" \"he\" \"f\"]) \"he\")"]
+          "should return: `#{\"hello\" \"health\" \"help\" \"he\"}`"]}
  :teaches #{mapcat set map partial str keys :recursion :trie-data-structure}
  :uses #{:recursion}}
 

@@ -9,13 +9,14 @@
           "Step 2: Create a function `random-list` that returns a shuffled a list of values from 0 to N."
           "Step 3: Create a function `sort-frequencies` that uses the above two functions to run a number of trials, and then reports the relative frequencies of the number of comparisons needed."
           "For example, `(sort-frequencies 8 1000)` (1000 trials of 8 item list) gave the result:"
-          [[12 0.001] [13 0.007] [14 0.026] [15 0.15] [16 0.342] [17 0.361] [18 0.113]]]
+          [:code [[12 0.001] [13 0.007] [14 0.026] [15 0.15] [16 0.342] [17 0.361] [18 0.113]]]]
   :pt-BR ["Explore quantas comparações são necessárias para ordenar uma lista."
           "Passo 1: Crie uma função `sort-count`, que, dada uma lista, retorna o número de comparações realizadas ao ordenar essa lista."
           "Passo 2: Crie uma função `random-list` que retorna uma lista embaralhada de valores de 0 a N."
           "Passo 3: Crie uma função `sort-frequencies` que usa as duas funções acima para executar um número de testes e, em seguida, relata as frequências relativas do número de comparações necessárias."
           "Por exemplo, `(sort-frequencies 8 1000)` (1000 testes de uma lista de 8 itens) deu o resultado:"
-          [[12 0.001] [13 0.007] [14 0.026] [15 0.15] [16 0.342] [17 0.361] [18 0.113]]]}
+          [:code
+           [[12 0.001] [13 0.007] [14 0.026] [15 0.15] [16 0.342] [17 0.361] [18 0.113]]]]}
  :uses #{:working-with-atoms atom swap! compare sort shuffle frequencies :destructuring ->> double count :math-operations /}}
 
 ;; --- [:solution 0]
