@@ -14,7 +14,7 @@
  :uses #{into inc}
  :teaches #{subvec}}
 
-; --- [:solution 0]
+;; --- [:solution 0]
 
 (defn dissoc-at
   [v index]

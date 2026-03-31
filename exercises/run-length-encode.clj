@@ -18,6 +18,8 @@
  :uses #{identity map juxt first count}
  :source "https://exercism.io/tracks/clojure/exercises/run-length-encoding"}
 
+;; --- [:solution 0]
+
 (defn run-length [coll]
   (->> (partition-by identity coll)
        (map (juxt first count))))
