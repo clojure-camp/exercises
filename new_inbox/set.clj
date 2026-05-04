@@ -1,4 +1,5 @@
 
+;; have 'set' exercise already, but could add 'exploring percent of valid combinations' exercise as done below
 
 (defn- join
   "Lazily concatenates a collection of collections into a flat sequence,
